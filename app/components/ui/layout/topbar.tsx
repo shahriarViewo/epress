@@ -13,11 +13,11 @@ const Topbar: FC = () => {
         <div className="flex space-x-6 items-center">
           <div className="flex items-center space-x-2">
             <FaPhoneAlt className="text-white text-xs" />
-            <span>+880 1711 738135</span>
+            <span>7186632848</span>
           </div>
           <div className="flex items-center space-x-2">
             <MdEmail className="text-white text-base" />
-            <span>info@printpress.net</span>
+            <span>info@oneprint.ai</span>
           </div>
         </div>
         
