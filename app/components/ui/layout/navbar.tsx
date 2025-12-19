@@ -23,7 +23,7 @@ const NavBar: React.FC = () => {
         {/* 1. Logo Section */}
         <div className="flex-shrink-0">
           <a href="/" className="text-3xl font-bold text-[#F24E1E] tracking-tight">
-            Printpress
+            OnePrint
           </a>
         </div>
 

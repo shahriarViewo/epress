@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 const testimonials = [
   {
     id: 1,
-    quote: "PrintPress transformed my Etsy shop! Their t-shirts sold out in hours, and my followers can't stop raving!",
+    quote: "OnePrint transformed my Etsy shop! Their t-shirts sold out in hours, and my followers can't stop raving!",
     author: "Emma L.",
     role: "Influencer"
   },
@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     id: 4,
-    quote: "Fast shipping and amazing customer support. PrintPress is now my go-to for all custom merchandise.",
+    quote: "Fast shipping and amazing customer support. OnePrint is now my go-to for all custom merchandise.",
     author: "Sarah J.",
     role: "Designer"
   }
@@ -48,7 +48,7 @@ const TestimonialSection = () => {
         {/* Header & Navigation */}
         <div className="flex justify-between items-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[#022c22]">
-            Creators Love PrintPress
+            Creators Love OnePrint
           </h2>
 
           {/* Nav Buttons */}

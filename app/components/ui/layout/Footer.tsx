@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="lg:col-span-4 flex flex-col gap-8 lg:pr-12 lg:border-r border-white/10">
             
             {/* Logo */}
-            <h2 className="text-4xl font-medium tracking-tight">Printpress</h2>
+            <h2 className="text-4xl font-medium tracking-tight">OnePrint</h2>
             
             {/* Contact Info Grid (Email & Call) */}
             <div className="flex flex-col sm:flex-row gap-6 mt-2">
@@ -61,8 +61,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Email</p>
-                  <a href="mailto:info@printpress.net" className="text-sm hover:text-orange-500 transition-colors">
-                    info@printpress.net
+                  <a href="mailto:info@OnePrint.ai" className="text-sm hover:text-orange-500 transition-colors">
+                    info@OnePrint.ai
                   </a>
                 </div>
               </div>
@@ -157,7 +157,7 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           
           <div className="text-gray-400 text-sm">
-            © All Right reserved by <span className="text-orange-500 font-semibold">Printpress</span> | 2025
+            © All Right reserved by <span className="text-orange-500 font-semibold">OnePrint</span> | 2025
           </div>
           
           {/* Payment Icons (Simulated with simple badges for this demo) */}

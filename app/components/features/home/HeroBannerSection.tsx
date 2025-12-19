@@ -26,7 +26,7 @@ const HeroBannerSection = () => {
               Empower your brand with advanced heat press technology creating vibrant, durable t-shirts, mugs, phone cases, tote bags, wall art, and personalized gifts.
             </p>
             <p className="text-lg md:text-xl font-semibold text-gray-900">
-              Inspire and grow with PrintPress!
+              Inspire and grow with OnePrint!
             </p>
           </div>
         </div>

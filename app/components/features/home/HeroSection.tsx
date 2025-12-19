@@ -12,27 +12,27 @@ const HeroSection = () => {
       id: 1,
       bgImage: '/images/hero/background.jpg', // Replace with your actual paths
       heroImage: '/images/hero/hero1.png',
-      title: "Stunning Men's Outfit Cap",
-      subtitle: "High-quality caps built for style and durability. Perfect for casual outings, sports, and everyday confidence.",
-      cta: "Explore Caps",
+      title: "American Top Choice for custom Heat Press Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
+      cta: "Explore Hats",
       color: "bg-[#E07A06]" // Color for the active dot
     },
     {
       id: 2,
       bgImage: '/images/hero/background.jpg', 
       heroImage: '/images/hero/hero2.png', // Example placeholder
-      title: "New Season Sneakers",
-      subtitle: "Step up your game with our latest collection of urban footwear designed for comfort.",
-      cta: "View Shoes",
+      title: "America's Leading Hub for Custom Heat Press Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tote bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with PrintPress!",
+      cta: "Explore T-Shirt",
       color: "bg-[#A55536]"
     },
     {
       id: 3,
       bgImage: '/images/hero/background.jpg',
       heroImage: '/images/hero/hero3.png', // Example placeholder
-      title: "Premium Travel Bags",
-      subtitle: "Durable, stylish, and spacious. The perfect companion for your next adventure.",
-      cta: "Shop Bags",
+      title: "Printing 21st Century Technology for Professional Custom Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with PrintPress!",
+      cta: "Explore Mug",
       color: "bg-blue-600"
     }
   ];
@@ -70,18 +70,18 @@ const HeroSection = () => {
               </div>
               
               {/* Hero Image (Right Side) */}
-              <img 
-                src={slide.heroImage} 
-                alt={slide.title} 
-                className="absolute right-0 h-full w-auto object-contain transition-transform duration-700 ease-out transform translate-x-0"
-              />
+              <div className="absolute right-0 bottom-0 h-4/5 w-1/2 flex items-end justify-end">
+                <img 
+                  src={slide.heroImage} 
+                  alt={slide.title} 
+                  className="h-full w-auto object-contain transition-transform duration-700 ease-out transform translate-x-0"
+                />
+              </div>
               
               {/* Content Overlay */}
-              <div className="relative z-10 h-full flex flex-col justify-center p-8 md:p-12 max-w-lg">
-                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4 animate-fadeIn">
-                  {slide.title.split(' ').map((word, i) => (
-                    <span key={i} className="block">{word} </span>
-                  ))}
+              <div className="relative z-10 h-full flex flex-col justify-center p-8 md:p-12 max-w-[70%]">
+                <h2 className="text-xl md:text-5xl font-bold text-white leading-tight mb-4 animate-fadeIn w-full break-words">
+                  {slide.title}
                 </h2>
                 <p className="text-white/90 text-lg mb-8 max-w-md">
                   {slide.subtitle}

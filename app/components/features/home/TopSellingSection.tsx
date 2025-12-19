@@ -48,7 +48,7 @@ const products = [
   {
     id: 6,
     title: 'Press the Crown',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/TopSellingProducts/6.png',
