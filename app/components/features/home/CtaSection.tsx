@@ -14,7 +14,7 @@ const CtaSection = () => {
         
         {/* Subheadline paragraph, white text, with a max-width for readability. */}
         <p className="text-white text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-          Join thousands of creators turning ideas into profits with PrintPress. Sign up now for exclusive deals and daily inspiration!
+          Join thousands of creators turning ideas into profits with OnePrint. Sign up now for exclusive deals and daily inspiration!
         </p>
         
         {/* Call-to-action button. White background with red text, pill-shaped. */}

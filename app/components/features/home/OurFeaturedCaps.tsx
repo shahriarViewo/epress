@@ -8,7 +8,7 @@ const caps = [
   {
     id: 1,
     title: 'Visionary Crown Cap',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/cap/1.png',
@@ -16,7 +16,7 @@ const caps = [
   {
     id: 2,
     title: 'Press the Crown',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/cap/2.png',
@@ -24,7 +24,7 @@ const caps = [
   {
     id: 3,
     title: 'Limitless Ink Cap',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/cap/3.png',
@@ -32,7 +32,7 @@ const caps = [
   {
     id: 4,
     title: 'The Innovator Cap',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/cap/4.png',
@@ -40,7 +40,7 @@ const caps = [
   {
     id: 5,
     title: 'PressPower Snap Cap',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/cap/5.png',
@@ -48,7 +48,7 @@ const caps = [
   {
     id: 6,
     title: 'Create Mode Cap',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/cap/6.png',
@@ -56,7 +56,7 @@ const caps = [
   {
     id: 7,
     title: 'DreamPress Heat Cap',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/cap/7.png',
@@ -64,7 +64,7 @@ const caps = [
   {
     id: 8,
     title: 'Press the Crown',
-    description: 'Street energy, printpress precision',
+    description: 'Street energy, OnePrint precision',
     price: 9.99,
     rating: 4.5,
     imageUrl: '/images/landingPage/cap/8.png',
