@@ -18,28 +18,26 @@ import BestsellersSection from "./components/features/home/BestsellersSection";
 export default function Home() {
   return (
     <>
-        <main className="min-h-screen max-w-[1600px] mx-auto">
-      <HeroSection />
-      <CategorySection />
-      <TopSellingSection />
-      <PromoDealsSection />
-      {/* we have issue in HeroBannerSection as its a image instead of full design */}
-      <HeroBannerSection/>
-      <BestSellingTshirtSection/>
-      <BestsellersSection/>
-      <WhyShopSection/>
-      <TwoColumnBanner/>
-      <OurFeaturedCaps/>
-      <PromoGridSection/>
-      <TestimonialSection />
-      <TShirtCollectionGrid />
-      <PromotionalBanner />
-      <FaqSection></FaqSection>
-      <FeaturesSection />
-    </main>
-          <CtaSection />
+      <main className="min-h-screen max-w-[1600px] mx-auto">
+        <HeroSection />
+        <CategorySection />
+        <TopSellingSection />
+        <PromoDealsSection />
+        {/* we have issue in HeroBannerSection as its a image instead of full design */}
+        <HeroBannerSection />
+        <BestSellingTshirtSection />
+        <BestsellersSection />
+        <WhyShopSection />
+        <TwoColumnBanner />
+        <OurFeaturedCaps />
+        <PromoGridSection />
+        {/* <TestimonialSection /> */}
+        <TShirtCollectionGrid />
+        <PromotionalBanner />
+        <FaqSection />
+        <FeaturesSection />
+      </main>
+      <CtaSection />
     </>
-
-
-  )
+  );
 }

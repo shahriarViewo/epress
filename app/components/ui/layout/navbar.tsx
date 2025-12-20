@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Search, Heart, ShoppingBag, User, Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
 
 interface NavLink {
   name: string;
@@ -20,17 +20,17 @@ const NavBar: React.FC = () => {
     // Set initial value
     handleResize();
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navLinks: NavLink[] = [
-    { name: 'Products', href: '#' },
-    { name: 'Shop', href: '#' },
-    { name: 'Custom Orders', href: '#' },
-    { name: 'Deal', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: "Products", href: "#" },
+    { name: "Shop", href: "#" },
+    { name: "Custom Orders", href: "#" },
+    { name: "Deal", href: "#" },
+    { name: "About", href: "#" },
+    { name: "Contact", href: "#" },
   ];
 
   const toggleMenu = () => {
@@ -50,10 +50,13 @@ const NavBar: React.FC = () => {
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
-          
+
           {/* Logo Section */}
-          <div className="flex-shrink-0">
-            <a href="/" className="text-3xl font-bold text-[#F24E1E] tracking-tight">
+          <div className="shrink-0">
+            <a
+              href="/"
+              className="text-3xl font-bold text-[#F24E1E] tracking-tight"
+            >
               OnePrint
             </a>
           </div>
@@ -76,24 +79,24 @@ const NavBar: React.FC = () => {
         {/* Mobile Menu Overlay */}
         <div className="lg:hidden">
           {/* Backdrop Overlay */}
-          <div 
+          <div
             className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
-              isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+              isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
             onClick={toggleMenu}
             aria-hidden="true"
           />
-          
+
           {/* Mobile Menu */}
-          <div 
+          <div
             className={`fixed left-0 w-4/5 max-w-sm bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-in-out ${
-              isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+              isMenuOpen ? "translate-x-0" : "-translate-x-full"
             }`}
-            style={{ 
+            style={{
               top: 0,
               bottom: 0,
-              paddingTop: '64px', // Push content down by navbar height
-              marginTop: 0
+              paddingTop: "64px", // Push content down by navbar height
+              marginTop: 0,
             }}
           >
             <div className="h-full overflow-y-auto px-4 pt-2">
@@ -109,7 +112,7 @@ const NavBar: React.FC = () => {
                   </a>
                 ))}
               </div>
-              
+
               {/* Additional Mobile Actions */}
               <div className="mt-8 pt-6 border-t border-gray-100">
                 <div className="flex items-center gap-4 mb-4">
@@ -131,7 +134,6 @@ const NavBar: React.FC = () => {
 
         {/* 3. Search Bar and Actions */}
         <div className="flex items-center gap-6">
-          
           {/* Search Input - Hidden below 1400px */}
           <div className="relative hidden [@media(min-width:1400px)]:block w-[380px]">
             <input
@@ -139,7 +141,7 @@ const NavBar: React.FC = () => {
               placeholder="Search for any product"
               className="w-full bg-gray-100/80 text-gray-600 rounded-full py-3 px-6 pr-12 outline-none focus:ring-2 focus:ring-[#F24E1E]/20 transition-all placeholder:text-gray-400"
             />
-            <button 
+            <button
               type="button"
               className="absolute right-1 top-1 bottom-1 bg-[#F24E1E] hover:bg-[#d63f14] text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shadow-sm"
               aria-label="Search"
@@ -149,7 +151,7 @@ const NavBar: React.FC = () => {
           </div>
 
           {/* Search Icon - Shown below 1400px */}
-          <button 
+          <button
             className="[@media(min-width:1400px)]:hidden w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition-colors"
             aria-label="Open search"
           >
@@ -159,34 +161,33 @@ const NavBar: React.FC = () => {
           {/* Icon Buttons */}
           <div className="flex items-center gap-3">
             {/* Wishlist */}
-            <button 
+            {/* <button
               type="button"
               className="w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition-colors"
             >
               <Heart size={22} />
-            </button>
+            </button> */}
 
             {/* Cart with Badge */}
-            <button 
+            {/* <button
               type="button"
               className="w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition-colors relative"
             >
               <ShoppingBag size={22} />
               {/* Notification Badge */}
-              <span className="absolute top-0 right-0 transform translate-x-[-2px] translate-y-[2px] bg-[#F24E1E] text-white text-[11px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
+            {/* <span className="absolute top-0 right-0 transform translate-x-[-2px] translate-y-[2px] bg-[#F24E1E] text-white text-[11px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
                 1
               </span>
-            </button>
+            </button> */}
 
             {/* User Profile */}
-            <button 
+            {/* <button
               type="button"
               className="w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition-colors"
             >
               <User size={22} />
-            </button>
+            </button> */}
           </div>
-
         </div>
       </div>
     </nav>
