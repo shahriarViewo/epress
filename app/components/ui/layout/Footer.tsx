@@ -160,14 +160,40 @@ const Footer = () => {
             © All Right reserved by <span className="text-orange-500 font-semibold">OnePrint</span> | 2025
           </div>
           
-          {/* Payment Icons (Simulated with simple badges for this demo) */}
+          {/* Payment Icons */}
           <div className="flex items-center gap-2">
-            {['PayPal', 'Mastercard', 'Visa', 'Discover'].map((brand) => (
-              <div key={brand} className="bg-white px-2 py-1 rounded shadow-sm">
-                 {/* In a real app, use <Image src="/visa.png" ... /> here */}
-                 <span className="text-[10px] font-bold text-black uppercase tracking-tighter">{brand}</span>
-              </div>
-            ))}
+            <div className="bg-white p-2 rounded shadow-sm w-16 h-9 flex items-center justify-center">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" 
+                alt="PayPal" 
+                className="h-5 w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white p-2 rounded shadow-sm w-16 h-9 flex items-center justify-center">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" 
+                alt="Mastercard" 
+                className="h-5 w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white p-2 rounded shadow-sm w-16 h-9 flex items-center justify-center">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" 
+                alt="Visa" 
+                className="h-5 w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white p-2 rounded shadow-sm w-16 h-9 flex items-center justify-center">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/5/57/Discover_Card_logo.svg" 
+                alt="Discover" 
+                className="h-5 w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
 

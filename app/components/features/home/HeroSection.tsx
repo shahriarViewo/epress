@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
   // 1. State for the active slide
@@ -10,34 +10,34 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      bgImage: '/images/hero/background.jpg', // Replace with your actual paths
+      bgImage: '/images/hero/background.jpg',
       heroImage: '/images/hero/hero1.png',
-      title: "Stunning Men's Outfit Cap",
-      subtitle: "High-quality caps built for style and durability. Perfect for casual outings, sports, and everyday confidence.",
-      cta: "Explore Caps",
-      color: "bg-[#E07A06]" // Color for the active dot
+      title: "American Top Choice for custom Heat Press Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
+      cta: "Explore Hats",
+      color: "bg-[#E07A06]"
     },
     {
       id: 2,
       bgImage: '/images/hero/background.jpg', 
-      heroImage: '/images/hero/hero2.png', // Example placeholder
-      title: "New Season Sneakers",
-      subtitle: "Step up your game with our latest collection of urban footwear designed for comfort.",
-      cta: "View Shoes",
+      heroImage: '/images/hero/hero2.png',
+      title: "America's Leading Hub for Custom Heat Press Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tote bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with PrintPress!",
+      cta: "Explore T-Shirt",
       color: "bg-[#A55536]"
     },
     {
       id: 3,
       bgImage: '/images/hero/background.jpg',
-      heroImage: '/images/hero/hero3.png', // Example placeholder
-      title: "Premium Travel Bags",
-      subtitle: "Durable, stylish, and spacious. The perfect companion for your next adventure.",
-      cta: "Shop Bags",
+      heroImage: '/images/hero/hero3.png',
+      title: "Printing 21st Century Technology for Professional Custom Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with PrintPress!",
+      cta: "Explore Mug",
       color: "bg-blue-600"
     }
   ];
 
-  // 3. Auto-play logic (Optional: changes slide every 5 seconds)
+  // 3. Auto-play logic
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -47,66 +47,77 @@ const HeroSection = () => {
   }, [slides.length]);
 
   return (
-    <div className="w-full p-16">
+    <div className="w-full px-4 py-4 lg:py-16 lg:px-16">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
         {/* === Left Main Card (Carousel Banner) === */}
-        <div className="lg:col-span-2 relative h-[500px] rounded-[32px] overflow-hidden group bg-gray-900">
-          
+        <div className="lg:col-span-2 relative rounded-[2rem] overflow-hidden group bg-gray-900 min-h-[260px] md:min-h-[380px] lg:min-h-[400px] xl:min-h-[500px]">
           {/* Slide Renderer */}
           {slides.map((slide, index) => (
-            <div 
+            <div
               key={slide.id}
               className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
-                index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                index === currentSlide
+                  ? "opacity-100 z-10"
+                  : "opacity-0 z-0 pointer-events-none"
               }`}
             >
               {/* Background Image */}
-              <div 
+              <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: `url("${slide.bgImage}")` }}
               >
-                <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
               </div>
-              
-              {/* Hero Image (Right Side) */}
-              <img 
-                src={slide.heroImage} 
-                alt={slide.title} 
-                className="absolute right-0 h-full w-auto object-contain transition-transform duration-700 ease-out transform translate-x-0"
+
+              {/* Hero Image */}
+              <img
+                src={slide.heroImage}
+                alt={slide.title}
+                className="absolute right-0 bottom-0 
+                   h-[160px] max-w-[50%] 
+                   md:h-[90%] md:max-w-[45%] 
+                   lg:max-w-[50%] xl:max-w-none 
+                   w-auto object-contain object-bottom 
+                   transition-transform duration-700 ease-out transform translate-x-0"
               />
-              
-              {/* Content Overlay */}
-              <div className="relative z-10 h-full flex flex-col justify-center p-8 md:p-12 max-w-lg">
-                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4 animate-fadeIn">
-                  {slide.title.split(' ').map((word, i) => (
-                    <span key={i} className="block">{word} </span>
-                  ))}
-                </h2>
-                <p className="text-white/90 text-lg mb-8 max-w-md">
-                  {slide.subtitle}
-                </p>
-                
-                <a 
-                  href="#" 
-                  className="bg-white text-black font-semibold py-3 px-8 rounded-full w-fit hover:bg-gray-100 transition-colors"
-                >
-                  {slide.cta}
-                </a>
+
+              {/* Content Overlay (Text Top / Button Bottom) */}
+              <div className="relative z-10 h-full flex flex-col justify-between p-6 pt-8 pb-14 md:p-8 md:pb-12 lg:p-10 lg:pb-12 xl:p-12 xl:pb-16 w-full md:max-w-lg xl:max-w-xl">
+                {/* TOP: Title & Subtitle */}
+                <div>
+                  <h2 className="text-3xl sm:text-4xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-2 md:mb-3 xl:mb-4 animate-fadeIn">
+                    {slide.title}
+                  </h2>
+
+                  {/* Description hidden on mobile, shown on md+ */}
+                  <p className="hidden md:block text-white/90 text-sm md:text-base xl:text-lg md:max-w-[80%] lg:max-w-md line-clamp-3 md:line-clamp-3 xl:line-clamp-none">
+                    {slide.subtitle}
+                  </p>
+                </div>
+
+                {/* BOTTOM: Button */}
+                <div>
+                  <a
+                    href="#"
+                    className="bg-white text-black font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit hover:bg-gray-100 transition-colors shadow-lg block"
+                  >
+                    {slide.cta}
+                  </a>
+                </div>
               </div>
             </div>
           ))}
 
-          {/* Carousel Dots (Interactive) */}
-          <div className="absolute bottom-8 right-8 z-20 flex gap-2 bg-white/20 p-2 rounded-full backdrop-blur-sm">
+          {/* Carousel Dots */}
+          <div className="absolute bottom-6 right-6 md:right-6 lg:bottom-8 lg:right-8 z-20 flex gap-2 bg-white/20 p-2 rounded-full backdrop-blur-sm w-fit">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index 
-                    ? `${slides[index].color} scale-110` 
-                    : 'bg-white/60 hover:bg-white'
+                className={`w-2 h-2 md:w-2.5 md:h-2.5 xl:w-3 xl:h-3 rounded-full transition-all duration-300 ${
+                  currentSlide === index
+                    ? `${slides[index].color} scale-110`
+                    : "bg-white/60 hover:bg-white"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -114,55 +125,71 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* === Right Column (Stacked Cards) - UNCHANGED === */}
-        <div className="flex flex-col gap-6">
-          
+        {/* === Right Column (Stacked Cards) === */}
+        <div className="flex flex-col gap-6 h-full">
           {/* Top Right Card */}
-          <div className="flex-1 relative rounded-[32px] overflow-hidden bg-[#A55536] p-8 flex items-center min-h-[240px]">
-            <div className="z-10 w-1/2">
-              <h3 className="text-3xl font-bold text-white mb-2">
+          <div className="flex-1 relative rounded-[32px] overflow-hidden bg-[#A55536] flex flex-col justify-between p-6 lg:p-6 xl:p-8 min-h-[240px]">
+            {/* Text Section (Top) */}
+            <div className="z-10 w-1/2 lg:w-3/5 xl:w-1/2">
+              <h3 className="text-3xl lg:text-2xl xl:text-3xl font-bold text-white mb-2">
                 Comfort <br /> Meets Style
               </h3>
-              <p className="text-white/80 text-sm mb-6">
+              
+              {/* === MODIFIED: Added hidden md:block === */}
+              <p className="hidden md:block text-white/80 text-sm mb-6 lg:mb-4 xl:mb-6">
                 Soft, breathable, and made for every moment.
               </p>
-              <a 
-                href="#" 
-                className="bg-white text-black font-bold py-2 px-6 rounded-full text-sm hover:bg-gray-100 transition-colors"
+            </div>
+
+            {/* Button Section (Bottom) */}
+            <div className="z-10 relative">
+              <a
+                href="#"
+                className="bg-white text-black font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full inline-block hover:bg-gray-100 transition-colors shadow-md"
               >
                 Shop Now
               </a>
             </div>
-            <img 
-              src="/images/hero/hero2.png" 
-              alt="Comfort Style" 
-              className="absolute right-0 bottom-0 h-full w-auto max-w-[60%] object-contain object-bottom"
+
+            {/* Image (Bottom Right) */}
+            <img
+              src="/images/hero/hero2.png"
+              alt="Comfort Style"
+              className="absolute right-0 bottom-0 h-[90%] w-auto max-w-[60%] lg:max-w-[50%] xl:max-w-[60%] object-contain object-bottom"
             />
           </div>
 
           {/* Bottom Right Card */}
-          <div className="flex-1 relative rounded-[32px] overflow-hidden bg-[#E07A06] p-8 flex items-center min-h-[240px]">
-            <div className="z-10 w-3/5">
-              <h3 className="text-3xl font-bold text-white mb-2">
-                Serve Style with Every Sip
+          <div className="flex-1 relative rounded-[32px] overflow-hidden bg-[#E07A06] flex flex-col justify-between p-6 lg:p-6 xl:p-8 min-h-[240px]">
+            {/* Text Section (Top) */}
+            <div className="z-10 w-3/5 lg:w-2/3 xl:w-3/5">
+              <h3 className="text-3xl lg:text-2xl xl:text-3xl font-bold text-white mb-2">
+                Serve Style <br /> with Sip
               </h3>
-              <p className="text-white/80 text-sm mb-6">
-                Premium ceramic mugs in creative and custom designs.
+              
+              {/* === MODIFIED: Added hidden md:block === */}
+              <p className="hidden md:block text-white/80 text-sm mb-6 lg:mb-4 xl:mb-6">
+                Premium ceramic mugs in custom designs.
               </p>
-              <a 
-                href="#" 
-                className="bg-white text-black font-bold py-2 px-6 rounded-full text-sm hover:bg-gray-100 transition-colors"
+            </div>
+
+            {/* Button Section (Bottom) */}
+            <div className="z-10 relative">
+              <a
+                href="#"
+                className="bg-white text-black font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full inline-block hover:bg-gray-100 transition-colors shadow-md"
               >
                 Shop Now
               </a>
             </div>
-            <img 
-              src="/images/hero/hero3.png" 
-              alt="Stylish Accessories" 
-              className="absolute right-0 bottom-0 h-full w-auto max-w-[65%] object-contain object-bottom drop-shadow-lg"
+
+            {/* Image (Bottom Right) */}
+            <img
+              src="/images/hero/hero3.png"
+              alt="Stylish Accessories"
+              className="absolute right-0 bottom-0 h-[90%] w-auto max-w-[65%] lg:max-w-[55%] xl:max-w-[65%] object-contain object-bottom drop-shadow-lg"
             />
           </div>
-
         </div>
       </div>
     </div>
