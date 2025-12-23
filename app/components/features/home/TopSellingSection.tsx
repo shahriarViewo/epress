@@ -170,22 +170,28 @@ const products = [
 
 const TopSellingSection = () => {
   return (
-    <section className="w-full py-4 lg:py-12 px-4 lg:px-16 mx-auto">
+    <section className="w-full py-4 lg:py-12 px-3 lg:px-16 mx-auto">
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-10 w-full">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-          Top Selling Product
+      <div className="flex justify-between items-center mb-6 lg:mb-10 w-full">
+        <h2 className="text-l md:text-4xl font-bold text-gray-900">
+          Top Selling Products
         </h2>
 
         <Link
           href="#"
-          className="text-[#E07A06] font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
+          className="text-[#E07A06] text-sm md:text-base font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
         >
-          View All products
+          View All
           <span>&gt;</span>
         </Link>
       </div>
-      <div className="w-full grid gap-y-10 gap-x lg:gap-x-6 justify-between grid-cols-1 md:grid-cols-2  xl:grid-cols-3 2xl:grid-cols-4">
+
+      {/* GRID FIX:
+         1. grid-cols-2: Forces 2 columns on mobile.
+         2. gap-3: Smaller gap on mobile (so cards have more room).
+         3. lg:gap-6: Bigger gap on desktop.
+      */}
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-6 gap-y-6 lg:gap-y-10">
         {products?.slice(0, 8)?.map((product) => (
           <ProductCard
             key={product?.id}

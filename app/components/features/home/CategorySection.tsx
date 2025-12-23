@@ -23,14 +23,14 @@ const CategorySection = () => {
       <div className=" px-4 mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+          <h2 className="text-l md:text-4xl font-bold text-gray-900">
             Shop By Categories
           </h2>
           <a
             href="#"
-            className="text-[#E07A06] font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
+          className="text-[#E07A06] text-sm md:text-base font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
           >
-            View All products
+            View All
             <span>&gt;</span>
           </a>
         </div>

@@ -73,23 +73,23 @@ const caps = [
 
 const OurFeaturedCaps = () => {
   return (
-    <section className="w-full py-12 px-4 lg:px-16 mx-auto">
+    <section className="w-full py-4 lg:py-12 px-3 lg:px-16 mx-auto">
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-10 w-full">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+      <div className="flex justify-between items-center mb-6 lg:mb-10 w-full">
+        <h2 className="text-xl md:text-4xl font-bold text-gray-900">
           Our Featured Caps
         </h2>
 
         <a
           href="#"
-          className="text-[#E07A06] font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
+          className="text-[#E07A06] text-sm md:text-base font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
         >
           View All Caps
           <span>&gt;</span>
         </a>
       </div>
 
-      <div className="w-full grid gap-y-10 gap-x-6 justify-between grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4">
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-6 gap-y-6 lg:gap-y-10">
         {caps.map((cap) => (
           <ProductCard
             key={cap?.id}

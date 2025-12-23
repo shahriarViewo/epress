@@ -5,7 +5,6 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const FaqSection = () => {
   // State to track which accordion item is open.
-  // We initialize with 0 so the first item is open by default, matching the image.
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleFaq = (index: number) => {
@@ -64,7 +63,8 @@ const FaqSection = () => {
             </div>
 
             {/* Image Banner */}
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-lg group">
+            {/* UPDATED: Changed h-[500px] to h-[350px] lg:h-[500px] to fix mobile height */}
+            <div className="relative w-full h-[350px] lg:h-[500px] rounded-3xl overflow-hidden shadow-lg group">
               <img
                 src="/images/landingPage/common/Humen.png"
                 alt="Support representative"
@@ -73,7 +73,7 @@ const FaqSection = () => {
 
               {/* Black Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90">
-                <div className="absolute bottom-0 left-0 p-8 w-full">
+                <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
                   <h3 className="text-white text-3xl md:text-4xl font-bold leading-tight mb-6">
                     We'd love to <br />
                     hear from you <br />

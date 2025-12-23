@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
+import { Search, Heart, ShoppingBag, User, Menu, X, Home, ShoppingCart, Tag, Info, Phone, Gift } from "lucide-react";
 
 interface NavLink {
   name: string;
@@ -24,13 +24,14 @@ const NavBar: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navLinks: NavLink[] = [
-    { name: "Products", href: "#" },
-    { name: "Shop", href: "#" },
-    { name: "Custom Orders", href: "#" },
-    { name: "Deal", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Contact", href: "#" },
+  const navLinks = [
+    { name: "Home", href: "#", icon: <Home size={18} className="mr-3" /> },
+    { name: "Products", href: "#products", icon: <ShoppingBag size={18} className="mr-3" /> },
+    { name: "Shop", href: "#shop", icon: <ShoppingCart size={18} className="mr-3" /> },
+    { name: "Custom Orders", href: "#custom", icon: <Gift size={18} className="mr-3" /> },
+    { name: "Deals", href: "#deals", icon: <Tag size={18} className="mr-3" /> },
+    { name: "About", href: "#about", icon: <Info size={18} className="mr-3" /> },
+    { name: "Contact", href: "#contact", icon: <Phone size={18} className="mr-3" /> },
   ];
 
   const toggleMenu = () => {
@@ -38,7 +39,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white py-4 shadow-sm border-b border-gray-100 font-sans relative">
+    <nav className="bg-white py-2 md:py-4 shadow-sm border-b border-gray-100 font-sans relative">
       <div className="max-w-[1600px] mx-auto flex items-center justify-between md:px-16 px-4">
         {/* Left side - Hamburger and Logo */}
         <div className="flex items-center">
@@ -55,7 +56,7 @@ const NavBar: React.FC = () => {
           <div className="shrink-0">
             <a
               href="/"
-              className="text-3xl font-bold text-[#F24E1E] tracking-tight"
+              className="text-2xl md:text-3xl font-bold text-[#F24E1E] tracking-tight"
             >
               OnePrint
             </a>
@@ -78,54 +79,63 @@ const NavBar: React.FC = () => {
 
         {/* Mobile Menu Overlay */}
         <div className="lg:hidden">
-          {/* Backdrop Overlay */}
-          <div
-            className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
-              isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-            onClick={toggleMenu}
-            aria-hidden="true"
-          />
 
           {/* Mobile Menu */}
           <div
-            className={`fixed left-0 w-4/5 max-w-sm bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-in-out ${
-              isMenuOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
-            style={{
-              top: 0,
-              bottom: 0,
-              paddingTop: "64px", // Push content down by navbar height
-              marginTop: 0,
-            }}
+            className={`fixed inset-0 z-40 flex justify-start ${
+              isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            } transition-all duration-300`}
           >
-            <div className="h-full overflow-y-auto px-4 pt-2">
-              <div className="space-y-2">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="block py-3 px-4 text-lg font-medium text-gray-800 hover:bg-gray-50 hover:text-[#F24E1E] rounded-lg transition-all duration-200 transform hover:translate-x-1"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-
-              {/* Additional Mobile Actions */}
-              <div className="mt-8 pt-6 border-t border-gray-100">
-                <div className="flex items-center gap-4 mb-4">
-                  <button className="flex items-center gap-2 text-gray-700 hover:text-[#F24E1E] transition-colors">
-                    <User size={20} />
-                    <span>My Account</span>
-                  </button>
+            {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+              onClick={toggleMenu}
+            />
+            
+            {/* Menu Panel */}
+            <div 
+              className={`relative w-4/5 max-w-xs h-full bg-white/95 backdrop-blur-md shadow-2xl transform transition-all duration-300 ease-in-out ${
+                isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+              }`}
+            >
+              <div className="h-full flex flex-col">
+                {/* Menu Header */}
+                <div className="p-4 border-b border-gray-100">
+                  <h3 className="text-lg font-semibold text-gray-800">Menu</h3>
                 </div>
-                <div className="flex items-center gap-4">
-                  <button className="flex items-center gap-2 text-gray-700 hover:text-[#F24E1E] transition-colors">
-                    <ShoppingBag size={20} />
-                    <span>Cart (1)</span>
-                  </button>
+                
+                {/* Menu Items */}
+                <nav className="flex-1 overflow-y-auto py-2 px-3">
+                  <ul className="space-y-1.5">
+                    {navLinks.map((link) => (
+                      <li key={link.name}>
+                        <a
+                          href={link.href}
+                          className="flex items-center py-3 px-3 text-gray-700 hover:bg-gray-50 hover:text-[#F24E1E] rounded-lg transition-all duration-200 group"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          <span className="text-[#F24E1E]/70 group-hover:text-[#F24E1E] transition-colors">
+                            {link.icon}
+                          </span>
+                          <span className="font-medium">{link.name}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+
+                {/* Footer Actions */}
+                <div className="p-4 border-t border-gray-100 bg-gray-50/50">
+                  <div className="space-y-3">
+                    <button className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-[#F24E1E] hover:bg-[#e04517] text-white rounded-lg font-medium transition-colors">
+                      <User size={18} />
+                      <span>My Account</span>
+                    </button>
+                    <button className="w-full flex items-center justify-center gap-2 py-2.5 px-4 border border-gray-200 hover:border-[#F24E1E]/40 hover:bg-[#F24E1E]/5 text-gray-700 rounded-lg font-medium transition-colors">
+                      <ShoppingBag size={18} />
+                      <span>Cart (1)</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -175,10 +185,10 @@ const NavBar: React.FC = () => {
             >
               <ShoppingBag size={22} />
               {/* Notification Badge */}
-            {/* <span className="absolute top-0 right-0 transform translate-x-[-2px] translate-y-[2px] bg-[#F24E1E] text-white text-[11px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
+              {/* <span className="absolute top-0 right-0 transform translate-x-[-2px] translate-y-[2px] bg-[#F24E1E] text-white text-[11px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
                 1
-              </span>
-            </button> */}
+              </span> */}
+            {/* </button> */}
 
             {/* User Profile */}
             {/* <button
