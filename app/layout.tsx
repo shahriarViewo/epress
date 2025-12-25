@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${instrumentSans.className} bg-white`}>
-        {/* <TopBar /> */}
+        <TopBar />
         <Navbar />
         <main className="bg-white">{children}</main>
         <Footer />

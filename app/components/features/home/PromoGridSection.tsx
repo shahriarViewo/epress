@@ -20,9 +20,14 @@ const PromoGridSection = () => {
 
           {/* Button (Positioned at bottom relative to flex container) */}
           <div className="relative z-10">
-            <button className="bg-[#EF5A2B] hover:bg-[#d64b1f] text-white font-bold py-3 px-8 rounded-full transition-colors shadow-sm">
-              Shop Now
-            </button>
+                          <button
+                type="button"
+                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+              >
+                <span className="relative z-10">
+                  Shop Now
+                </span>
+              </button>
           </div>
 
           {/* Image: Mug */}
@@ -50,9 +55,14 @@ const PromoGridSection = () => {
           </div>
 
           <div className="relative z-10">
-            <button className="bg-[#EF5A2B] hover:bg-[#d64b1f] text-white font-bold py-3 px-8 rounded-full transition-colors shadow-sm">
-              Shop Now
-            </button>
+                         <button
+                type="button"
+                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+              >
+                <span className="relative z-10">
+                  Shop Now
+                </span>
+              </button>
           </div>
 
           {/* Image: Tote Bag */}
@@ -80,9 +90,14 @@ const PromoGridSection = () => {
           </div>
 
           <div className="relative z-10">
-            <button className="bg-[#EF5A2B] hover:bg-[#d64b1f] text-white font-bold py-3 px-8 rounded-full transition-colors shadow-sm">
-              Shop Now
-            </button>
+                          <button
+                type="button"
+                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+              >
+                <span className="relative z-10">
+                  Shop Now
+                </span>
+              </button>
           </div>
 
           {/* Image: Model */}

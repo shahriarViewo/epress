@@ -108,10 +108,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
           
           <button
             onClick={onAddToCart}
-            className="bg-[#EF5A2B] hover:bg-[#d64a1f] text-white font-semibold 
+            className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold 
                        py-1.5 px-3 lg:py-2.5 lg:px-6 
                        text-xs lg:text-base 
-                       rounded-full flex items-center gap-1 lg:gap-2 transition-colors shrink-0"
+                       rounded-full gap-1 lg:gap-2 transition-all duration-200 shrink-0
+                       before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out 
+                       hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
             aria-label="Add to cart"
           >
             <svg
@@ -120,7 +122,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-4 h-4 lg:w-5 lg:h-5"
+              className="w-4 h-4 lg:w-5 lg:h-5 relative z-10"
             >
               <path
                 strokeLinecap="round"
@@ -130,7 +132,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </svg>
             {/* Show "Cart" text only on bigger screens if it gets too tight? 
                 Actually 'Cart' is short enough to keep on mobile. */}
-            <span>Cart</span>
+            <span className="relative z-10">Cart</span>
           </button>
 
           <span className="text-sm lg:text-lg font-bold text-gray-900">

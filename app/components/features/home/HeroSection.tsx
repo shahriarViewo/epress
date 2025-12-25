@@ -97,12 +97,14 @@ const HeroSection = () => {
 
                 {/* BOTTOM: Button */}
                 <div>
-                  <a
-                    href="#"
-                    className="bg-white text-black font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit hover:bg-gray-100 transition-colors shadow-lg block"
+                  <button
+                    type="button"
+                    className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                   >
-                    {slide.cta}
-                  </a>
+                    <span className="relative z-10">
+                      {slide.cta}
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -143,12 +145,14 @@ const HeroSection = () => {
 
             {/* Button Section (Bottom) */}
             <div className="z-10 relative">
-              <a
-                href="#"
-                className="bg-white text-black font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full inline-block hover:bg-gray-100 transition-colors shadow-md"
+              <button
+                type="button"
+                className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
               >
-                Shop Now
-              </a>
+                <span className="relative z-10">
+                  Shop Now
+                </span>
+              </button>
             </div>
 
             {/* Image (Bottom Right) */}
@@ -175,12 +179,14 @@ const HeroSection = () => {
 
             {/* Button Section (Bottom) */}
             <div className="z-10 relative">
-              <a
-                href="#"
-                className="bg-white text-black font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full inline-block hover:bg-gray-100 transition-colors shadow-md"
+              <button
+                type="button"
+                className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
               >
-                Shop Now
-              </a>
+                <span className="relative z-10">
+                  Shop Now
+                </span>
+              </button>
             </div>
 
             {/* Image (Bottom Right) */}

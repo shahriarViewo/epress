@@ -40,9 +40,9 @@ const WhyShopSection = () => {
                   <path d="M5 18h14M5 18a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v6h-3M5 18a2 2 0 0 0 0 4h14a2 2 0 0 0 0-4M15 9h5M19 17v4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Free Shipping</h3>
+              <h3 className="text-xl font-bold text-gray-900">Custom Design</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Buy product over $50 and get free shipping
+                Custom Design Support – Need help? Our design team is here for you. Upload your artwork or collaborate with our team.
               </p>
             </div>
 
@@ -64,11 +64,11 @@ const WhyShopSection = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900">
-                Easy Return Policy
+                Free Delivery
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Hassle-free exchanges and a friendly support team.
-              </p>
+                FREE SHIPPING on orders over $50!
+                Fast Turnaround Times with nationwide shipping.              </p>
             </div>
 
             {/* Feature 3: Secure Payment */}
@@ -89,10 +89,10 @@ const WhyShopSection = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900">
-                Secure Payment
+                Premium Paints
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                We confirm that payment systems are totally secure
+                Premium Materials & Inks for long-lasting quality.
               </p>
             </div>
 
@@ -114,10 +114,10 @@ const WhyShopSection = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900">
-                Premium Quality
+                Affordable Price
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Durable, breathable, and designed to last.
+                No minimum order requirements
               </p>
             </div>
           </div>
@@ -134,8 +134,13 @@ const WhyShopSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-8">
               Your New <br /> Favorite Tee <br /> Starts Here
             </h2>
-            <button className="bg-white text-[#5236AC] font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors shadow-sm">
-              Shop Now
+            <button
+              type="button"
+              className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-semibold text-sm md:text-base py-2 px-6 md:py-2.5 md:px-7 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+            >
+              <span className="relative z-10">
+                Shop Now
+              </span>
             </button>
           </div>
 

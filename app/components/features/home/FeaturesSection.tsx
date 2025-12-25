@@ -1,34 +1,36 @@
 import React from "react";
-import { Award, Leaf, Zap, Palette } from "lucide-react";
+// Icons commented out as we're using images now
+// import { Award, Leaf, Zap, Palette } from "lucide-react";
+import Image from "next/image";
 
 // Define the shape of a single feature item
 interface FeatureItem {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   description: string;
 }
 
 const features: FeatureItem[] = [
   {
-    icon: <Award className="w-8 h-8 text-[#F35824]" strokeWidth={1.5} />,
+    icon: "/images/landingPage/FeaturesSection/1.png",
     title: "Vibrant Quality",
     description:
       "Our advanced heat press ensures colors pop and prints last, turning heads and driving sales.",
   },
   {
-    icon: <Leaf className="w-8 h-8 text-[#F35824]" strokeWidth={1.5} />,
+    icon: "/images/landingPage/FeaturesSection/2.png",
     title: "Eco-Friendly",
     description:
       "Sustainable materials that resonate with conscious buyers and boost your brand's appeal.",
   },
   {
-    icon: <Zap className="w-8 h-8 text-[#F35824]" strokeWidth={1.5} />,
+    icon: "/images/landingPage/FeaturesSection/3.png",
     title: "Fast Turnaround",
     description:
       "Lightning-fast printing and shipping to keep your customers coming back for more.",
   },
   {
-    icon: <Palette className="w-8 h-8 text-[#F35824]" strokeWidth={1.5} />,
+    icon: "/images/landingPage/FeaturesSection/4.png",
     title: "Easy Design Tools",
     description:
       "Upload, preview, and perfect your designs in seconds with our intuitive platform.",
@@ -50,8 +52,13 @@ const FeaturesSection = () => {
               key={index}
               className="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col items-center h-full w-full"
             >
-              <div className="mb-6 p-4 bg-orange-50 rounded-full flex items-center justify-center">
-                {feature.icon}
+              <div className="mb-6 w-20 h-20 relative">
+                <Image 
+                  src={feature.icon} 
+                  alt={feature.title}
+                  fill
+                  className="object-contain"
+                />
               </div>
 
               <h3 className="text-xl font-bold text-gray-900 mb-4">

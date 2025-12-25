@@ -13,34 +13,29 @@ const FaqSection = () => {
 
   const faqData = [
     {
-      question: "What materials do you use for your T-shirts?",
+      question: "Will the prints fade or crack over time?",
       answer:
-        "Our T-shirts are crafted using soft, breathable, premium cotton blends to ensure comfort, durability, and long-lasting print quality.",
+        "No. We use vibrant, long-lasting prints with superior quality designed so they won't fade, crack, or peel.",
     },
     {
-      question: "Are the caps adjustable?",
+      question: "Is there a minimum order quantity?",
       answer:
-        "Yes, our caps feature adjustable straps to ensure a perfect fit for all head sizes.",
+        "There are no minimum orders. We are perfect for both single personal projects and bulk business orders.",
     },
     {
-      question: "Are the mug prints dishwasher safe?",
+      question: "How long does production and shipping take?",
       answer:
-        "Absolutely. Our mugs use high-quality sublimation printing that is both dishwasher and microwave safe.",
+        "We offer fast turnaround times and quick delivery without compromising on the quality of your product.",
     },
     {
-      question: "How long does shipping take?",
+      question: "Are your printing methods eco-friendly?",
       answer:
-        "Standard shipping typically takes 3-5 business days, while express options are available at checkout.",
+        "Yes. We prioritize eco-friendly printing, using safe, sustainable, and environmentally friendly practices.",
     },
     {
-      question: "Can I return or exchange my order?",
+      question: "Can you help me if I don't have a design ready?",
       answer:
-        "We offer a 30-day return policy for unused items in their original packaging. Please visit our returns page for more info.",
-    },
-    {
-      question: "Will I receive a tracking number for my order?",
-      answer:
-        "Yes, a tracking number will be sent to your email immediately after your order has been shipped.",
+        "Absolutely. We offer custom design support, and our design team is here to assist you.",
     },
   ];
 
@@ -55,7 +50,7 @@ const FaqSection = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Discover More in Our Faq
               </h2>
-              <p className="text-gray-500 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 Find quick answers to the most common questions about our
                 T-shirts, caps, mugs, shipping, returns, and more — everything
                 you need for a smooth shopping experience.
@@ -79,8 +74,13 @@ const FaqSection = () => {
                     hear from you <br />
                     let's talk!
                   </h3>
-                  <button className="bg-[#F35824] hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-full transition-colors duration-300 shadow-md">
-                    Contact Us
+                  <button
+                    type="button"
+                    className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+                  >
+                    <span className="relative z-10">
+                      Contact Us
+                    </span>
                   </button>
                 </div>
               </div>
@@ -94,11 +94,10 @@ const FaqSection = () => {
               return (
                 <div
                   key={index}
-                  className={`border rounded-xl transition-all duration-300 ${
-                    isOpen
+                  className={`border rounded-xl transition-all duration-300 ${isOpen
                       ? "bg-white border-gray-200 shadow-sm"
                       : "bg-white border-gray-200"
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => toggleFaq(index)}
@@ -116,9 +115,8 @@ const FaqSection = () => {
 
                   {/* Content with simple animation logic */}
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                    }`}
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                      }`}
                   >
                     <div className="p-5 pt-0 text-gray-500 leading-relaxed">
                       {item.answer}

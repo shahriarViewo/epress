@@ -201,8 +201,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
           <h3 className="text-lg font-medium mb-4">About Description</h3>
           <p className="text-gray-400 text-xs leading-relaxed max-w-4xl mx-auto">
-            We're committed to delivering a seamless shopping experience with fast shipping, secure payments, and dedicated customer support. Whether you're shopping for the latest trends or everyday essentials, we ensure quality, reliability, and satisfaction. Join thousands of happy customers and discover the difference today!
-          </p>
+We're not just here to print your merch - we're here to power your vision. At OnePrint, we believe creativity should be effortless, fun, and full of possibilities. That's why we built a print-on-demand platform made for the new generation of designers, influencers, hustlers, artists, and side-hustlers. Whether you're printing your art on a hoodie, starting a streetwear brand from your dorm, or making custom gifts for your crew - we're here for all of it. No upfront costs. No inventory stress. No gatekeepers. Just your ideas, our platform, and unlimited potential.          </p>
         </div>
 
       </div>

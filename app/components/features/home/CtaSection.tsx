@@ -18,9 +18,10 @@ const CtaSection = () => {
         </p>
         
         {/* Call-to-action button. White background with red text, pill-shaped. */}
-        <button className="bg-white text-[#161617] font-bold text-lg px-10 py-4 rounded-full shadow-md hover:bg-gray-100 transition-colors duration-300">
-          First Order 15% Off
+        <button className="bg-white text-[#161617] font-bold text-lg px-10 py-4 rounded-full shadow-md hover:bg-gray-100 hover:scale-105 hover:shadow-lg transform transition-all duration-300 ease-in-out">
+          Get Started - First Order 15% Off
         </button>
+        
         
       </div>
     </section>

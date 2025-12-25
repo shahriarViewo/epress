@@ -43,9 +43,14 @@ const PromotionalBanner = () => {
             weekly prices.
           </p>
 
-          <button className="bg-white text-black font-bold text-base py-3.5 px-10 rounded-full hover:bg-gray-100 active:scale-95 transition-all duration-200 shadow-xl">
-            Shop Now
-          </button>
+                              <button
+                    type="button"
+                    className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                  >
+                    <span className="relative z-10">
+                      Shop Now
+                    </span>
+                  </button>
         </div>
 
         {/* --- Floating Images Group (Right Side) --- */}

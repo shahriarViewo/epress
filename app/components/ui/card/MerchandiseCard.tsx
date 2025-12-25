@@ -64,9 +64,11 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
         {/* CTA Button */}
         <button
           onClick={onButtonClick}
-          className="w-full py-3.5 rounded-full bg-[#F05A28] text-white font-semibold text-lg hover:bg-[#d64b1d] active:scale-[0.98] transition-all duration-200 shadow-sm"
+          className="relative flex items-center justify-center overflow-hidden w-full py-3.5 rounded-full bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold text-lg transition-all duration-200 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-[200%] hover:before:w-full hover:before:left-0 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
         >
-          {buttonText}
+          <span className="relative z-10">
+            {buttonText}
+          </span>
         </button>
       </div>
     </div>
