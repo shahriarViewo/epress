@@ -13,7 +13,7 @@ interface Product {
   imageUrl: string;
 }
 
-const ProductCarousel = () => {
+const CapCarousel = () => {
   // Caps data from OurFeaturedCaps component
   const products: Product[] = [
     {
@@ -105,4 +105,4 @@ const ProductCarousel = () => {
   );
 };
 
-export default ProductCarousel;
+export default CapCarousel;

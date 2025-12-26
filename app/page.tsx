@@ -15,7 +15,8 @@ import FeaturesSection from "./components/features/home/FeaturesSection";
 import CtaSection from "./components/features/home/CtaSection";
 import OurFeaturedCaps from "./components/features/home/OurFeaturedCaps";
 import BestsellersSection from "./components/features/home/BestsellersSection";
-import ProductCarousel from "./components/features/home/ProductCarousel";
+import CapCarousel from "./components/features/home/CapCarousel";
+import TshirtCarousel from './components/features/home/TshirtCarousel';
 export default function Home() {
   return (
     <>
@@ -34,7 +35,8 @@ export default function Home() {
         <TestimonialSection />
         <TShirtCollectionGrid />
         <PromotionalBanner />
-        <ProductCarousel />
+        <CapCarousel />
+        <TshirtCarousel />
         <FaqSection />
         <FeaturesSection />
       </main>
