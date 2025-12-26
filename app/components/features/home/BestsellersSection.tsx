@@ -10,15 +10,15 @@ const productData = [
   },
   {
     imageSrc: '/images/landingPage/SparkYour/2.png',
-    title: 'Custom Mugs',
+    title: 'Personalized Mugs',
     description: 'Start your day with a sip of inspiration! Perfect for gifts, merch, or your home office.',
     priceText: 'From $9.99 – 20% Off Today!',
   },
   {
     imageSrc: '/images/landingPage/SparkYour/3.png',
     title: 'Bold Banners',
-    description: 'Stand out at events with eye-catching, weatherproof banners.',
-    priceText: 'Starting at $19.99!',
+    description: 'Sip in style with custom mugs that make every moment memorable.',
+    priceText: 'Buy 10, Get 2 Free!',
   },
 ];
 

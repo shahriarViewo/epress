@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 
+const YELLOW_SHIRT_IMAGE = "/images/landingPage/common/yellow.png";
+
 const WhyShopSection = () => {
   return (
     <section className="w-full bg-white py-16 px-4 lg:px-16">
@@ -147,7 +149,7 @@ const WhyShopSection = () => {
           {/* Background Image (Yellow Tee) */}
           <div className="absolute right-0 top-0 h-full w-[50%] md:w-[60%]">
             <Image
-              src="/images/landingPage/common/yellow.png"
+              src={YELLOW_SHIRT_IMAGE}
               alt="Yellow T-Shirt on Rack"
               fill
               className="object-cover object-left"
