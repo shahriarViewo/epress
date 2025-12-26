@@ -15,6 +15,7 @@ import FeaturesSection from "./components/features/home/FeaturesSection";
 import CtaSection from "./components/features/home/CtaSection";
 import OurFeaturedCaps from "./components/features/home/OurFeaturedCaps";
 import BestsellersSection from "./components/features/home/BestsellersSection";
+import ProductCarousel from "./components/features/home/ProductCarousel";
 export default function Home() {
   return (
     <>
@@ -23,7 +24,6 @@ export default function Home() {
         <CategorySection />
         <TopSellingSection />
         <PromoDealsSection />
-        {/* we have issue in HeroBannerSection as its a image instead of full design */}
         <HeroBannerSection />
         <BestSellingTshirtSection />
         <BestsellersSection />
@@ -31,9 +31,10 @@ export default function Home() {
         <TwoColumnBanner />
         <OurFeaturedCaps />
         <PromoGridSection />
-        {/* <TestimonialSection /> */}
+        <TestimonialSection />
         <TShirtCollectionGrid />
         <PromotionalBanner />
+        <ProductCarousel />
         <FaqSection />
         <FeaturesSection />
       </main>
