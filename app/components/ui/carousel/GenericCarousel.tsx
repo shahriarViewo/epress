@@ -54,8 +54,8 @@ const GenericCarousel = <T,>({
     <section className={`w-full py-4 lg:py-12 px-3 lg:px-16 mx-auto ${className}`}>
       {title && (
         <div className="text-center mb-6 lg:mb-10">
-          <h2 className="text-l md:text-4xl font-bold text-gray-900">{title}</h2>
-          {subtitle && <p className="text-gray-500 mt-2">{subtitle}</p>}
+          <h2 className="text-l md:text-4xl font-bold text-black">{title}</h2>
+          {subtitle && <p className="text-black mt-2">{subtitle}</p>}
         </div>
       )}
 

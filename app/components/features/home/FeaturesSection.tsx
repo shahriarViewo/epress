@@ -65,7 +65,7 @@ const FeaturesSection = () => {
                 {feature.title}
               </h3>
 
-              <p className="text-gray-500 text-[15px] leading-relaxed">
+              <p className="text-black text-[15px] leading-relaxed">
                 {feature.description}
               </p>
             </div>

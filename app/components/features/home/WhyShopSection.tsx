@@ -17,7 +17,7 @@ const WhyShopSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Shop With OnePrint?
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-black text-lg leading-relaxed">
               We don't just sell products — we craft everyday essentials that
               feel good, look great, and last longer. Designed with care, made
               for real-life moments.
@@ -43,7 +43,7 @@ const WhyShopSection = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900">Custom Design</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-black text-sm leading-relaxed">
                 Custom Design Support – Need help? Our design team is here for you. Upload your artwork or collaborate with our team.
               </p>
             </div>
@@ -68,7 +68,7 @@ const WhyShopSection = () => {
               <h3 className="text-xl font-bold text-gray-900">
                 Free Delivery
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-black text-sm leading-relaxed">
                 FREE SHIPPING on orders over $50!
                 Fast Turnaround Times with nationwide shipping.              </p>
             </div>
@@ -93,7 +93,7 @@ const WhyShopSection = () => {
               <h3 className="text-xl font-bold text-gray-900">
                 Premium Paints
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-black text-sm leading-relaxed">
                 Premium Materials & Inks for long-lasting quality.
               </p>
             </div>
@@ -118,7 +118,7 @@ const WhyShopSection = () => {
               <h3 className="text-xl font-bold text-gray-900">
                 Affordable Price
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-black text-sm leading-relaxed">
                 No minimum order requirements
               </p>
             </div>

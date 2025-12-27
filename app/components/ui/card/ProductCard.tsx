@@ -98,7 +98,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Description: Hidden or clamped strictly on mobile */}
-        <p className="text-gray-600 text-xs lg:text-sm mb-2 lg:mb-4 flex-1 line-clamp-1">
+        <p className="text-black text-xs lg:text-sm mb-2 lg:mb-4 flex-1 line-clamp-1">
           {description}
         </p>
 

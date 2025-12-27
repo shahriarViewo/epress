@@ -53,7 +53,7 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
           {title}
         </h3>
 
-        <p className="text-gray-500 text-[15px] leading-relaxed mb-4">
+        <p className="text-black text-[15px] leading-relaxed mb-4">
           {description}
         </p>
 
