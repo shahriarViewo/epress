@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, use } from 'react';
+import { Wand2 } from 'lucide-react'; // Icon for magic/auto generation
 
 // --- Types ---
 interface AttributeOption {
@@ -83,6 +84,35 @@ export default function ProductVariantsPage({ params }: { params: Promise<{ prod
     }
     fetchData();
   }, [productId]);
+
+  // --- HELPER: Auto Generate SKU ---
+  const generateAutoSKU = () => {
+    // Logic: P-{ProductId}-{OptionName}-{OptionName}-{Random4Digits}
+    // Example: P-4-RED-LRG-4021
+    
+    let parts = [`P${productId}`];
+
+    // Loop through selected attributes to find their text labels (e.g. "Red")
+    Object.entries(selectedAttributeMap).forEach(([attrName, selectedId]) => {
+        // Find the attribute object (e.g. Color)
+        const attrObj = attributes.find(a => a.name === attrName);
+        if (attrObj) {
+            // Find the selected option (e.g. Red)
+            const optionObj = attrObj.options.find(o => o.id.toString() === selectedId);
+            if (optionObj) {
+                // Add first 3 letters of option value (RED, S, LRG)
+                parts.push(optionObj.value.substring(0, 3).toUpperCase());
+            }
+        }
+    });
+
+    // Add random suffix for uniqueness
+    const randomSuffix = Math.floor(1000 + Math.random() * 9000); // 4 digit random
+    parts.push(randomSuffix.toString());
+
+    setVariantForm(prev => ({ ...prev, sku: parts.join('-') }));
+  };
+
 
   // 2. Handle Variant Submission
   const handleCreateVariant = async (e: React.FormEvent) => {
@@ -195,40 +225,10 @@ export default function ProductVariantsPage({ params }: { params: Promise<{ prod
           </h2>
           
           <form onSubmit={handleCreateVariant} className="space-y-5">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">SKU Code</label>
-                <input 
-                  type="text" required placeholder="e.g. TSHIRT-BLK-S"
-                  className="w-full p-2.5 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition"
-                  value={variantForm.sku}
-                  onChange={e => setVariantForm({...variantForm, sku: e.target.value})}
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Stock</label>
-                <input 
-                  type="number" required placeholder="100"
-                  className="w-full p-2.5 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition"
-                  value={variantForm.stock_qty}
-                  onChange={e => setVariantForm({...variantForm, stock_qty: e.target.value})}
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Price Override ($)</label>
-              <input 
-                type="number" step="0.01" required placeholder="25.00"
-                className="w-full p-2.5 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition"
-                value={variantForm.price}
-                onChange={e => setVariantForm({...variantForm, price: e.target.value})}
-              />
-            </div>
-
-            {/* Dynamic Attribute Selectors */}
+            
+            {/* Dynamic Attribute Selectors (MOVED UP so SKU gen works better) */}
             <div className="p-4 bg-gray-50 rounded-md border border-gray-100">
-              <h3 className="text-sm font-bold text-gray-800 mb-3">Select Attributes</h3>
+              <h3 className="text-sm font-bold text-gray-800 mb-3">Select Attributes First</h3>
               
               {attributes.length === 0 && (
                 <p className="text-xs text-gray-400 italic">
@@ -241,7 +241,7 @@ export default function ProductVariantsPage({ params }: { params: Promise<{ prod
                   <div key={attr.id}>
                     <label className="block text-xs font-medium text-gray-600 mb-1">{attr.name}</label>
                     <select 
-                      className="w-full p-2 text-sm border border-gray-300 rounded bg-white outline-none focus:ring-1 focus:ring-black"
+                      className="w-full p-2 text-sm border border-gray-300 rounded bg-white outline-none focus:ring-1 focus:ring-black text-black"
                       value={selectedAttributeMap[attr.name] || ""}
                       onChange={(e) => setSelectedAttributeMap({ ...selectedAttributeMap, [attr.name]: e.target.value })}
                     >
@@ -253,6 +253,47 @@ export default function ProductVariantsPage({ params }: { params: Promise<{ prod
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                   <label className="block text-xs font-bold text-gray-700 uppercase">SKU Code</label>
+                   <button 
+                     type="button" 
+                     onClick={generateAutoSKU}
+                     className="text-[10px] flex items-center gap-1 text-blue-600 hover:text-blue-800 font-bold bg-blue-50 px-2 py-0.5 rounded"
+                     title="Generate Random SKU based on attributes"
+                   >
+                     <Wand2 size={10} /> Auto
+                   </button>
+                </div>
+                <input 
+                  type="text" required placeholder="e.g. TSHIRT-BLK-S"
+                  className="w-full p-2.5 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition text-black"
+                  value={variantForm.sku}
+                  onChange={e => setVariantForm({...variantForm, sku: e.target.value})}
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Stock</label>
+                <input 
+                  type="number" required placeholder="100"
+                  className="w-full p-2.5 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition text-black"
+                  value={variantForm.stock_qty}
+                  onChange={e => setVariantForm({...variantForm, stock_qty: e.target.value})}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Price Override ($)</label>
+              <input 
+                type="number" step="0.01" required placeholder="25.00"
+                className="w-full p-2.5 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition text-black"
+                value={variantForm.price}
+                onChange={e => setVariantForm({...variantForm, price: e.target.value})}
+              />
             </div>
 
             <button 
@@ -301,7 +342,7 @@ export default function ProductVariantsPage({ params }: { params: Promise<{ prod
               
               <div>
                 <label className="block text-xs font-bold text-gray-700 mb-1">Assign to Variant (Optional)</label>
-                <select name="variant" className="w-full p-2 border rounded text-sm bg-white outline-none focus:ring-1 focus:ring-black">
+                <select name="variant" className="w-full p-2 border rounded text-sm bg-white outline-none focus:ring-1 focus:ring-black text-black">
                   <option value="">Apply to All Variants (Global)</option>
                   {existingVariants.map((v) => (
                     <option key={v.id} value={v.id}>{v.sku}</option>
@@ -338,14 +379,14 @@ export default function ProductVariantsPage({ params }: { params: Promise<{ prod
                 name="title" 
                 required
                 placeholder="Video Title (e.g. 360 View)" 
-                className="w-full p-2 border rounded text-sm outline-none focus:ring-1 focus:ring-black" 
+                className="w-full p-2 border rounded text-sm outline-none focus:ring-1 focus:ring-black text-black" 
               />
               
               <textarea 
                 name="description" 
                 placeholder="Video Description (Optional)" 
                 rows={2}
-                className="w-full p-2 border rounded text-sm resize-none outline-none focus:ring-1 focus:ring-black" 
+                className="w-full p-2 border rounded text-sm resize-none outline-none focus:ring-1 focus:ring-black text-black" 
               />
 
               <button type="submit" className="w-full border border-black text-black py-2 rounded font-semibold hover:bg-black hover:text-white transition-colors">

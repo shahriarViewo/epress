@@ -422,8 +422,16 @@
 // }
 "use client";
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { ChevronRight, Save, Loader2 } from 'lucide-react';
+
+// Define the shape of a Category from your API
+interface Category {
+  id: number;
+  category_name: string;
+  subcategories?: Category[]; // Recursive structure
+}
 
 export default function CreateProductPage() {
   const router = useRouter();
@@ -431,43 +439,52 @@ export default function CreateProductPage() {
   // --- STATE ---
   const [formData, setFormData] = useState({
     product_name: '',
-    category: '',
+    category: '', // This will send the Category ID
     short_description: '',
     description: '',
-    status: 'draft',
-    // Note: If your API requires base_price here, add it. 
-    // Otherwise price usually goes in variants.
+    status: 'draft', // Default status
   });
 
-  const [categories, setCategories] = useState<any[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
+  const [loadingCategories, setLoadingCategories] = useState(true);
+  const [error, setError] = useState('');
 
-  // --- 1. FETCH CATEGORIES (Real API) ---
+  // --- 1. FETCH CATEGORIES ON LOAD ---
   useEffect(() => {
     async function fetchCategories() {
       try {
         const res = await fetch('http://127.0.0.1:8000/api/v1/catalog/categories/');
-        const data = await res.json();
-        setCategories(data);
-      } catch (error) {
-        console.error("Failed to load categories", error);
+        if (res.ok) {
+          const data = await res.json();
+          // Handle if API returns { results: [...] } or just [...]
+          setCategories(Array.isArray(data) ? data : data.results || []);
+        } else {
+          console.error("Failed to fetch categories");
+        }
+      } catch (err) {
+        console.error("Network error fetching categories", err);
+      } finally {
+        setLoadingCategories(false);
       }
     }
     fetchCategories();
   }, []);
 
-  // --- HANDLERS ---
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  // --- 2. HANDLE INPUT CHANGE ---
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // --- 3. SUBMIT FORM ---
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setMessage('');
+    setError('');
 
-    // TEMP: Hardcoded Auth for MVP (As provided)
+    // TEMP AUTH: Replace with real auth logic/context
     const basicAuth = btoa("admin@gmail.com:admin"); 
 
     try {
@@ -482,130 +499,158 @@ export default function CreateProductPage() {
 
       if (res.ok) {
         const data = await res.json();
-        setMessage('✅ Product Created! Redirecting to add variants...');
-        // Redirect to the variants page using the new ID
-        setTimeout(() => router.push(`/vendor/products/${data.id}/variants`), 1000);
+        // ✅ SUCCESS: Redirect to Step 2 (Variants) using the new Product ID
+        router.push(`/vendor/products/${data.id}/variants`); 
       } else {
-        const errorData = await res.json();
-        setMessage(`❌ Error: ${JSON.stringify(errorData)}`);
+        const errData = await res.json();
+        setError(`Error: ${JSON.stringify(errData)}`);
+        setLoading(false);
       }
-    } catch (error) {
-      setMessage('❌ Network Error');
-    } finally {
+    } catch (err) {
+      setError('Network Error. Is the backend running?');
       setLoading(false);
     }
   };
 
-  // --- HELPER: Recursive Category Renderer ---
-  const renderCategoryOptions = (cats: any[], depth = 0): React.ReactNode[] => {
-    return cats.map((cat) => {
-      const prefix = depth > 0 ? '— '.repeat(depth) : '';
-      return (
-        <>
-          <option key={cat.id} value={cat.id}>
-            {prefix} {cat.category_name}
-          </option>
-          {cat.subcategories && cat.subcategories.length > 0 && 
-            renderCategoryOptions(cat.subcategories, depth + 1)
-          }
-        </>
-      );
-    });
+  // --- HELPER: Recursive Category Options ---
+  // This visually indents sub-categories (e.g., "Men > Shirts > T-Shirts")
+  const renderCategoryOptions = (cats: Category[], depth = 0): React.ReactNode[] => {
+    return cats.map((cat) => (
+      // ✅ FIXED: Used React.Fragment to solve the "unique key" warning
+      <React.Fragment key={cat.id}>
+        <option value={cat.id}>
+          {depth > 0 ? '\u00A0\u00A0'.repeat(depth) + '— ' : ''}
+          {cat.category_name}
+        </option>
+        
+        {/* Recursion: If this category has children, render them too */}
+        {cat.subcategories && cat.subcategories.length > 0 && 
+          renderCategoryOptions(cat.subcategories, depth + 1)
+        }
+      </React.Fragment>
+    ));
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Add New Product</h1>
-        <button 
-          type="button" 
-          onClick={() => router.back()} 
-          className="text-gray-500 hover:text-black transition"
-        >
-          Cancel
-        </button>
+    <div className="max-w-4xl mx-auto p-4 md:p-8">
+      
+      {/* Header */}
+      <div className="mb-8 border-b pb-4">
+        <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+          <span>Products</span>
+          <ChevronRight className="w-4 h-4" />
+          <span className="font-semibold text-black">Create New</span>
+        </div>
+        <h1 className="text-3xl font-bold text-gray-900">Add Product details</h1>
+        <p className="text-gray-500 mt-1">Step 1 of 2: Basic Information</p>
       </div>
 
-      <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-        
-        {message && (
-          <div className={`mb-6 p-4 rounded-md text-sm font-medium ${message.includes('Error') ? 'bg-red-50 text-red-700' : 'bg-green-50 text-green-700'}`}>
-            {message}
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Form Container */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-6">
           
-          {/* 1. Basic Info */}
-          <div className="grid grid-cols-1 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
-              <input
-                type="text"
-                name="product_name"
-                required
-                placeholder="e.g. Vintage Denim Jacket"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition"
-                onChange={handleChange}
-              />
+          {error && (
+            <div className="bg-red-50 text-red-600 p-4 rounded-lg text-sm">
+              {error}
             </div>
+          )}
 
-            {/* 2. Category Selection */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+          {/* Product Name */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1">
+              Product Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              name="product_name"
+              required
+              placeholder="e.g. Vintage Denim Jacket"
+              // ✅ FIXED: Added 'text-black'
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-black transition text-black"
+              onChange={handleChange}
+            />
+          </div>
+
+          {/* Category Dropdown */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1">
+              Category <span className="text-red-500">*</span>
+            </label>
+            <div className="relative">
               <select
                 name="category"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black bg-white transition"
+                // ✅ FIXED: Added 'text-black'
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-black bg-white appearance-none text-black"
                 onChange={handleChange}
+                disabled={loadingCategories}
               >
-                <option value="">Select a Category</option>
-                {renderCategoryOptions(categories)}
+                <option value="">
+                  {loadingCategories ? "Loading categories..." : "Select a Category"}
+                </option>
+                {!loadingCategories && renderCategoryOptions(categories)}
               </select>
-            </div>
-
-            {/* 3. Descriptions */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Short Description</label>
-              <input
-                type="text"
-                name="short_description"
-                placeholder="Brief summary for list views..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition"
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Full Description</label>
-              <textarea
-                name="description"
-                rows={5}
-                required
-                placeholder="Detailed product information..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-black transition"
-                onChange={handleChange}
-              />
+              {/* Custom arrow icon for styling */}
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                <ChevronRight className="w-4 h-4 text-gray-400 rotate-90" />
+              </div>
             </div>
           </div>
 
-          {/* 4. Action Buttons */}
-          <div className="pt-6 border-t flex justify-end gap-4">
-             <button
+          {/* Short Description */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1">
+              Short Description
+            </label>
+            <input
+              type="text"
+              name="short_description"
+              placeholder="Brief summary for list views (Max 150 chars)"
+              // ✅ FIXED: Added 'text-black'
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-black transition text-black"
+              onChange={handleChange}
+            />
+          </div>
+
+          {/* Full Description */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1">
+              Full Description <span className="text-red-500">*</span>
+            </label>
+            <textarea
+              name="description"
+              rows={6}
+              required
+              placeholder="Detailed product specifications, care instructions, etc."
+              // ✅ FIXED: Added 'text-black'
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-black transition resize-none text-black"
+              onChange={handleChange}
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div className="pt-4 flex items-center justify-end gap-4 border-t mt-8">
+            <button
               type="button"
-              className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50 transition"
               onClick={() => router.back()}
+              className="px-6 py-3 text-gray-600 font-medium hover:text-black transition"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading}
-              className={`px-6 py-3 text-white font-bold rounded-md transition-all ${
-                loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-black hover:bg-gray-800 shadow-md hover:shadow-lg'
-              }`}
+              className="px-8 py-3 bg-black text-white font-bold rounded-lg hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 transition-all shadow-md hover:shadow-lg"
             >
-              {loading ? 'Creating...' : 'Create & Add Variants →'}
+              {loading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" /> Creating...
+                </>
+              ) : (
+                <>
+                  Next Step: Variants <ChevronRight className="w-4 h-4" />
+                </>
+              )}
             </button>
           </div>
 
