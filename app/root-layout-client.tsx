@@ -25,10 +25,10 @@ export default function ClientRootLayout({
   return (
     <html lang="en">
       <body className={`${instrumentSans.className} bg-white`}>
-        {!pathname.startsWith("/vendor") && <TopBar />}
-        {!pathname.startsWith("/vendor") && <Navbar />}
+        {!pathname.startsWith("/vendor") && !pathname.startsWith("/admin") && <TopBar />}
+        {!pathname.startsWith("/vendor") && !pathname.startsWith("/admin") && <Navbar />}
         <main className="bg-white">{children}</main>
-        {!pathname.startsWith("/vendor") && <Footer />}
+        {!pathname.startsWith("/vendor") && !pathname.startsWith("/admin") && <Footer />}
       </body>
     </html>
   );
