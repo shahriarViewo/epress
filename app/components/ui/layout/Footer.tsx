@@ -157,7 +157,7 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           
           <div className="text-gray-400 text-sm">
-            © All Right reserved by <span className="text-orange-500 font-semibold">OnePrint</span> | 2025
+            © All Right reserved by <span className="text-orange-500 font-semibold">OnePrint</span> | {new Date().getFullYear()}
           </div>
           
           {/* Payment Icons */}
