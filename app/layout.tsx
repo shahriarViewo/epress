@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
+// @ts-ignore
 import "./globals.css";
 import TopBar from "./components/ui/layout/topbar";
 import Navbar from "./components/ui/layout/navbar";
@@ -12,8 +13,8 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Ecomprint",
-  description: "Ecomprint application",
+  title: "OnePrint",
+  description: "OnePrint ecommerce website for custom printed merchandise.",
 };
 
 export default function RootLayout({
