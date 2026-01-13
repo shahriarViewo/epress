@@ -76,7 +76,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="p-3 lg:p-4 flex-1 flex flex-col">
         <div className="flex justify-between items-start mb-1 lg:mb-2 gap-2">
           {/* Title: Text-sm on mobile, truncated to 1 line to save space */}
-          <h3 className="text-sm lg:text-lg font-semibold text-gray-900 line-clamp-1 lg:line-clamp-none">
+          <h3 className="text-base lg:text-lg font-semibold text-gray-900 line-clamp-1 lg:line-clamp-none">
             {title}
           </h3>
           
@@ -93,12 +93,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 clipRule="evenodd"
               />
             </svg>
-            <span className="text-xs lg:text-sm text-gray-500">({rating})</span>
+            <span className="text-sm text-gray-500">({rating})</span>
           </div>
         </div>
 
         {/* Description: Hidden or clamped strictly on mobile */}
-        <p className="text-black text-xs lg:text-sm mb-2 lg:mb-4 flex-1 line-clamp-1">
+        <p className="text-gray-600 text-sm lg:text-base mb-2 lg:mb-4 flex-1 line-clamp-1">
           {description}
         </p>
 
@@ -110,7 +110,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             onClick={onAddToCart}
             className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold 
                        py-1.5 px-3 lg:py-2.5 lg:px-6 
-                       text-xs lg:text-base 
+                       text-sm lg:text-base 
                        rounded-full gap-1 lg:gap-2 transition-all duration-200 shrink-0
                        before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out 
                        hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
@@ -135,7 +135,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <span className="relative z-10">Cart</span>
           </button>
 
-          <span className="text-sm lg:text-lg font-bold text-gray-900">
+          <span className="text-base lg:text-lg font-bold text-gray-900">
             ${price.toFixed(2)}
           </span>
         </div>

@@ -14,7 +14,7 @@ const PromoDealsSection = () => {
           <div className="hidden lg:flex lg:col-span-2 relative bg-[#3B75B8] rounded-[32px] overflow-hidden p-6 md:p-8 lg:p-10 flex-col justify-between h-full min-h-[400px] lg:min-h-0 group">
             {/* Top Section: Text */}
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+              <h2 className="text-4xl font-bold text-white leading-tight mb-4">
                 Level Up Your <br />Look with<br /> Exclusive  <br />Cap Deals
               </h2>
               <p className="text-white/90 text-lg">
@@ -47,8 +47,8 @@ const PromoDealsSection = () => {
 
             {/* Red Badge */}
             <div className="absolute bottom-8 right-[25%] md:right-[35%] w-24 h-24 bg-[#EF4444] rounded-full flex flex-col items-center justify-center text-white font-bold rotate-12 shadow-lg z-20 animate-pulse-slow">
-              <span className="text-xs font-normal">Up to</span>
-              <span className="text-2xl leading-none">20%</span>
+              <span className="text-sm font-normal">Up to</span>
+              <span className="text-3xl leading-none">20%</span>
             </div>
           </div>
 
@@ -70,8 +70,8 @@ const PromoDealsSection = () => {
                 </a>
               </div>
               <div className="absolute top-6 right-6 w-16 h-16 bg-[#185C37] rounded-full flex flex-col items-center justify-center text-white text-center shadow-md z-20">
-                <span className="text-[10px] uppercase">Up to</span>
-                <span className="text-sm font-bold">5%</span>
+                <span className="text-xs uppercase">Up to</span>
+                <span className="text-lg font-bold">5%</span>
               </div>
               <div className="absolute right-[-10px] bottom-[-10px] w-40 h-40">
                 <Image
@@ -123,10 +123,10 @@ const PromoDealsSection = () => {
               <span className="text-white/90 text-lg font-medium mb-1">
                 Save up to
               </span>
-              <h2 className="text-5xl md:text-6xl font-serif italic font-bold text-white mb-4">
+              <h2 className="text-5xl font-serif italic font-bold text-white mb-4">
                 60% Off
               </h2>
-              <p className="text-white/80 text-sm mb-6 max-w-[200px]">
+              <p className="text-white/80 text-base mb-6 max-w-[200px]">
                 Comfortable, stylish, built to last. Get yours now.
               </p>
               <button className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B] w-full max-w-[200px]">

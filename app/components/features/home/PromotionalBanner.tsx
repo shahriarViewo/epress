@@ -33,12 +33,12 @@ const PromotionalBanner = () => {
 
         {/* --- Main Content (Center) --- */}
         <div className="relative z-20 flex flex-col items-center text-center max-w-2xl mx-auto">
-          <h1 className=" text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight tracking-tight mb-6 drop-shadow-lg">
+          <h1 className=" text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6 drop-shadow-lg">
             Get UP TO 30% OFF on <br />
             T-Shirts, Caps & Mugs
           </h1>
 
-          <p className="text-white/90 md:text-base mb-10 max-w-lg leading-relaxed font-medium">
+          <p className="text-white/90 text-base md:text-lg mb-10 max-w-lg leading-relaxed font-medium">
             Premium T-shirts, stylish caps, and creative mugs — all at special
             weekly prices.
           </p>

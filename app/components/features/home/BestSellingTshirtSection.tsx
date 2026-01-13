@@ -77,7 +77,7 @@ const BestSellingTshirtSection = () => {
     <section className="w-full py-4 lg:py-12 px-3 lg:px-16 mx-auto">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-6 lg:mb-10 w-full">
-        <h2 className="text-xl md:text-4xl font-bold text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           Best Selling T-Shirts
         </h2>
 

@@ -26,7 +26,7 @@ const BestsellersSection = () => {
   return (
     <section className="w-full py-16 sm:px-16">
       <div className=" mx-auto ">
-        <h2 className="text-[32px] sm:text-[40px] font-bold text-[#1C3F2F] mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#1C3F2F] mb-12 text-center">
           Spark Your Brand with Our Bestsellers
         </h2>
 

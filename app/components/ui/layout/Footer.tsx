@@ -62,7 +62,7 @@ const Footer = () => {
                 <div>
                   <p className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Email</p>
                   <a href="mailto:info@OnePrint.net" className="text-sm hover:text-orange-500 transition-colors">
-                    info@OnePrint.net
+                    info@OnePrint.ai
                   </a>
                 </div>
               </div>

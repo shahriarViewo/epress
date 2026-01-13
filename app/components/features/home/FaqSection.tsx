@@ -50,7 +50,7 @@ const FaqSection = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Discover More in Our Faq
               </h2>
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
                 Find quick answers to the most common questions about our
                 T-shirts, caps, mugs, shipping, returns, and more — everything
                 you need for a smooth shopping experience.
@@ -69,7 +69,7 @@ const FaqSection = () => {
               {/* Black Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90">
                 <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                  <h3 className="text-white text-3xl md:text-4xl font-bold leading-tight mb-6">
+                  <h3 className="text-white text-3xl font-bold leading-tight mb-6">
                     We'd love to <br />
                     hear from you <br />
                     let's talk!
@@ -118,7 +118,7 @@ const FaqSection = () => {
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <div className="p-5 pt-0 text-black leading-relaxed">
+                    <div className="p-5 pt-0 text-base text-gray-600 leading-relaxed">
                       {item.answer}
                     </div>
                   </div>

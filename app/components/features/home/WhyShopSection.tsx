@@ -42,8 +42,8 @@ const WhyShopSection = () => {
                   <path d="M5 18h14M5 18a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v6h-3M5 18a2 2 0 0 0 0 4h14a2 2 0 0 0 0-4M15 9h5M19 17v4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Custom Design</h3>
-              <p className="text-black text-sm leading-relaxed">
+              <h3 className="text-2xl font-bold text-gray-900">Custom Design</h3>
+              <p className="text-gray-600 text-base leading-relaxed">
                 Custom Design Support – Need help? Our design team is here for you. Upload your artwork or collaborate with our team.
               </p>
             </div>
@@ -65,10 +65,10 @@ const WhyShopSection = () => {
                   <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Free Delivery
               </h3>
-              <p className="text-black text-sm leading-relaxed">
+              <p className="text-gray-600 text-base leading-relaxed">
                 FREE SHIPPING on orders over $50!
                 Fast Turnaround Times with nationwide shipping.              </p>
             </div>
@@ -90,10 +90,10 @@ const WhyShopSection = () => {
                   <line x1="2" y1="10" x2="22" y2="10" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Premium Paints
               </h3>
-              <p className="text-black text-sm leading-relaxed">
+              <p className="text-gray-600 text-base leading-relaxed">
                 Premium Materials & Inks for long-lasting quality.
               </p>
             </div>
@@ -115,10 +115,10 @@ const WhyShopSection = () => {
                   <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Affordable Price
               </h3>
-              <p className="text-black text-sm leading-relaxed">
+              <p className="text-gray-600 text-base leading-relaxed">
                 No minimum order requirements
               </p>
             </div>
@@ -133,7 +133,7 @@ const WhyShopSection = () => {
             <span className="text-white/90 font-medium italic mb-2 block text-lg">
               Save up to 15%
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-8">
+            <h2 className="text-4xl font-bold text-white leading-tight mb-8">
               Your New <br /> Favorite Tee <br /> Starts Here
             </h2>
             <button

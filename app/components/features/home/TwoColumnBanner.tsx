@@ -18,7 +18,7 @@ const TwoColumnBanner = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight mb-4">
               Buy a Cap, Boost <br /> Your Style
             </h2>
-            <p className="text-black text-sm md:text-base mb-8 max-w-xs leading-relaxed">
+            <p className="text-gray-700 text-base md:text-lg mb-8 max-w-xs leading-relaxed">
               Exclusive styles crafted for everyday confidence. Shop the offer today.
             </p>
               <button
@@ -55,7 +55,7 @@ const TwoColumnBanner = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight mb-4">
               Your Favorite Mug, <br /> Now on Sale
             </h2>
-            <p className="text-black text-sm md:text-base mb-8 max-w-xs leading-relaxed">
+            <p className="text-gray-700 text-base md:text-lg mb-8 max-w-xs leading-relaxed">
               Limited-time offer on bestselling designs. Don't miss your perfect fit.
             </p>
               <button

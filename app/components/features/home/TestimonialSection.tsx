@@ -3,9 +3,9 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 
-// React Slick CSS ফাইল ইম্পোর্ট করতে হবে
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// // React Slick CSS ফাইল ইম্পোর্ট করতে হবে
+ import "slick-carousel/slick/slick.css";
+ import "slick-carousel/slick/slick-theme.css";
 
 const testimonials = [
   {
@@ -129,7 +129,7 @@ const TestimonialSection = () => {
                     <span className="absolute -top-4 -left-2 text-6xl text-gray-100 font-serif leading-none select-none">
                       &ldquo;
                     </span>
-                    <p className="relative z-10 text-lg md:text-xl font-medium text-gray-800 leading-relaxed">
+                    <p className="relative z-10 text-lg font-medium text-gray-800 leading-relaxed">
                       "{item.quote}"
                     </p>
                   </div>

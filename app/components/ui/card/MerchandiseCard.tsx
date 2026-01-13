@@ -49,15 +49,15 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
 
       {/* Content Section */}
       <div className="flex flex-col px-1">
-        <h3 className="text-[26px] font-bold text-gray-900 leading-tight mb-2 tracking-tight">
+        <h3 className="text-2xl font-bold text-gray-900 leading-tight mb-2 tracking-tight">
           {title}
         </h3>
 
-        <p className="text-black text-[15px] leading-relaxed mb-4">
+        <p className="text-gray-600 text-base leading-relaxed mb-4">
           {description}
         </p>
 
-        <p className="text-[#D93F3F] font-medium text-[15px] mb-6">
+        <p className="text-[#D93F3F] font-medium text-base mb-6">
           {priceText}
         </p>
 

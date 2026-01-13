@@ -23,7 +23,7 @@ const CategorySection = () => {
       <div className=" px-4 mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-l md:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Shop By Categories
           </h2>
           <a
@@ -53,7 +53,7 @@ const CategorySection = () => {
               </div>
 
               {/* Category Name */}
-              <h3 className="text-sm font-medium text-gray-800 text-center">
+              <h3 className="text-base font-medium text-gray-800 text-center">
                 {cat.name}
               </h3>
             </div>
