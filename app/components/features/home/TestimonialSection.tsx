@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 
-// // React Slick CSS ফাইল ইম্পোর্ট করতে হবে
+// React Slick CSS ফাইল ইম্পোর্ট করতে হবে
  import "slick-carousel/slick/slick.css";
  import "slick-carousel/slick/slick-theme.css";
 

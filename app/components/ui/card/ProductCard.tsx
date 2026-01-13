@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       - h-auto: Mobile height is flexible (depends on content).
       - lg:h-[395px]: Desktop height is fixed/tall.
     */
-    <div className="w-full h-auto lg:h-[395px] bg-white rounded-xl lg:rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+    <div className="group w-full h-auto lg:h-[395px] bg-white rounded-xl lg:rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
       
       {/* Top Section: Image & Heart Icon */}
       {/* Mobile Height: 160px | Desktop Height: 254px */}
@@ -65,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             src={imageUrl}
             alt={title}
             fill
-            className="object-contain mix-blend-multiply drop-shadow-xl"
+            className="object-contain mix-blend-multiply drop-shadow-xl group-hover:scale-110 transition-transform duration-500 ease-in-out"
             sizes="(max-width: 768px) 50vw, 320px"
             priority={false}
           />
