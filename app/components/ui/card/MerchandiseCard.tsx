@@ -31,7 +31,7 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
         max-h-[500px]
         border border-gray-100 
         shadow-[0_8px_30px_rgb(0,0,0,0.04)] 
-        hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] 
+        hover:shadow-2xl hover:-translate-y-1
         transition-all duration-300
         ${className}
       `}
@@ -42,7 +42,7 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
           src={imageSrc}
           alt={imageAlt}
           fill
-          className="object-contain p-4 mix-blend-multiply hover:scale-105 transition-transform duration-300"
+          className="object-contain p-4 mix-blend-multiply group-hover:scale-110 transition-transform duration-500 ease-in-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
