@@ -44,8 +44,9 @@ export async function generateStaticParams() {
 export default function ProductPage({ params }: { params: { id: string } }) {
   
   return (
-    <div className="container mx-auto px-4 py-6">
-      <div className="mb-6">
+    <div className="max-w-[1600px] mx-auto">
+      <div className="w-full px-4 py-4 lg:py-16 lg:px-16">
+      <div className="mb-6 ">
         <Breadcrumbs />
       </div>
 
@@ -76,7 +77,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       <div className="mt-16">
         <FeaturesSection />
       </div>
-
+      </div>
       {/* FAQ Section */}
       <div className="mt-16">
         <FaqSection />
