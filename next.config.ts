@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export',
   distDir: 'dist', // Changes the build output directory to 'dist' instead of '.next'
+  trailingSlash: true,
   images: {
     unoptimized: true, // Required for static export on cPanel
     domains: ['placehold.co', 'images.unsplash.com', 'cdn.pixabay.com'],
