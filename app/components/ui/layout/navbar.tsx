@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Search, Heart, ShoppingBag, User, Menu, X, Home, ShoppingCart, Tag, Info, Phone, Gift } from "lucide-react";
+import Link from "next/link";
 
 interface NavLink {
   name: string;
@@ -179,16 +180,18 @@ const NavBar: React.FC = () => {
             </button> */}
 
             {/* Cart with Badge */}
-            {/* <button
-              type="button"
-              className="w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition-colors relative"
-            >
-              <ShoppingBag size={22} />
-              {/* Notification Badge */}
-              {/* <span className="absolute top-0 right-0 transform translate-x-[-2px] translate-y-[2px] bg-[#F24E1E] text-white text-[11px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
-                1
-              </span> */}
-            {/* </button> */}
+            <Link href="/cart">
+              <button
+                type="button"
+                className="w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition-colors relative"
+              >
+                <ShoppingBag size={22} />
+                {/* Notification Badge */}
+                <span className="absolute top-0 right-0 transform translate-x-[-2px] translate-y-[2px] bg-[#F24E1E] text-white text-[11px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
+                  1
+                </span>
+              </button>
+            </Link>
 
             {/* User Profile */}
             {/* <button

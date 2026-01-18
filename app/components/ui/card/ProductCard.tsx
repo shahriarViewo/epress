@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type ProductCardProps = {
   title: string;
@@ -9,6 +10,7 @@ type ProductCardProps = {
   price: number;
   rating: number;
   imageUrl: string;
+  productLink?: string;
   onAddToCart?: () => void;
   onWishlistToggle?: () => void;
   isWishlisted?: boolean;
@@ -20,17 +22,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
   price = 9.99,
   rating = 4.5,
   imageUrl = "",
+  productLink,
   onAddToCart = () => {},
   onWishlistToggle = () => {},
   isWishlisted = false,
 }) => {
   return (
-    /* CONTAINER LOGIC:
-      - h-auto: Mobile height is flexible (depends on content).
-      - lg:h-[395px]: Desktop height is fixed/tall.
-    */
-    <div className="group w-full h-auto lg:h-[395px] bg-white rounded-xl lg:rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
-      
+    <Link
+      href={productLink || "/products/1"}
+      className="block group w-full h-auto lg:h-[395px] bg-white rounded-xl lg:rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+    >
       {/* Top Section: Image & Heart Icon */}
       {/* Mobile Height: 160px | Desktop Height: 254px */}
       <div className="relative h-[160px] lg:h-[254px] bg-[#F3F4F6] flex items-center justify-center p-4 lg:p-6">
@@ -140,7 +141,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

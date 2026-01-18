@@ -205,10 +205,10 @@ export default function CartPage() {
 
               {/* --- PROCEED TO CHECKOUT BUTTON --- */}
               {/* Solid Orange -> White Fill (Text turns Orange) */}
-              <button className="group relative w-full overflow-hidden bg-[#F15A24] text-white h-12 rounded-full font-bold shadow-lg shadow-orange-100 transition-all duration-300 hover:text-[#F15A24] hover:shadow-orange-200 hover:border-2 hover:border-[#F15A24]">
+              <Link href="/checkout" className="group relative w-full overflow-hidden bg-[#F15A24] text-white h-12 rounded-full font-bold shadow-lg shadow-orange-100 transition-all duration-300 hover:text-[#F15A24] hover:shadow-orange-200 hover:border-2 hover:border-[#F15A24] flex items-center justify-center">
                 <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-0 w-0 rounded-full bg-white transition-all duration-500 ease-out group-hover:h-80 group-hover:w-90"></span>
                 <span className="relative z-10">Proceed to Checkout</span>
-              </button>
+              </Link>
 
             </div>
           </div>
