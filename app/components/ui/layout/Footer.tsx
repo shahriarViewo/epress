@@ -8,6 +8,28 @@ import {
   Instagram 
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+
+// Optimized Payment Logo Component
+const PaymentLogo = ({
+  src,
+  alt,
+}: {
+  src: string;
+  alt: string;
+}) => (
+  // Added 'relative' so the 'fill' image knows its boundaries
+  <div className="relative bg-white p-1 rounded shadow-sm w-16 h-10 flex items-center justify-center overflow-hidden">
+    <Image
+      src={src}
+      alt={alt}
+      fill // Automatically fills the parent container
+      sizes="64px" // Optimization: tells browser the image is small (w-16)
+      className="object-contain p-1" // Ensures the logo scales correctly without cropping
+      loading="lazy"
+    />
+  </div>
+);
 
 // --- Data for the Links ---
 const companyLinks = [
@@ -62,7 +84,7 @@ const Footer = () => {
                 <div>
                   <p className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Email</p>
                   <a href="mailto:info@OnePrint.net" className="text-sm hover:text-orange-500 transition-colors">
-                    info@OnePrint.ai
+                    info@oneprint.ai
                   </a>
                 </div>
               </div>
@@ -157,51 +179,35 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           
           <div className="text-gray-400 text-sm">
-            © All Right reserved by <span className="text-orange-500 font-semibold">OnePrint</span> | {new Date().getFullYear()}
+            &copy; All Right reserved by <span className="text-orange-500 font-semibold">OnePrint</span> | {new Date().getFullYear()}
           </div>
           
           {/* Payment Icons */}
           <div className="flex items-center gap-2">
-            <div className="bg-white p-2 rounded shadow-sm w-16 h-9 flex items-center justify-center">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" 
-                alt="PayPal" 
-                className="h-5 w-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white p-2 rounded shadow-sm w-16 h-9 flex items-center justify-center">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" 
-                alt="Mastercard" 
-                className="h-5 w-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white p-2 rounded shadow-sm w-16 h-9 flex items-center justify-center">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" 
-                alt="Visa" 
-                className="h-5 w-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white p-2 rounded shadow-sm w-16 h-9 flex items-center justify-center">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/5/57/Discover_Card_logo.svg" 
-                alt="Discover" 
-                className="h-5 w-auto object-contain"
-                loading="lazy"
-              />
-            </div>
+            <PaymentLogo 
+              src="/images/footer/american_express.png"
+              alt="American Express"
+            />
+            <PaymentLogo 
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" 
+              alt="Mastercard" 
+            />
+            <PaymentLogo 
+              src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" 
+              alt="Visa" 
+            />
+            <PaymentLogo 
+              src="https://upload.wikimedia.org/wikipedia/commons/5/57/Discover_Card_logo.svg" 
+              alt="Discover" 
+            />
           </div>
         </div>
 
-        {/* === BOTTOM SECTION: About Description === */}
+        {/* === BOTTOM SECTION: About OnePrint === */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
-          <h3 className="text-lg font-medium mb-4">About Description</h3>
+          <h3 className="text-lg font-medium mb-4">About OnePrint</h3>
           <p className="text-gray-400 text-xs leading-relaxed max-w-4xl mx-auto">
-We're not just here to print your merch - we're here to power your vision. At OnePrint, we believe creativity should be effortless, fun, and full of possibilities. That's why we built a print-on-demand platform made for the new generation of designers, influencers, hustlers, artists, and side-hustlers. Whether you're printing your art on a hoodie, starting a streetwear brand from your dorm, or making custom gifts for your crew - we're here for all of it. No upfront costs. No inventory stress. No gatekeepers. Just your ideas, our platform, and unlimited potential.          </p>
+We're not just here to print your merch - we're here to power your vision. At OnePrint, we believe creativity should be effortless, fun, and full of possibilities. That's why we built a print-on-demand platform made for the new generation of designers, influencers, hustlers, artists, and side-hustlers. Whether you're printing your art on a hoodie, starting a streetwear brand from your dorm, or making custom gifts for your crew - we're here for all of it. No upfront costs. No inventory stress. No gatekeepers. Just your ideas, our platform, and unlimited potential.           </p>
         </div>
 
       </div>
