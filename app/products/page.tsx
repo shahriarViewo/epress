@@ -16,15 +16,15 @@ import { SlidersHorizontal } from "lucide-react";
 
 // Mock Data
 const PRODUCTS = [
-  { id: 1, title: "Legends T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/red-tshirt.png" },
-  { id: 2, title: "Ink Hustle Cap", description: "Hustle hard looks harder", price: 9.99, rating: 4.5, imageUrl: "/images/red-cap.png" },
-  { id: 3, title: "Legends T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/blue-tshirt.png" },
-  { id: 4, title: "Daily Grind Cup", description: "Fuel your hustle in style", price: 9.99, rating: 4.5, imageUrl: "/images/mug.png" },
-  { id: 5, title: "Legends T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/black-tshirt.png" },
-  { id: 6, title: "Pure Press Tee", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/red-graphic-tee.png" },
-  { id: 7, title: "Drip Ambition T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/black-drip.png" },
-  { id: 8, title: "Drip Ambition T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/purple-drip.png" },
-  { id: 9, title: "Drip Ambition T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/pink-drip.png" },
+  { id: 1, title: "Legends T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/products/1.png" },
+  { id: 2, title: "Ink Hustle Cap", description: "Hustle hard looks harder", price: 9.99, rating: 4.5, imageUrl: "/images/products/2.png" },
+  { id: 3, title: "Legends T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/products/3.png" },
+  { id: 4, title: "Daily Grind Cup", description: "Fuel your hustle in style", price: 9.99, rating: 4.5, imageUrl: "/images/products/4.png" },
+  { id: 5, title: "Legends T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/products/5.png" },
+  { id: 6, title: "Pure Press Tee", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/products/6.png" },
+  { id: 7, title: "Drip Ambition T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/products/7.png" },
+  { id: 8, title: "Drip Ambition T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/products/8.png" },
+  { id: 9, title: "Drip Ambition T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/products/9.png" },
 ];
 
 export default function ShopPage() {

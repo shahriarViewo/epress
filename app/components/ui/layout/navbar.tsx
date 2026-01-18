@@ -26,13 +26,16 @@ const NavBar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#", icon: <Home size={18} className="mr-3" /> },
-    { name: "Products", href: "#products", icon: <ShoppingBag size={18} className="mr-3" /> },
-    { name: "Shop", href: "#shop", icon: <ShoppingCart size={18} className="mr-3" /> },
-    { name: "Custom Orders", href: "#custom", icon: <Gift size={18} className="mr-3" /> },
-    { name: "Deals", href: "#deals", icon: <Tag size={18} className="mr-3" /> },
-    { name: "About", href: "#about", icon: <Info size={18} className="mr-3" /> },
-    { name: "Contact", href: "#contact", icon: <Phone size={18} className="mr-3" /> },
+    { name: "Home", href: "/", icon: <Home size={18} className="mr-3" /> },
+    { name: "Products", href: "/products", icon: <ShoppingBag size={18} className="mr-3" /> },
+    // { name: "Shop", href: "#shop", icon: <ShoppingCart size={18} className="mr-3" /> },
+    // { name: "Custom Orders", href: "#custom", icon: <Gift size={18} className="mr-3" /> },
+    // { name: "Deals", href: "#deals", icon: <Tag size={18} className="mr-3" /> },
+    { name: "About", href: "/about", icon: <Info size={18} className="mr-3" /> },
+    { name: "Contact", href: "/contact", icon: <Phone size={18} className="mr-3" /> },
+    { name: "Vision", href: "/mission-and-vision", icon: <Phone size={18} className="mr-3" /> },
+    { name: "Values", href: "/values", icon: <Phone size={18} className="mr-3" /> },
+    { name: "Why Choose us", href: "/why-choose-us", icon: <Phone size={18} className="mr-3" /> },
   ];
 
   const toggleMenu = () => {
