@@ -1,42 +1,19 @@
-"use client";
-
-import React from "react";
-import ProductCard from "../components/ui/card/ProductCard";
-import { FilterSidebar } from "../components/features/products/FilterSidebar";
-import BentoGridBanner from "../components/banners/BentoGridBanner";
+'use client'
+import TestingBanner from '@/app/components/delete/TestingBanner'
+import ProductCard from "@/app/components/ui/card/ProductCard";
+import { FilterSidebar } from "@/app/components/features/products/FilterSidebar";
+import BentoGridBanner from "@/app/components/banners/BentoGridBanner";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../components/ui/select";
-import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
+} from "@/app/components/ui/select";
+import { Sheet, SheetContent, SheetTrigger } from "@/app/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { SlidersHorizontal } from "lucide-react"; 
 
-const griddata = {
-  left: {
-    src: "/images/banners/GridBannerImages/1.jpg",
-    alt: "Caps Collection",
-    href: "/category/caps"
-  },
-  center: {
-    src: "/images/banners/GridBannerImages/2.jpg",
-    alt: "T-Shirts",
-    href: "/category/tshirts"
-  },
-  rightTop: {
-    src: "/images/banners/GridBannerImages/3.jpg",
-    alt: "Mugs",
-    href: "/category/mugs"
-  },
-  rightBottom: {
-    src: "/images/banners/GridBannerImages/4.jpg",
-    alt: "Merch",
-    href: "/category/skills"
-  }
-};
 
 // Mock Data
 const PRODUCTS = [
@@ -51,10 +28,11 @@ const PRODUCTS = [
   { id: 9, title: "Drip Ambition T-Shirt", description: "Sustainable, soft, simple & stylish", price: 9.99, rating: 4.5, imageUrl: "/images/products/9.png" },
 ];
 
-export default function ShopPage() {
-  return (
+export default function AllTshirtPage() {
+    return (
+      <>
+          <TestingBanner />
     <div className="min-h-screen bg-gray-50/50 p-4 lg:p-8 font-sans">
-      <BentoGridBanner bannerData={griddata} />
       
       {/* --- Header Section --- */}
       <div className="max-w-[1400px] mx-auto mb-8 lg:mb-10">
@@ -138,5 +116,6 @@ export default function ShopPage() {
 
       </div>
     </div>
+    </>
   );
 }

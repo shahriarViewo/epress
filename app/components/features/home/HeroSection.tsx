@@ -34,7 +34,35 @@ const HeroSection = () => {
       subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
       cta: "Explore Mug",
       color: "bg-blue-600"
+    },
+    {
+      id: 4,
+      bgImage: '/images/hero/background.jpg',
+      heroImage: '/images/all/girlbrowntshirt.webp',
+      title: "American Top Choice for custom Heat Press Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
+      cta: "Explore Hats",
+      color: "bg-[#E07A06]"
+    },
+    {
+      id: 5,
+      bgImage: '/images/hero/background.jpg', 
+      heroImage: '/images/hero/hero2.png',
+      title: "America's Leading Hub for Custom Heat Press Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tote bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
+      cta: "Explore T-Shirt",
+      color: "bg-[#A55536]"
+    },
+    {
+      id: 6,
+      bgImage: '/images/hero/background.jpg',
+      heroImage: '/images/hero/hero3.png',
+      title: "Printing 21st Century Technology for Professional Custom Creations",
+      subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
+      cta: "Explore Mug",
+      color: "bg-blue-600"
     }
+
   ];
 
   // 3. Auto-play logic

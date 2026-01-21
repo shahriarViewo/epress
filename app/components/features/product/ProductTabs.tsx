@@ -8,7 +8,7 @@ export default function ProductTabs() {
 
   const tabs = [
     { id: 'description', label: 'Product Description' },
-    { id: 'specs', label: 'Key Specification' },
+    { id: 'specs', label: 'Specification' },
     { id: 'review', label: 'Review(12)' },
   ]
 

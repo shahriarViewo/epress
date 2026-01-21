@@ -1,0 +1,173 @@
+FONT SIZES AND COLORS ANALYSIS FOR EPRESS PROJECT
+===============================================
+
+FONT SIZES BY COMPONENT:
+========================
+
+1. NAVBAR (app/components/ui/layout/navbar.tsx):
+   - Logo: text-2xl md:text-3xl font-bold (24px mobile, 30px desktop)
+   - Navigation links: text-[17px] font-medium (17px)
+   - Mobile menu title: text-lg font-semibold (18px)
+   - Mobile menu items: font-medium (default size)
+   - Search placeholder: text-gray-600 placeholder:text-gray-400
+   - Cart badge: text-[11px] font-bold (11px)
+
+2. HERO SECTION (app/components/features/home/HeroSection.tsx):
+   - Main title: text-3xl sm:text-4xl md:text-4xl xl:text-5xl font-bold
+     (30px mobile, 36px tablet, 48px desktop, 60px xl)
+   - Subtitle: text-white/90 text-sm md:text-base xl:text-lg
+     (14px mobile, 16px desktop, 18px xl)
+   - Button text: font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6
+     (default mobile, 12px lg, 14px xl)
+   - Category card titles: text-3xl lg:text-2xl xl:text-3xl font-bold
+     (30px mobile, 24px lg, 30px xl)
+   - Category card descriptions: text-white/80 text-sm (14px)
+
+3. CATEGORY SECTION (app/components/features/home/CategorySection.tsx):
+   - Section title: text-3xl md:text-4xl font-bold (30px mobile, 36px desktop)
+   - "View All" link: text-[#E07A06] text-sm md:text-base font-medium
+     (14px mobile, 16px desktop)
+   - Category names: text-base font-medium (16px)
+
+4. FEATURES SECTION (app/components/features/home/FeaturesSection.tsx):
+   - Section title: text-3xl md:text-4xl font-bold (30px mobile, 36px desktop)
+   - Feature titles: text-2xl font-bold (24px)
+   - Feature descriptions: text-gray-600 text-base (16px)
+
+5. TESTIMONIAL SECTION (app/components/features/home/TestimonialSection.tsx):
+   - Section title: text-3xl md:text-4xl font-bold text-[#022c22]
+     (30px mobile, 36px desktop)
+   - Quote mark: text-6xl text-gray-100 font-serif (60px)
+   - Quote text: text-lg font-medium text-gray-800 (18px)
+   - Author name: text-gray-900 font-bold text-lg (18px)
+   - Author role: font-normal text-gray-500 (18px)
+
+6. PRODUCT CARD (app/components/ui/card/ProductCard.tsx):
+   - Product title: text-base lg:text-lg font-semibold
+     (16px mobile, 18px desktop)
+   - Rating: text-sm text-gray-500 (14px)
+   - Description: text-gray-600 text-sm lg:text-base
+     (14px mobile, 16px desktop)
+   - Button text: text-sm lg:text-base font-semibold
+     (14px mobile, 16px desktop)
+   - Price: text-base lg:text-lg font-bold (16px mobile, 18px desktop)
+
+7. FOOTER (app/components/ui/layout/Footer.tsx):
+   - Logo: text-4xl font-medium (36px)
+   - Email/Call labels: text-xs text-gray-400 uppercase font-semibold (12px)
+   - Email/Call values: text-sm hover:text-orange-500 (14px)
+   - Social media title: text-lg font-medium (18px)
+   - Footer section titles: text-xl font-medium (20px)
+   - Footer links: text-gray-400 hover:text-orange-500 transition-colors text-sm (14px)
+   - Copyright: text-gray-400 text-sm (14px)
+   - About section title: text-lg font-medium (18px)
+   - About text: text-gray-400 text-xs (12px)
+
+8. CART PAGE (app/cart/page.tsx):
+   - Page title: text-2xl font-bold text-gray-900 (24px)
+   - Table headers: text-sm font-semibold text-gray-900 (14px)
+   - Product name: font-semibold text-gray-900 text-base (16px)
+   - Product details: text-sm text-gray-500 (14px)
+   - Remove button: text-[#F15A24] hover:text-red-700 text-sm (14px)
+   - Unit price: font-semibold text-gray-900 (16px)
+   - Original price: text-xs text-gray-400 line-through (12px)
+   - Quantity: text-center text-sm font-medium (14px)
+   - Total price: font-bold text-gray-900 (16px)
+   - Order summary title: text-lg font-bold text-gray-900 (18px)
+   - Summary labels: text-sm text-gray-600 (14px)
+   - Summary values: font-medium text-gray-900 (14px)
+   - Total price label: font-bold text-gray-900 text-base (16px)
+   - Total price value: font-bold text-gray-900 text-xl (20px)
+
+9. CHECKOUT PAGE (app/checkout/page.tsx):
+   - Product name: font-semibold text-gray-900 text-sm sm:text-base
+     (14px mobile, 16px desktop)
+   - Product details: text-xs sm:text-sm text-gray-500
+     (12px mobile, 14px desktop)
+   - Remove button: text-[#F15A24] hover:text-red-700 text-xs sm:text-sm
+     (12px mobile, 14px desktop)
+   - Unit price: font-semibold text-gray-900 text-sm sm:text-base
+     (14px mobile, 16px desktop)
+   - Original price: text-xs text-gray-400 line-through (12px)
+   - Quantity: text-xs sm:text-sm font-medium (12px mobile, 14px desktop)
+   - Total price: font-bold text-gray-900 text-sm sm:text-base
+     (14px mobile, 16px desktop)
+   - Order summary title: text-xl font-bold text-gray-900 (20px)
+   - Summary labels: text-sm text-gray-600 (14px)
+   - Summary values: font-medium text-gray-900 (14px)
+   - Total price label: font-bold text-gray-900 text-base (16px)
+   - Total price value: font-bold text-gray-900 text-xl (20px)
+
+COLORS BY COMPONENT:
+====================
+
+PRIMARY BRAND COLORS:
+- #F24E1E - Main brand orange (navbar logo, links, buttons)
+- #E07A06 - Secondary orange (category section, hero cards)
+- #EF5A2B - Button orange (product cards, cart/checkout)
+- #F15A24 - Cart/checkout orange variant
+- #A55536 - Brown accent (hero section)
+- #022c22 - Dark green (testimonial section)
+
+NEUTRAL COLORS:
+- text-gray-900 - Main text color
+- text-gray-800 - Secondary text
+- text-gray-700 - Tertiary text
+- text-gray-600 - Description text
+- text-gray-500 - Muted text
+- text-gray-400 - Light text, footer links
+- text-white - White text on dark backgrounds
+
+BACKGROUND COLORS:
+- bg-white - White backgrounds
+- bg-gray-50 - Light gray backgrounds (cart/checkout)
+- bg-gray-100 - Light gray elements
+- bg-gray-200 - Category grid borders
+- bg-[#121212] - Footer background
+- bg-[#1F1F1F] - Footer icon backgrounds
+
+SPECIAL COLORS:
+- text-red-500 - Wishlist active state
+- text-amber-500 - Star ratings
+- text-blue-600 - Hero section accent
+- text-[#022c22] - Testimonial section title
+
+RESPONSIVE FONT SIZE PATTERNS:
+==============================
+
+Mobile First Approach:
+- Base sizes typically start at mobile (text-sm, text-base)
+- Increase on tablet (md:text-base, md:text-lg)
+- Further increase on desktop (lg:text-lg, lg:text-xl)
+- XL screens get largest sizes (xl:text-xl, xl:text-2xl)
+
+Common Responsive Patterns:
+- text-sm md:text-base lg:text-lg (14px → 16px → 18px)
+- text-base lg:text-lg (16px → 18px)
+- text-3xl md:text-4xl (30px → 36px)
+- text-2xl md:text-3xl (24px → 30px)
+
+FONT WEIGHTS:
+=============
+- font-normal - Regular weight (400)
+- font-medium - Medium weight (500)
+- font-semibold - Semi-bold (600)
+- font-bold - Bold (700)
+
+TYPOGRAPHY HIERARCHY:
+====================
+1. Headlines: text-4xl to text-5xl font-bold
+2. Section titles: text-2xl to text-3xl font-bold
+3. Card titles: text-lg to text-xl font-semibold
+4. Body text: text-base to text-lg
+5. Small text: text-sm
+6. Labels/Metadata: text-xs
+
+NOTES:
+======
+- Project uses Tailwind CSS for all styling
+- Consistent use of gray scale for text hierarchy
+- Brand orange (#F24E1E family) used for CTAs and accents
+- Responsive design with mobile-first approach
+- Font sizes scale progressively across breakpoints
+- Color system uses semantic naming (primary, secondary, muted)
