@@ -1,9 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Star, ChevronLeft, ChevronRight, Minus, Plus, ShoppingBag } from 'lucide-react'
+// import { Star, ChevronLeft, ChevronRight, Minus, Plus, ShoppingBag } from 'lucide-react'
+import { Star, Minus, Plus, ShoppingBag } from 'lucide-react'
 import ServiceInfo from './ServiceInfo' // 1. Restore this import
-
+import ProductImageViewer from './ProductImageViewer' // <--- Add this
 interface ProductProps {
   product: {
     id: string
@@ -20,20 +21,21 @@ interface ProductProps {
 }
 
 export default function ProductDetails({ product }: ProductProps) {
-  const [selectedImage, setSelectedImage] = useState(0)
+  // const [selectedImage, setSelectedImage] = useState(0)
   const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name)
   const [selectedSize, setSelectedSize] = useState(product.sizes[0])
   const [quantity, setQuantity] = useState(1)
 
-  const handlePrevImage = () => setSelectedImage((prev) => (prev === 0 ? product.images.length - 1 : prev - 1))
-  const handleNextImage = () => setSelectedImage((prev) => (prev === product.images.length - 1 ? 0 : prev + 1))
+  // const handlePrevImage = () => setSelectedImage((prev) => (prev === 0 ? product.images.length - 1 : prev - 1))
+  //const handleNextImage = () => setSelectedImage((prev) => (prev === product.images.length - 1 ? 0 : prev + 1))
 
   return (
     <div className="bg-white font-sans text-gray-900 pb-20 lg:pb-0">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-16">
         
         {/* --- LEFT: Image Gallery --- */}
-        <div className="flex flex-col-reverse lg:flex-row gap-4 h-fit">
+        <ProductImageViewer images={product.images} />
+        {/* <div className="flex flex-col-reverse lg:flex-row gap-4 h-fit">
           <div className="flex lg:flex-col gap-3 overflow-x-auto lg:overflow-visible lg:w-24 flex-shrink-0 scrollbar-hide px-1">
             {product.images.map((img, idx) => (
               <button
@@ -51,7 +53,7 @@ export default function ProductDetails({ product }: ProductProps) {
             <button onClick={handlePrevImage} className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-100"><ChevronLeft size={20} /></button>
             <button onClick={handleNextImage} className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-100"><ChevronRight size={20} /></button>
           </div>
-        </div>
+        </div> */}
 
         {/* --- RIGHT: Details --- */}
         <div className="flex flex-col gap-6 pt-2">

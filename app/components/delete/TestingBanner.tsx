@@ -77,7 +77,7 @@ export default function TestingBanner() {
             quality <span className="text-gray-900">custom T-Shirts</span>
           </h1>
           
-          <p className="text-gray-500 text-lg md:text-xl max-w-lg leading-relaxed">
+          <p className=" text-lg md:text-xl max-w-lg leading-relaxed">
             Turn your ideas into premium products that leave a lasting impression
           </p>
 

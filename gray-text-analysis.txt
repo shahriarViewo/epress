@@ -1,0 +1,150 @@
+GRAY TEXT USAGE ANALYSIS - EPRESS WEBSITE
+============================================
+Date: January 20, 2026
+Analysis of all pages where gray text is used instead of black text
+
+SUMMARY:
+Found 279 matches across 40 files using gray/grey text colors.
+
+DETAILED BREAKDOWN BY PAGES:
+
+1. CART PAGE (app/cart/page.tsx) - 29 instances
+   - Line 66: bg-gray-50 (background)
+   - Line 66: text-gray-900 (main text color)
+   - Line 71: text-gray-900 (heading)
+   - Line 79: border-gray-100
+   - Line 82: text-gray-900 (header text)
+   - Line 90: divide-gray-100
+   - Line 96: bg-gray-100, border-gray-200
+   - Line 101: text-gray-900 (product name)
+   - Line 102: text-gray-500 (color info)
+   - Line 103: text-gray-500 (size info)
+   - Line 117: text-gray-500 (label)
+   - Line 119: text-gray-900 (price)
+   - Line 120: text-gray-400 (original price)
+   - Line 126: text-gray-500 (label)
+   - Line 127: border-gray-200
+   - Line 128: text-gray-500 (button)
+   - Line 130: text-gray-500 (button)
+   - Line 136: text-gray-500 (label)
+   - Line 144: text-gray-500 (empty cart message)
+   - Line 163: border-gray-100
+   - Line 164: text-gray-900 (heading)
+   - Line 172: border-gray-200
+   - Line 184: text-gray-600 (summary text)
+   - Line 187: text-gray-900 (total items)
+   - Line 191: text-gray-900 (subtotal)
+   - Line 195: text-gray-900 (discount)
+   - Line 199: border-gray-100
+   - Line 202: text-gray-900 (total price)
+   - Line 203: text-gray-900 (total amount)
+
+2. CHECKOUT PAGE (app/checkout/page.tsx) - 28 instances
+   - Line 67: bg-gray-50 (background)
+   - Line 67: text-gray-900 (main text)
+   - Line 81: border-gray-100
+   - Line 83: text-gray-900 (header)
+   - Line 91: divide-gray-100
+   - Line 97: bg-gray-100, border-gray-200
+   - Line 102: text-gray-900 (product name)
+   - Line 103: text-gray-500 (color info)
+   - Line 104: text-gray-500 (size info)
+   - Line 114: text-gray-500 (label)
+   - Line 116: text-gray-900 (price)
+   - Line 117: text-gray-400 (original price)
+   - Line 123: text-gray-500 (label)
+   - Line 124: border-gray-200
+   - Line 125: text-gray-500 (button)
+   - Line 127: text-gray-500 (button)
+   - Line 133: text-gray-500 (label)
+   - Line 134: text-gray-900 (total)
+   - Line 155: border-gray-100
+   - Line 156: text-gray-900 (heading)
+   - Line 164: border-gray-200
+   - Line 164: placeholder:text-gray-400
+   - Line 175: text-gray-600 (summary text)
+   - Line 178: text-gray-900 (total items)
+   - Line 182: text-gray-900 (subtotal)
+   - Line 186: text-gray-900 (discount)
+   - Line 190: text-gray-900 (shipping)
+   - Line 194: border-gray-100
+   - Line 197: text-gray-900 (total price)
+   - Line 198: text-gray-900 (total amount)
+
+3. CONTACT PAGE (app/contact/page.tsx) - 18 instances
+   - Line 27: text-gray-900 (heading)
+   - Line 31: text-gray-600 (description)
+   - Line 57: border-gray-100
+   - Line 60: text-gray-900 (form heading)
+   - Line 64: text-gray-600 (form description)
+   - Line 73: text-gray-900 (label)
+   - Line 84: text-gray-900 (label)
+   - Line 99: text-gray-900 (label)
+   - Line 110: text-gray-900 (label)
+   - Line 124: text-gray-900 (label)
+   - Line 137: text-gray-900 (label)
+
+4. PRODUCTS PAGE (app/products/page.tsx) - 6 instances
+   - Line 36: border-gray-100
+   - Line 38: text-gray-900 (heading)
+   - Line 39: text-gray-500 (product count)
+   - Line 63: text-gray-500 (sort label)
+
+OTHER PAGES WITH GRAY TEXT:
+- ProductTabs.tsx: 24 instances
+- ProductDetails.tsx: 19 instances
+- ShippingAddress.tsx: 18 instances
+- FilterSidebar.tsx: 14 instances
+- navbar.tsx: 13 instances
+- Footer.tsx: 10 instances
+- TestimonialSection.tsx: 9 instances
+- WhyShopSection.tsx: 9 instances
+- FaqSection.tsx: 8 instances
+- WhyChooseUsSection.tsx: 6 instances
+- ProductCard.tsx: 6 instances
+- PaymentMethod.tsx: 5 instances
+- CategorySection.tsx: 5 instances
+- OurValuesSection.tsx: 5 instances
+- TestingBanner.tsx: 4 instances
+- AboutSection.tsx: 4 instances
+- FeaturesSection.tsx: 4 instances
+- MissionVisionSection.tsx: 4 instances
+- ServiceInfo.tsx: 4 instances
+- MapSection.tsx: 3 instances
+- MerchandiseCard.tsx: 3 instances
+- Breadcrumbs.tsx: 3 instances
+- ContactInfoCard.tsx: 2 instances
+- HeroBannerSection.tsx: 2 instances
+- TopSellingSection.tsx: 2 instances
+- TwoColumnBanner.tsx: 2 instances
+- BestSellingTshirtSection.tsx: 1 instance
+- CtaSection.tsx: 1 instance
+- HeroSection.tsx: 1 instance
+- OurFeaturedCaps.tsx: 1 instance
+- PromotionalBanner.tsx: 1 instance
+- RelatedProducts.tsx: 1 instance
+- mission-and-vision page: 1 instance
+- products/[id] page: 1 instance
+- values page: 1 instance
+- why-choose-us page: 1 instance
+
+COMMON GRAY TEXT CLASSES FOUND:
+- text-gray-900 (very dark gray, almost black) - ACCEPTABLE
+- text-gray-600 (medium gray) - CONSIDER CHANGING TO BLACK
+- text-gray-500 (medium-light gray) - CONSIDER CHANGING TO BLACK
+- text-gray-400 (light gray) - CONSIDER CHANGING TO BLACK
+- bg-gray-50, bg-gray-100 (background grays) - OK for backgrounds
+- border-gray-100, border-gray-200 (border grays) - OK for borders
+- divide-gray-100 (divider grays) - OK for dividers
+
+RECOMMENDATIONS:
+1. Most text-gray-900 instances are acceptable as they're very close to black
+2. Priority changes needed for text-gray-600, text-gray-500, and text-gray-400 for better readability
+3. Focus on high-traffic areas first: cart, checkout, product pages, and contact form
+4. Review gray backgrounds and borders to ensure they don't affect text contrast
+5. Consider accessibility standards for text contrast ratios
+
+TOTAL FILES WITH GRAY TEXT: 40
+TOTAL GRAY TEXT INSTANCES: 279
+
+Note: This analysis was created on January 20, 2026. The dist/fontnote.txt file could not be updated due to .gitignore restrictions, so this file was created as gray-text-analysis.txt in the root directory instead.

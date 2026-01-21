@@ -10,26 +10,53 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 
+// // Optimized Payment Logo Component
+// const PaymentLogo = ({
+//   src,
+//   alt,
+// }: {
+//   src: string;
+//   alt: string;
+// }) => (
+//   // Added 'relative' so the 'fill' image knows its boundaries
+//   <div className="relative bg-white rounded shadow-sm w-16 h-10 flex items-center justify-center overflow-hidden">
+//     <Image
+//       src={src}
+//       alt={alt}
+//       fill // Automatically fills the parent container
+//       sizes="64px" // Optimization: tells browser the image is small (w-16)
+//       className="object-contain p-1" // Ensures the logo scales correctly without cropping
+//       loading="lazy"
+//     />
+//   </div>
+// );
+
 // Optimized Payment Logo Component
 const PaymentLogo = ({
   src,
   alt,
+  color = 'white', // Default is white
 }: {
   src: string;
   alt: string;
-}) => (
-  // Added 'relative' so the 'fill' image knows its boundaries
-  <div className="relative bg-white p-1 rounded shadow-sm w-16 h-10 flex items-center justify-center overflow-hidden">
-    <Image
-      src={src}
-      alt={alt}
-      fill // Automatically fills the parent container
-      sizes="64px" // Optimization: tells browser the image is small (w-16)
-      className="object-contain p-1" // Ensures the logo scales correctly without cropping
-      loading="lazy"
-    />
-  </div>
-);
+  color?: 'white' | 'blue'; // Allow white or blue
+}) => {
+  // Switch background based on color prop
+  const bgClass = color === 'blue' ? 'bg-blue-600' : 'bg-white';
+
+  return (
+    <div className={`relative ${bgClass} rounded shadow-sm w-16 h-10 flex items-center justify-center overflow-hidden`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill 
+        sizes="64px" 
+        className="object-contain p-1" 
+        loading="lazy"
+      />
+    </div>
+  );
+};
 
 // --- Data for the Links ---
 const companyLinks = [

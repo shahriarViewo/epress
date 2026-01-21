@@ -28,14 +28,18 @@ export default function Home() {
         <HeroBannerSection />
         <BestSellingTshirtSection />
         <BestsellersSection />
+
         <WhyShopSection />
         <TwoColumnBanner />
         <OurFeaturedCaps />
+
         <PromoGridSection />
         <TestimonialSection />
         <TShirtCollectionGrid />
         <PromotionalBanner />
+
         <CapCarousel />
+
         <TshirtCarousel />
         <FaqSection />
         <FeaturesSection />
