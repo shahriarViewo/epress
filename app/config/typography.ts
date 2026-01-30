@@ -17,7 +17,7 @@ export const typography = {
   
   // Product Cards
   productTitle: "text-base font-medium",
-  productDescription: "text-sm text-gray-600",
+  productDescription: "text-sm leading-relaxed",
   productPrice: "text-lg font-bold",
   productRating: "text-sm",
   

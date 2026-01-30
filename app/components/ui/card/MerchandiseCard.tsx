@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { colors } from "../../../config/colors";
 
 interface MerchandiseCardProps {
   imageSrc: string;
@@ -53,7 +54,7 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
           {title}
         </h3>
 
-        <p className="text-gray-600 text-base leading-relaxed mb-4">
+        <p className="text-base leading-relaxed mb-4" style={{ color: colors.textDefault }}>
           {description}
         </p>
 
