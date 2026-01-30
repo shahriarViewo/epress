@@ -2,16 +2,18 @@
 
 import React from "react";
 import Image from "next/image";
+import { colors } from "../../../config/colors";
+import { typography } from "../../../config/typography";
 
 const PromoGridSection = () => {
   return (
-    <section className="w-full py-12 px-4 lg:px-16 bg-white">
+    <section className={`w-full py-12 px-4 lg:px-16 ${colors.background}`}>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
         {/* === Card 1: Cyan (Mug) === */}
-        <div className="relative bg-[#D6F3F5] rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group">
+        <div className="relative rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group" style={{ backgroundColor: colors.promoCard1 }}>
           {/* Text Content */}
           <div className="relative z-10 max-w-[70%]">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight mb-6">
+            <h2 className={`${typography.sectionTitle} leading-tight mb-6`} style={{ color: colors.textStrong }}>
               Vibrant, <br />
               Personalized, <br />
               Durable Tote
@@ -22,7 +24,16 @@ const PromoGridSection = () => {
           <div className="relative z-10">
                           <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+                className="relative flex items-center justify-center overflow-hidden text-white font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2"
+                style={{ backgroundColor: colors.button }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.buttonHover;
+                  e.currentTarget.style.color = colors.primary;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.button;
+                  e.currentTarget.style.color = 'white';
+                }}
               >
                 <span className="relative z-10">
                   Shop Now
@@ -45,9 +56,9 @@ const PromoGridSection = () => {
         </div>
 
         {/* === Card 2: Pink (Tote Bag) === */}
-        <div className="relative bg-[#FBE4E7] rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group">
+        <div className="relative rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group" style={{ backgroundColor: colors.promoCard2 }}>
           <div className="relative z-10 max-w-[60%]">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight mb-6">
+            <h2 className={`${typography.sectionTitle} leading-tight mb-6`} style={{ color: colors.textStrong }}>
               Stylish, <br />
               Custom, <br />
               Eco-Friendly
@@ -57,7 +68,16 @@ const PromoGridSection = () => {
           <div className="relative z-10">
                          <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+                className="relative flex items-center justify-center overflow-hidden text-white font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2"
+                style={{ backgroundColor: colors.button }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.buttonHover;
+                  e.currentTarget.style.color = colors.primary;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.button;
+                  e.currentTarget.style.color = 'white';
+                }}
               >
                 <span className="relative z-10">
                   Shop Now
@@ -80,9 +100,9 @@ const PromoGridSection = () => {
         </div>
 
         {/* === Card 3: Green (T-Shirt Model) === */}
-        <div className="relative bg-[#D9F7E8] rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group">
+        <div className="relative rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group" style={{ backgroundColor: colors.promoCard3 }}>
           <div className="relative z-10 max-w-[60%]">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight mb-6">
+            <h2 className={`${typography.sectionTitle} leading-tight mb-6`} style={{ color: colors.textStrong }}>
               Bold, <br />
               Unique, <br />
               Long Lasting
@@ -92,7 +112,16 @@ const PromoGridSection = () => {
           <div className="relative z-10">
                           <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+                className="relative flex items-center justify-center overflow-hidden text-white font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2"
+                style={{ backgroundColor: colors.button }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.buttonHover;
+                  e.currentTarget.style.color = colors.primary;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.button;
+                  e.currentTarget.style.color = 'white';
+                }}
               >
                 <span className="relative z-10">
                   Shop Now

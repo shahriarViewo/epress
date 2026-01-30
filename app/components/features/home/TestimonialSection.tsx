@@ -2,10 +2,10 @@
 
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
-
-// React Slick CSS ফাইল ইম্পোর্ট করতে হবে
- import "slick-carousel/slick/slick.css";
- import "slick-carousel/slick/slick-theme.css";
+import { colors } from "../../../config/colors";
+import { typography } from "../../../config/typography";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const testimonials = [
   {
@@ -39,37 +39,33 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => {
-  // স্লাইডার কন্ট্রোল করার জন্য Ref
   const sliderRef = useRef<Slider>(null);
-  
-  // বাটনের স্টাইল কন্ট্রোল করার জন্য স্টেট (অপশনাল, শুধু ডিসেবল স্টাইলের জন্য)
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {
-    dots: false,           // নিচে ডট দেখাবে না
-    infinite: false,       // লুপ হবে না (আপনার আগের লজিক অনুযায়ী)
-    speed: 500,            // এনিমেশন স্পিড
-    slidesToShow: 2,       // ডেস্কটপে ২টা দেখাবে (যদি চান) বা ১টা রাখতে পারেন
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
     slidesToScroll: 1,
-    arrows: false,         // ডিফল্ট অ্যারো বন্ধ (আমরা কাস্টম বাটন ব্যবহার করব)
+    arrows: false,
     beforeChange: (oldIndex: number, newIndex: number) => setCurrentSlide(newIndex),
     responsive: [
       {
-        breakpoint: 1024, // ট্যাবলেট বা ছোট ল্যাপটপ
-        settings: {
-          slidesToShow: 1, // ছোট স্ক্রিনে ১টা করে স্লাইড
-        }
-      },
-      {
-        breakpoint: 640, // মোবাইল
+        breakpoint: 1024,
         settings: {
           slidesToShow: 1,
-        }
-      }
-    ]
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
-  // কাস্টম বাটন হ্যান্ডলার
   const handlePrev = () => {
     sliderRef.current?.slickPrev();
   };
@@ -79,11 +75,11 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="w-full py-12 px-4 bg-white">
+    <section className={`w-full py-12 px-4 ${colors.background}`}>
       <div className="max-w-[1440px] mx-auto">
         {/* Header & Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#022c22] text-center md:text-left">
+          <h2 className={`${typography.sectionTitle} text-center md:text-left`} style={{ color: colors.textStrong }}>
             Creators Love OnePrint
           </h2>
 
@@ -94,9 +90,10 @@ const TestimonialSection = () => {
               disabled={currentSlide === 0}
               className={`w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center transition-colors ${
                 currentSlide === 0
-                  ? "opacity-50 cursor-not-allowed text-gray-300"
-                  : "hover:bg-gray-50 text-gray-700"
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:bg-gray-50"
               }`}
+              style={{ color: currentSlide === 0 ? colors.textSubtle : colors.textMuted }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -105,12 +102,16 @@ const TestimonialSection = () => {
 
             <button
               onClick={handleNext}
-              disabled={currentSlide >= testimonials.length - 1} // নোট: infinite: true হলে এটা দরকার নেই
+              disabled={currentSlide >= testimonials.length - 1}
               className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
                 currentSlide >= testimonials.length - 1
-                  ? "bg-gray-200 cursor-not-allowed text-gray-400"
-                  : "bg-[#EF5A2B] hover:bg-[#d64b1f] text-white shadow-md"
+                  ? "bg-gray-200 cursor-not-allowed"
+                  : "shadow-md"
               }`}
+              style={{
+                backgroundColor: currentSlide >= testimonials.length - 1 ? colors.border : colors.button,
+                color: 'white'
+              }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -124,20 +125,20 @@ const TestimonialSection = () => {
           <Slider ref={sliderRef} {...settings} className="-mx-2">
             {testimonials.map((item) => (
               <div key={item.id} className="px-2"> {/* স্লাইডারের মাঝে গ্যাপ রাখার জন্য প্যাডিং */}
-                <div className="bg-white border border-gray-100 rounded-[24px] p-8 md:p-12 shadow-sm flex flex-col justify-between min-h-[280px]">
+                <div className={`${colors.background} border border-gray-100 rounded-[24px] p-8 md:p-12 shadow-sm flex flex-col justify-between min-h-[280px]`}>
                   <div className="relative">
-                    <span className="absolute -top-4 -left-2 text-6xl text-gray-100 font-serif leading-none select-none">
+                    <span className="absolute -top-4 -left-2 text-6xl font-serif leading-none select-none" style={{ color: colors.border }}>
                       &ldquo;
                     </span>
-                    <p className="relative z-10 text-lg font-medium text-gray-800 leading-relaxed">
+                    <p className={`relative z-10 ${typography.body} font-medium leading-relaxed`} style={{ color: colors.textGray }}>
                       "{item.quote}"
                     </p>
                   </div>
 
                   <div className="mt-8">
-                    <p className="text-gray-900 font-bold text-lg">
+                    <p className={`${typography.body} font-bold text-lg`} style={{ color: colors.textStrong }}>
                       {item.author},{" "}
-                      <span className="font-normal text-gray-500">
+                      <span className="font-normal" style={{ color: colors.textMuted }}>
                         {item.role}
                       </span>
                     </p>

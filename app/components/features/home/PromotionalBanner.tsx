@@ -1,5 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { colors } from "../../../config/colors";
+import { typography } from "../../../config/typography";
 
 const PromotionalBanner = () => {
   return (
@@ -33,7 +37,7 @@ const PromotionalBanner = () => {
 
         {/* --- Main Content (Center) --- */}
         <div className="relative z-20 flex flex-col items-center text-center max-w-2xl mx-auto">
-          <h1 className=" text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6 drop-shadow-lg">
             Get UP TO 30% OFF on <br />
             T-Shirts, Caps & Mugs
           </h1>
@@ -45,7 +49,19 @@ const PromotionalBanner = () => {
 
                               <button
                     type="button"
-                    className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                    className="relative flex items-center justify-center overflow-hidden font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                    style={{ 
+                      backgroundColor: colors.background,
+                      color: colors.textDefault
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = colors.button;
+                      e.currentTarget.style.color = colors.textPrimary;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = colors.background;
+                      e.currentTarget.style.color = colors.textDefault;
+                    }}
                   >
                     <span className="relative z-10">
                       Shop Now

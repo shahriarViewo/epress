@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { colors } from "../../../config/colors";
 
 const categories = [
   { name: "Electronics", img: "/images/landingPage/ShopByCategories/1.png" },
@@ -26,10 +27,10 @@ const CategorySection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Shop By Categories
           </h2>
-          <a
-            href="#"
-          className="text-[#E07A06] text-sm md:text-base font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
-          >
+          <a href="#" className="text-sm md:text-base font-medium flex items-center gap-1 transition-colors" 
+             style={{ color: colors.primary }}
+             onMouseEnter={(e) => e.currentTarget.style.color = colors.linkHover}
+             onMouseLeave={(e) => e.currentTarget.style.color = colors.primary}>
             View All
             <span>&gt;</span>
           </a>

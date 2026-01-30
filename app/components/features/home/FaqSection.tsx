@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { colors } from "../../../config/colors";
+import { typography } from "../../../config/typography";
 
 const FaqSection = () => {
   // State to track which accordion item is open.
@@ -40,17 +42,17 @@ const FaqSection = () => {
   ];
 
   return (
-    <div className="w-full font-sans py-4 md:py-20 px-4 lg:px-16">
+    <div className={`w-full ${typography.fontFamily} py-4 md:py-20 px-4 lg:px-16`}>
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column: Text and Image */}
           <div>
             {/* FAQ Text */}
             <div className="w-full mb-8 lg:mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className={`${typography.sectionTitle} ${colors.textStrong} mb-4`}>
                 Discover More in Our Faq
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className={`${typography.body} ${colors.textMuted} leading-relaxed`}>
                 Find quick answers to the most common questions about our
                 T-shirts, caps, mugs, shipping, returns, and more — everything
                 you need for a smooth shopping experience.
@@ -69,14 +71,23 @@ const FaqSection = () => {
               {/* Black Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90">
                 <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                  <h3 className="text-white text-3xl font-bold leading-tight mb-6">
+                  <h3 className={`${typography.h3} leading-tight mb-6`} style={{ color: colors.textPrimary }}>
                     We'd love to <br />
                     hear from you <br />
                     let's talk!
                   </h3>
                   <button
                     type="button"
-                    className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+                    className="relative flex items-center justify-center overflow-hidden text-white hover:text-white font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    style={{ backgroundColor: colors.button }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = colors.buttonHover;
+                      e.currentTarget.style.color = colors.primary;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = colors.button;
+                      e.currentTarget.style.color = 'white';
+                    }}
                   >
                     <span className="relative z-10">
                       Contact Us
@@ -94,22 +105,23 @@ const FaqSection = () => {
               return (
                 <div
                   key={index}
-                  className={`border rounded-xl transition-all duration-300 ${isOpen
+                  className={`border rounded-xl transition-all duration-300 ${
+                    isOpen
                       ? "bg-white border-gray-200 shadow-sm"
                       : "bg-white border-gray-200"
-                    }`}
+                  }`}
                 >
                   <button
                     onClick={() => toggleFaq(index)}
                     className="w-full flex justify-between items-center p-5 text-left focus:outline-none"
                   >
-                    <span className="text-lg font-medium text-gray-900">
+                    <span className={`${typography.body} ${colors.textStrong} font-medium`}>
                       {item.question}
                     </span>
                     {isOpen ? (
-                      <ChevronUp className="w-5 h-5 text-gray-500" />
+                      <ChevronUp className="w-5 h-5" style={{ color: colors.textMuted }} />
                     ) : (
-                      <ChevronDown className="w-5 h-5 text-gray-500" />
+                      <ChevronDown className="w-5 h-5" style={{ color: colors.textMuted }} />
                     )}
                   </button>
 
@@ -118,7 +130,7 @@ const FaqSection = () => {
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <div className="p-5 pt-0 text-base text-gray-600 leading-relaxed">
+                    <div className={`p-5 pt-0 ${typography.body} leading-relaxed`} style={{ color: `${colors.textStrong} !important` }}>
                       {item.answer}
                     </div>
                   </div>

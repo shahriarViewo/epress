@@ -2,6 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
+import { colors } from "../../../config/colors";
+import { typography } from "../../../config/typography";
 
 const TShirtCollectionGrid = () => {
   return (
@@ -26,7 +28,19 @@ const TShirtCollectionGrid = () => {
 
                               <button
                     type="button"
-                    className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                    className="relative flex items-center justify-center overflow-hidden font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                    style={{ 
+                      backgroundColor: colors.heroButton,
+                      color: colors.heroButtonText
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = colors.button;
+                      e.currentTarget.style.color = colors.textPrimary;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = colors.heroButton;
+                      e.currentTarget.style.color = colors.heroButtonText;
+                    }}
                   >
                     <span className="relative z-10">
                       Shop Now

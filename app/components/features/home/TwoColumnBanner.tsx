@@ -2,28 +2,39 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { colors } from "../../../config/colors";
+import { typography } from "../../../config/typography";
 
 const TwoColumnBanner = () => {
   return (
-    <section className="w-full py-12 px-4 md:px-16 bg-white">
+    <section className={`w-full py-12 px-4 md:px-16 ${colors.background}`}>
       
       {/* Grid Layout: Stacks on mobile, 2 columns on desktop */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
         
         {/* === Left Card: Pink (Caps) === */}
-        <div className="relative bg-[#EAD8D8] rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col justify-center min-h-[360px] md:min-h-[400px]">
+        <div className={`relative rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col justify-center min-h-[360px] md:min-h-[400px]`} style={{ backgroundColor: colors.backgroundSecondary }}>
           
           {/* Text Content */}
           <div className="relative z-10 max-w-[60%] flex flex-col items-start h-full justify-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight mb-4">
+            <h2 className={`${typography.h2} ${colors.textStrong} leading-tight mb-4`}>
               Buy a Cap, Boost <br /> Your Style
             </h2>
-            <p className="text-gray-700 text-base md:text-lg mb-8 max-w-xs leading-relaxed">
+            <p className={`${colors.textMuted} text-base md:text-lg mb-8 max-w-xs leading-relaxed`}>
               Exclusive styles crafted for everyday confidence. Shop the offer today.
             </p>
               <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+                className={`relative flex items-center justify-center overflow-hidden text-white font-semibold ${typography.buttonText} py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                style={{ backgroundColor: colors.button }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.buttonHover;
+                  e.currentTarget.style.color = colors.primary;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.button;
+                  e.currentTarget.style.color = 'white';
+                }}
               >
                 <span className="relative z-10">
                   Shop Now
@@ -48,19 +59,28 @@ const TwoColumnBanner = () => {
         </div>
 
         {/* === Right Card: Green (Mugs) === */}
-        <div className="relative bg-[#DAEFE6] rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col justify-center min-h-[360px] md:min-h-[400px]">
+        <div className={`relative rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col justify-center min-h-[360px] md:min-h-[400px]`} style={{ backgroundColor: colors.categoryBackground }}>
           
           {/* Text Content */}
           <div className="relative z-10 max-w-[60%] flex flex-col items-start h-full justify-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight mb-4">
+            <h2 className={`${typography.h2} ${colors.textStrong} leading-tight mb-4`}>
               Your Favorite Mug, <br /> Now on Sale
             </h2>
-            <p className="text-gray-700 text-base md:text-lg mb-8 max-w-xs leading-relaxed">
+            <p className={`${colors.textMuted} text-base md:text-lg mb-8 max-w-xs leading-relaxed`}>
               Limited-time offer on bestselling designs. Don't miss your perfect fit.
             </p>
               <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+                className={`relative flex items-center justify-center overflow-hidden text-white font-semibold ${typography.buttonText} py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                style={{ backgroundColor: colors.button }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.buttonHover;
+                  e.currentTarget.style.color = colors.primary;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.button;
+                  e.currentTarget.style.color = 'white';
+                }}
               >
                 <span className="relative z-10">
                   Shop Now
