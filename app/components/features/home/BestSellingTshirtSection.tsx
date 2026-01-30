@@ -3,6 +3,7 @@
 import React from "react";
 import ProductCard from "@/app/components/ui/card/ProductCard";
 import Link from "next/link";
+import { colors } from "../../../config/colors";
 
 // Mock Data for t-shirts
 const tshirts = [
@@ -83,7 +84,10 @@ const BestSellingTshirtSection = () => {
 
         <Link
           href="#"
-          className="text-[#E07A06] text-sm md:text-base font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
+          className="text-sm md:text-base font-medium flex items-center gap-1 transition-colors"
+          style={{ color: colors.primary }}
+          onMouseEnter={(e) => e.currentTarget.style.color = colors.linkHover}
+          onMouseLeave={(e) => e.currentTarget.style.color = colors.primary}
         >
           View All T-Shirts
           <span>&gt;</span>

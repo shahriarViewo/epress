@@ -3,6 +3,8 @@
 import React from "react";
 import ProductCard from "@/app/components/ui/card/ProductCard";
 import Link from "next/link";
+import { colors } from "../../../config/colors";
+import { typography } from "../../../config/typography";
 
 // Mock Data matching your screenshot
 const products = [
@@ -173,13 +175,16 @@ const TopSellingSection = () => {
     <section className="w-full py-4 lg:py-12 px-3 lg:px-16 mx-auto">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-6 lg:mb-10 w-full">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 className={`${typography.sectionTitle} ${colors.textStrong}`}>
           Top Selling Products
         </h2>
 
         <Link
           href="#"
-          className="text-[#E07A06] text-sm md:text-base font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
+          className="text-sm md:text-base font-medium flex items-center gap-1 transition-colors"
+          style={{ color: colors.primary }}
+          onMouseEnter={(e) => e.currentTarget.style.color = colors.linkHover}
+          onMouseLeave={(e) => e.currentTarget.style.color = colors.primary}
         >
           View All
           <span>&gt;</span>

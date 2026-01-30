@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { colors } from "../../../config/colors";
 
 const HeroSection = () => {
   // 1. State for the active slide
@@ -15,7 +16,7 @@ const HeroSection = () => {
       title: "American Top Choice for custom Heat Press Creations",
       subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
       cta: "Explore Hats",
-      color: "bg-[#E07A06]"
+      color: colors.primary
     },
     {
       id: 2,
@@ -24,7 +25,7 @@ const HeroSection = () => {
       title: "America's Leading Hub for Custom Heat Press Creations",
       subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tote bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
       cta: "Explore T-Shirt",
-      color: "bg-[#A55536]"
+      color: colors.secondary
     },
     {
       id: 3,
@@ -33,7 +34,7 @@ const HeroSection = () => {
       title: "Printing 21st Century Technology for Professional Custom Creations",
       subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
       cta: "Explore Mug",
-      color: "bg-blue-600"
+      color: colors.info
     },
     {
       id: 4,
@@ -42,7 +43,7 @@ const HeroSection = () => {
       title: "American Top Choice for custom Heat Press Creations",
       subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
       cta: "Explore Hats",
-      color: "bg-[#E07A06]"
+      color: colors.primary
     },
     {
       id: 5,
@@ -51,7 +52,7 @@ const HeroSection = () => {
       title: "America's Leading Hub for Custom Heat Press Creations",
       subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tote bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
       cta: "Explore T-Shirt",
-      color: "bg-[#A55536]"
+      color: colors.secondary
     },
     {
       id: 6,
@@ -60,7 +61,7 @@ const HeroSection = () => {
       title: "Printing 21st Century Technology for Professional Custom Creations",
       subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
       cta: "Explore Mug",
-      color: "bg-blue-600"
+      color: colors.info
     }
 
   ];
@@ -127,7 +128,19 @@ const HeroSection = () => {
                 <div>
                   <button
                     type="button"
-                    className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                    className="relative flex items-center justify-center overflow-hidden font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                    style={{ 
+                      backgroundColor: colors.heroButton,
+                      color: colors.heroButtonText
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = slide.color;
+                      e.currentTarget.style.color = colors.textPrimary;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = colors.heroButton;
+                      e.currentTarget.style.color = colors.heroButtonText;
+                    }}
                   >
                     <span className="relative z-10">
                       {slide.cta}
@@ -146,9 +159,12 @@ const HeroSection = () => {
                 onClick={() => setCurrentSlide(index)}
                 className={`w-2 h-2 md:w-2.5 md:h-2.5 xl:w-3 xl:h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index
-                    ? `${slides[index].color} scale-110`
+                    ? "scale-110"
                     : "bg-white/60 hover:bg-white"
                 }`}
+                style={{
+                  backgroundColor: currentSlide === index ? slides[index].color : undefined
+                }}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
@@ -158,7 +174,7 @@ const HeroSection = () => {
         {/* === Right Column (Stacked Cards) === */}
         <div className="flex flex-col gap-6 h-full">
           {/* Top Right Card */}
-          <div className="flex-1 relative rounded-[32px] overflow-hidden bg-[#A55536] flex flex-col justify-between p-6 lg:p-6 xl:p-8 min-h-[240px]">
+          <div className="flex-1 relative rounded-[32px] overflow-hidden flex flex-col justify-between p-6 lg:p-6 xl:p-8 min-h-[240px]" style={{ backgroundColor: colors.secondary }}>
             {/* Text Section (Top) */}
             <div className="z-10 w-1/2 lg:w-3/5 xl:w-1/2">
               <h3 className="text-3xl lg:text-2xl xl:text-3xl font-bold text-white mb-2">
@@ -175,7 +191,19 @@ const HeroSection = () => {
             <div className="z-10 relative">
               <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                className="relative flex items-center justify-center overflow-hidden font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                style={{ 
+                  backgroundColor: colors.heroButton,
+                  color: colors.heroButtonText
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.secondary;
+                  e.currentTarget.style.color = colors.textPrimary;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.heroButton;
+                  e.currentTarget.style.color = colors.heroButtonText;
+                }}
               >
                 <span className="relative z-10">
                   Shop Now
@@ -192,7 +220,7 @@ const HeroSection = () => {
           </div>
 
           {/* Bottom Right Card */}
-          <div className="flex-1 relative rounded-[32px] overflow-hidden bg-[#E07A06] flex flex-col justify-between p-6 lg:p-6 xl:p-8 min-h-[240px]">
+          <div className="flex-1 relative rounded-[32px] overflow-hidden flex flex-col justify-between p-6 lg:p-6 xl:p-8 min-h-[240px]" style={{ backgroundColor: colors.primary }}>
             {/* Text Section (Top) */}
             <div className="z-10 w-3/5 lg:w-2/3 xl:w-3/5">
               <h3 className="text-3xl lg:text-2xl xl:text-3xl font-bold text-white mb-2">
@@ -209,7 +237,19 @@ const HeroSection = () => {
             <div className="z-10 relative">
               <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden bg-white text-black hover:text-white font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                className="relative flex items-center justify-center overflow-hidden font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                style={{ 
+                  backgroundColor: colors.heroButton,
+                  color: colors.heroButtonText
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.primary;
+                  e.currentTarget.style.color = colors.textPrimary;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = colors.heroButton;
+                  e.currentTarget.style.color = colors.heroButtonText;
+                }}
               >
                 <span className="relative z-10">
                   Shop Now

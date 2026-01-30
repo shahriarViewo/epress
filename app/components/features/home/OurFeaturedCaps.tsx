@@ -2,6 +2,7 @@
 
 import React from "react";
 import ProductCard from "@/app/components/ui/card/ProductCard";
+import { colors } from "../../../config/colors";
 
 // Mock Data for caps
 const caps = [
@@ -82,7 +83,7 @@ const OurFeaturedCaps = () => {
 
         <a
           href="#"
-          className="text-[#E07A06] text-sm md:text-base font-medium hover:text-[#c76a00] flex items-center gap-1 transition-colors"
+          style={{ color: colors.primary }} className="text-sm md:text-base font-medium hover:underline flex items-center gap-1 transition-colors"
         >
           View All Caps
           <span>&gt;</span>

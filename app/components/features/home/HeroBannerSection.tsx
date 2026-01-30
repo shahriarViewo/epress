@@ -2,10 +2,12 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { colors } from "../../../config/colors";
+import { typography } from "../../../config/typography";
 
 const HeroBannerSection = () => {
   return (
-    <section className="w-full bg-[#F9FAFB] py-16 px-4 md:px-8 overflow-hidden">
+    <section className={`w-full ${colors.backgroundSecondary} py-16 px-4 md:px-8 overflow-hidden`}>
       {/* Container: Flex on Desktop, Stack on Mobile */}
       <div className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 px-4 sm:px-6">
         
@@ -13,7 +15,7 @@ const HeroBannerSection = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start z-10">
           
           {/* Big Bold Headline */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-[#0B132B] leading-tight tracking-tight mb-6 md:mb-10 space-y-2 md:space-y-4">
+          <h1 className={`${typography.display} font-black ${colors.textStrong} leading-tight tracking-tight mb-6 md:mb-10 space-y-2 md:space-y-4`}>
             <div className="block">PRESS IT.</div>
             <div className="block">WEAR IT.</div>
             <div className="block">LOVE IT.</div>
@@ -21,10 +23,10 @@ const HeroBannerSection = () => {
 
           {/* Descriptive Text with Better Spacing */}
           <div className="space-y-4 md:space-y-6 max-w-lg">
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className={`${typography.body} ${colors.textMuted} leading-relaxed`}>
               Empower your brand with advanced heat press technology creating vibrant, durable t-shirts, mugs, phone cases, tote bags, wall art, and personalized gifts.
             </p>
-            <p className="text-lg font-semibold text-gray-900">
+            <p className={`${typography.body} font-semibold ${colors.textStrong}`}>
               Inspire and grow with OnePrint!
             </p>
           </div>

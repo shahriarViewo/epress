@@ -2,16 +2,17 @@
 
 import React from "react";
 import Image from "next/image";
+import { colors } from "../../../config/colors";
 
 const PromoDealsSection = () => {
   return (
-    <section className="w-full py-12 px-4 lg:px-16 bg-white">
+    <section className="w-full py-12 px-4 lg:px-16">
       <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:h-[500px] h-auto">
           
           {/* === 1. Left Large Card (Blue) === */}
           {/* FIX: Added 'hidden' to hide on mobile, and 'lg:flex' to show on large screens */}
-          <div className="hidden lg:flex lg:col-span-2 relative bg-[#3B75B8] rounded-[32px] overflow-hidden p-6 md:p-8 lg:p-10 flex-col justify-between h-full min-h-[400px] lg:min-h-0 group">
+          <div className="hidden lg:flex lg:col-span-2 relative rounded-[32px] overflow-hidden p-6 md:p-8 lg:p-10 flex-col justify-between h-full min-h-[400px] lg:min-h-0 group" style={{ backgroundColor: colors.info }}>
             {/* Top Section: Text */}
             <div className="relative z-10">
               <h2 className="text-4xl font-bold text-white leading-tight mb-4">
@@ -27,7 +28,15 @@ const PromoDealsSection = () => {
             <div className="relative z-10">
               <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+                className="relative flex items-center justify-center overflow-hidden text-white hover:text-white font-semibold 
+                           py-2.5 px-6 
+                           text-sm md:text-base 
+                           rounded-full gap-2 transition-all duration-200 shrink-0
+                           before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out 
+                           hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2"
+                style={{ backgroundColor: colors.button }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = colors.primaryDark}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = colors.button}
               >
                 <span className="relative z-10">
                   Shop Now
@@ -46,7 +55,7 @@ const PromoDealsSection = () => {
             </div>
 
             {/* Red Badge */}
-            <div className="absolute bottom-8 right-[25%] md:right-[35%] w-24 h-24 bg-[#EF4444] rounded-full flex flex-col items-center justify-center text-white font-bold rotate-12 shadow-lg z-20 animate-pulse-slow">
+            <div className="absolute bottom-8 right-[25%] md:right-[35%] w-24 h-24 rounded-full flex flex-col items-center justify-center text-white font-bold rotate-12 shadow-lg z-20 animate-pulse-slow" style={{ backgroundColor: colors.error }}>
               <span className="text-sm font-normal">Up to</span>
               <span className="text-3xl leading-none">20%</span>
             </div>
@@ -55,7 +64,7 @@ const PromoDealsSection = () => {
           {/* === 2. Middle Column (Stacked Cards) === */}
           <div className="flex flex-col gap-6 lg:col-span-1 h-full">
             {/* Top: Purple Card (Mug) */}
-            <div className="relative bg-[#A82897] rounded-4xl overflow-hidden p-6 flex flex-col justify-between h-[300px] lg:h-[calc(50%-12px)]">
+            <div className="relative rounded-4xl overflow-hidden p-6 flex flex-col justify-between h-[300px] lg:h-[calc(50%-12px)]" style={{ backgroundColor: colors.promoCardPurple }}>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-white leading-snug">
                   Serve Style with <br /> Every Sip — Offer <br /> On Now
@@ -69,7 +78,7 @@ const PromoDealsSection = () => {
                   Shop Now
                 </a>
               </div>
-              <div className="absolute top-6 right-6 w-16 h-16 bg-[#185C37] rounded-full flex flex-col items-center justify-center text-white text-center shadow-md z-20">
+              <div className="absolute top-6 right-6 w-16 h-16 rounded-full flex flex-col items-center justify-center text-white text-center shadow-md z-20" style={{ backgroundColor: colors.success }}>
                 <span className="text-xs uppercase">Up to</span>
                 <span className="text-lg font-bold">5%</span>
               </div>
@@ -84,7 +93,7 @@ const PromoDealsSection = () => {
             </div>
 
             {/* Bottom: Cyan Card (Cap) */}
-            <div className="relative bg-[#209EB8] rounded-[32px] overflow-hidden p-6 flex flex-col justify-between h-[300px] lg:h-[calc(50%-12px)]">
+            <div className="relative rounded-[32px] overflow-hidden p-6 flex flex-col justify-between h-[300px] lg:h-[calc(50%-12px)]" style={{ backgroundColor: colors.promoCardCyan }}>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-white leading-snug">
                   Upgrade Your <br /> Headwear Shop & <br /> Save
@@ -110,7 +119,7 @@ const PromoDealsSection = () => {
           </div>
 
           {/* === 3. Right Vertical Card (Dark Image) === */}
-          <div className="lg:col-span-1 relative bg-black rounded-[32px] overflow-hidden h-[500px] lg:h-full group">
+          <div className="lg:col-span-1 relative rounded-[32px] overflow-hidden h-[500px] lg:h-full group" style={{ backgroundColor: colors.backgroundDark }}>
             <Image
               src="/images/landingPage/PromoDealsSection/4.png"
               alt="Man in T-Shirt"
@@ -123,13 +132,23 @@ const PromoDealsSection = () => {
               <span className="text-white/90 text-lg font-medium mb-1">
                 Save up to
               </span>
-              <h2 className="text-5xl font-serif italic font-bold text-white mb-4">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-black italic font-serif text-white mb-4">
                 60% Off
               </h2>
               <p className="text-white/80 text-base mb-6 max-w-[200px]">
                 Comfortable, stylish, built to last. Get yours now.
               </p>
-              <button className="relative flex items-center justify-center overflow-hidden bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B] w-full max-w-[200px]">
+              <button 
+                className="relative flex items-center justify-center overflow-hidden text-white hover:text-white font-semibold 
+                           py-2.5 px-6 
+                           text-sm md:text-base 
+                           rounded-full gap-2 transition-all duration-200 shrink-0
+                           before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out 
+                           hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2 w-full max-w-[200px]"
+                style={{ backgroundColor: colors.button }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = colors.primaryDark}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = colors.button}
+              >
                 <span className="relative z-10">
                   Shop Now
                 </span>
