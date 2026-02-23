@@ -48,6 +48,7 @@ export const typography = {
   
   // Special Typography
   display: "text-5xl md:text-6xl lg:text-7xl font-black leading-none",
+  displayMedium: "text-3xl md:text-4xl lg:text-5xl font-black leading-none",
   quote: "text-lg md:text-xl italic leading-relaxed",
   
   // Links
