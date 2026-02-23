@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface HelpBannerProps {
   title: string;
@@ -29,17 +30,21 @@ const HelpBanner: React.FC<HelpBannerProps> = ({ title, subtitle, images }) => {
           {/* LEFT CLUSTER */}
           <div className="hidden md:block relative w-[220px] h-[260px] flex-shrink-0">
             <div className="absolute top-0 right-0 w-44 h-56 rounded-xl overflow-hidden shadow-2xl z-10 border border-white/5">
-              <img 
+              <Image 
                 src={images.leftMain} 
                 alt="Left Main Visual" 
+                width={176}
+                height={224}
                 className="w-full h-full object-cover" 
               />
             </div>
 
             <div className="absolute bottom-0 left-0 w-32 h-36 bg-[#FFF5EB] rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 overflow-hidden">
-              <img 
+              <Image 
                 src={images.leftCard} 
                 alt="Left Product Card" 
+                width={128}
+                height={144}
                 className="w-full h-full object-cover mix-blend-multiply" 
               />
             </div>
@@ -58,17 +63,21 @@ const HelpBanner: React.FC<HelpBannerProps> = ({ title, subtitle, images }) => {
           {/* RIGHT CLUSTER */}
           <div className="hidden md:block relative w-[220px] h-[260px] flex-shrink-0">
             <div className="absolute top-0 left-0 w-44 h-56 rounded-xl overflow-hidden shadow-2xl z-10 border border-white/5">
-              <img 
+              <Image 
                 src={images.rightMain} 
                 alt="Right Main Visual" 
+                width={176}
+                height={224}
                 className="w-full h-full object-cover" 
               />
             </div>
 
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-white rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 overflow-hidden">
-              <img 
+              <Image 
                 src={images.rightCard} 
                 alt="Right Product Card" 
+                width={128}
+                height={128}
                 className="w-full h-full object-cover" 
               />
             </div>
@@ -77,15 +86,19 @@ const HelpBanner: React.FC<HelpBannerProps> = ({ title, subtitle, images }) => {
           {/* MOBILE GRID FALLBACK */}
           <div className="md:hidden grid grid-cols-2 gap-3 mt-6 w-full max-w-sm mx-auto">
              <div className="rounded-lg overflow-hidden h-40 shadow-lg">
-               <img 
+               <Image 
                  src={images.leftMain} 
+                 width={160}
+                 height={160}
                  className="w-full h-full object-cover" 
                  alt="Left Visual Mobile"
                />
              </div>
              <div className="rounded-lg overflow-hidden h-40 shadow-lg">
-               <img 
+               <Image 
                  src={images.rightMain} 
+                 width={160}
+                 height={160}
                  className="w-full h-full object-cover" 
                  alt="Right Visual Mobile"
                />

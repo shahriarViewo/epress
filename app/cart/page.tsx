@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Trash2, Minus, Plus } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Breadcrumbs from '@/app/components/ui/layout/Breadcrumbs'
 import RelatedProducts from '@/app/components/features/product/RelatedProducts'
 
@@ -94,7 +95,7 @@ export default function CartPage() {
                     {/* Product Info */}
                     <div className="sm:col-span-6 flex gap-4">
                       <div className="w-20 h-20 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden border border-gray-200">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover mix-blend-multiply" />
+                        <Image src={item.image} alt={item.name} width={80} height={80} className="w-full h-full object-cover mix-blend-multiply" />
                       </div>
                       <div className="flex flex-col justify-between py-1">
                         <div>

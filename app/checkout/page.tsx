@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { Trash2, Minus, Plus } from 'lucide-react'
+import Image from 'next/image'
 import PaymentMethod from '../components/features/checkout/PaymentMethod'
 import ShippingAddress from '../components/features/checkout/ShippingAddress'
 import Breadcrumbs from '../components/ui/layout/Breadcrumbs'
@@ -95,7 +96,7 @@ export default function CheckoutPage() {
                     {/* Info */}
                     <div className="sm:col-span-6 flex gap-4">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden border border-gray-200">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover mix-blend-multiply" />
+                        <Image src={item.image} alt={item.name} width={80} height={80} className="w-full h-full object-cover mix-blend-multiply" />
                       </div>
                       <div className="flex flex-col justify-between py-1">
                         <div>

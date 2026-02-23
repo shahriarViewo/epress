@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { colors } from "../../../config/colors";
 
 const HeroSection = () => {
@@ -99,9 +100,11 @@ const HeroSection = () => {
               </div>
 
               {/* Hero Image */}
-              <img
+              <Image
                 src={slide.heroImage}
                 alt={slide.title}
+                width={400}
+                height={400}
                 className="absolute right-0 bottom-0 
                    h-[160px] max-w-[50%] 
                    md:h-[90%] md:max-w-[45%] 
@@ -212,9 +215,11 @@ const HeroSection = () => {
             </div>
 
             {/* Image (Bottom Right) */}
-            <img
+            <Image
               src="/images/hero/hero2.png"
               alt="Comfort Style"
+              width={300}
+              height={300}
               className="absolute right-0 bottom-0 h-[90%] w-auto max-w-[60%] lg:max-w-[50%] xl:max-w-[60%] object-contain object-bottom"
             />
           </div>
@@ -258,9 +263,11 @@ const HeroSection = () => {
             </div>
 
             {/* Image (Bottom Right) */}
-            <img
+            <Image
               src="/images/hero/hero3.png"
               alt="Stylish Accessories"
+              width={300}
+              height={300}
               className="absolute right-0 bottom-0 h-[90%] w-auto max-w-[65%] lg:max-w-[55%] xl:max-w-[65%] object-contain object-bottom drop-shadow-lg"
             />
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { colors } from "../../../config/colors";
 
 const categories = [
@@ -45,9 +46,11 @@ const CategorySection = () => {
             >
               {/* Image Circle */}
               <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center mb-4 overflow-hidden p-1">
-                <img
+                <Image
                   src={cat.img}
                   alt={cat.name}
+                  width={96}
+                  height={96}
                   className="w-full h-full object-contain mix-blend-multiply group-hover:scale-125 transition-transform duration-300 ease-in-out"
                   style={{ transformOrigin: "center" }}
                 />

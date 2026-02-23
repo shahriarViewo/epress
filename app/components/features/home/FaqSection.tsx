@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import Image from "next/image";
 import { colors } from "../../../config/colors";
 import { typography } from "../../../config/typography";
 
@@ -62,9 +63,11 @@ const FaqSection = () => {
             {/* Image Banner */}
             {/* UPDATED: Changed h-[500px] to h-[350px] lg:h-[500px] to fix mobile height */}
             <div className="relative w-full h-[350px] lg:h-[500px] rounded-3xl overflow-hidden shadow-lg group">
-              <img
+              <Image
                 src="/images/landingPage/common/Humen.png"
                 alt="Support representative"
+                width={500}
+                height={500}
                 className="absolute -top-[8%] left-0 w-full h-auto object-top object-cover transition-transform duration-500 group-hover:scale-105"
               />
 

@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, MouseEvent } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 
 interface ProductImageViewerProps {
   images: string[]
@@ -50,7 +51,7 @@ export default function ProductImageViewer({ images }: ProductImageViewerProps) 
               selectedImage === idx ? 'border-gray-900' : 'border-transparent hover:border-gray-300'
             }`}
           >
-            <img src={img} alt={`View ${idx}`} className="w-full h-full object-cover bg-gray-100" />
+            <Image src={img} alt={`View ${idx}`} width={80} height={80} className="w-full h-full object-cover bg-gray-100" />
           </button>
         ))}
       </div>
@@ -65,9 +66,11 @@ export default function ProductImageViewer({ images }: ProductImageViewerProps) 
       >
         {/* Inner wrapper for image rounding */}
         <div className="w-full h-full overflow-hidden rounded-2xl relative">
-          <img 
+          <Image 
             src={images[selectedImage]} 
             alt="Product Main" 
+            width={600}
+            height={600}
             className="w-full h-full object-contain mix-blend-multiply p-8"
           />
           
