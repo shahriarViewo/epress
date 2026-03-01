@@ -52,11 +52,11 @@ const RichTextEditor = () => {
   return (
     <div className="flex flex-col h-full overflow-hidden bg-white dark:bg-gray-900">
       {/* Toolbar */}
-      <div className="bg-gray-50 border-b border-gray-200 p-2 flex flex-wrap gap-2 text-gray-800 dark:bg-gray-800 dark:border-gray-700 dark:text-white/90">
+      <div className="bg-gray-50 border-b border-gray-500 p-2 flex flex-wrap gap-2 text-gray-800 dark:bg-gray-800 dark:border-gray-700 dark:text-white/90">
         <button 
           onClick={toggleBold}
           className={`p-2 rounded px-3 text-sm border shadow-sm transition ${
-            editor.isActive('bold') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-200 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
+            editor.isActive('bold') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-500 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
           }`}
           title="Bold"
         >
@@ -65,7 +65,7 @@ const RichTextEditor = () => {
         <button 
           onClick={toggleItalic}
           className={`p-2 rounded italic px-3 text-sm border shadow-sm transition ${
-            editor.isActive('italic') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-200 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
+            editor.isActive('italic') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-500 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
           }`}
           title="Italic"
         >
@@ -74,7 +74,7 @@ const RichTextEditor = () => {
         <button 
           onClick={toggleUnderline}
           className={`p-2 rounded underline px-3 text-sm border shadow-sm transition ${
-            editor.isActive('underline') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-200 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
+            editor.isActive('underline') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-500 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
           }`}
           title="Underline"
         >
@@ -84,7 +84,7 @@ const RichTextEditor = () => {
         <button 
           onClick={toggleBulletList}
           className={`p-2 rounded px-3 text-sm border shadow-sm transition ${
-            editor.isActive('bulletList') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-200 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
+            editor.isActive('bulletList') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-500 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
           }`}
           title="Bullet List"
         >
@@ -93,7 +93,7 @@ const RichTextEditor = () => {
         <button 
           onClick={addLink}
           className={`p-2 rounded px-3 text-sm border shadow-sm transition ${
-            editor.isActive('link') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-200 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
+            editor.isActive('link') ? 'bg-brand-600 text-white border-brand-600' : 'bg-white hover:bg-gray-50 border-gray-500 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600'
           }`}
           title="Link"
         >
@@ -111,19 +111,19 @@ const RichTextEditor = () => {
 
 // 1. Basic Info Component
 const BasicInfo = () => (
-  <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+  <div className="rounded-2xl border border-gray-500 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
     <div className="mb-6">
       <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Title</label>
       <input 
         type="text" 
         placeholder="Short sleeve t-shirt" 
-        className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+        className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-500 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
       />
     </div>
     
     <div>
       <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Description</label>
-      <div className="rounded-lg border border-gray-300 bg-transparent overflow-hidden focus-within:border-brand-300 focus-within:ring focus-within:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900">
+      <div className="rounded-lg border border-gray-500 bg-transparent overflow-hidden focus-within:border-brand-300 focus-within:ring focus-within:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900">
         <RichTextEditor />
       </div>
     </div>
@@ -158,7 +158,7 @@ const MediaUpload = () => {
   };
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+    <div className="rounded-2xl border border-gray-500 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
       <h3 className="mb-6 text-lg font-semibold text-gray-800 dark:text-white/90">Media</h3>
       
       {/* Images Section */}
@@ -167,7 +167,7 @@ const MediaUpload = () => {
         
         <div className="flex flex-wrap gap-4 mb-4">
           {images.map((img, idx) => (
-            <div key={idx} className="relative w-24 h-24 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 group">
+            <div key={idx} className="relative w-24 h-24 rounded-lg overflow-hidden border border-gray-500 dark:border-gray-700 group">
               <img src={img} alt={`Product ${idx + 1}`} className="w-full h-full object-cover" />
               <span className="absolute top-1 left-1 bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
                 {idx + 1}
@@ -181,14 +181,14 @@ const MediaUpload = () => {
             </div>
           ))}
           
-          <label className="w-24 h-24 rounded-lg border border-dashed border-gray-300 bg-gray-50 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition">
+          <label className="w-24 h-24 rounded-lg border border-dashed border-gray-500 bg-gray-50 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition">
             <span className="text-2xl text-gray-400 dark:text-gray-500">+</span>
             <span className="text-xs font-medium text-gray-500 dark:text-gray-400 mt-1">Add</span>
             <input type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
           </label>
         </div>
 
-        <div className="rounded-xl border border-gray-300 dark:border-gray-700 p-4 flex items-center justify-center gap-6">
+        <div className="rounded-xl border border-gray-500 dark:border-gray-700 p-4 flex items-center justify-center gap-6">
           <button 
             onClick={() => setImageUploadType('new')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition ${imageUploadType === 'new' ? 'bg-gray-100 text-gray-900 shadow-sm dark:bg-gray-800 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`}
@@ -205,7 +205,7 @@ const MediaUpload = () => {
         
         {imageUploadType === 'new' && (
           <div className="mt-2 text-center">
-             <label className="block w-full py-8 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800/50 transition">
+             <label className="block w-full py-8 border-2 border-dashed border-gray-500 rounded-lg cursor-pointer hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800/50 transition">
                 <input type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
                 <p className="text-sm text-gray-500 dark:text-gray-400">Click to upload or drag and drop</p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">SVG, PNG, JPG or GIF (max. 3MB)</p>
@@ -220,7 +220,7 @@ const MediaUpload = () => {
         
         <div className="flex flex-wrap gap-4 mb-4">
           {videos.map((vid, idx) => (
-            <div key={idx} className="relative w-24 h-24 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 flex items-center justify-center group">
+            <div key={idx} className="relative w-24 h-24 rounded-lg overflow-hidden border border-gray-500 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 flex items-center justify-center group">
               <div className="text-gray-400 dark:text-gray-600">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
               </div>
@@ -239,14 +239,14 @@ const MediaUpload = () => {
             </div>
           ))}
           
-          <label className="w-24 h-24 rounded-lg border border-dashed border-gray-300 bg-gray-50 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition">
+          <label className="w-24 h-24 rounded-lg border border-dashed border-gray-500 bg-gray-50 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition">
             <span className="text-2xl text-gray-400 dark:text-gray-500">+</span>
             <span className="text-xs font-medium text-gray-500 dark:text-gray-400 mt-1">Add</span>
             <input type="file" className="hidden" accept="video/*" onChange={handleVideoUpload} />
           </label>
         </div>
 
-        <div className="rounded-xl border border-gray-300 dark:border-gray-700 p-4 flex items-center justify-center gap-6">
+        <div className="rounded-xl border border-gray-500 dark:border-gray-700 p-4 flex items-center justify-center gap-6">
           <button 
              onClick={() => setVideoUploadType('new')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition ${videoUploadType === 'new' ? 'bg-gray-100 text-gray-900 shadow-sm dark:bg-gray-800 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`}
@@ -263,7 +263,7 @@ const MediaUpload = () => {
 
          {videoUploadType === 'new' && (
           <div className="mt-2 text-center">
-             <label className="block w-full py-8 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800/50 transition">
+             <label className="block w-full py-8 border-2 border-dashed border-gray-500 rounded-lg cursor-pointer hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800/50 transition">
                 <input type="file" className="hidden" accept="video/*" onChange={handleVideoUpload} />
                 <p className="text-sm text-gray-500 dark:text-gray-400">Click to upload or drag and drop</p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">MP4, WebM or Ogg (max. 10MB)</p>
@@ -294,7 +294,7 @@ const KeyFeatures = () => {
   };
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+    <div className="rounded-2xl border border-gray-500 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">Key Features</h3>
         <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800 dark:bg-white/10 dark:text-white/90">
@@ -309,11 +309,11 @@ const KeyFeatures = () => {
               value={feature.value}
               onChange={(e) => updateFeature(feature.id, e.target.value)}
               placeholder="Add a feature"
-              className="dark:bg-dark-900 h-11 flex-1 rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800" 
+              className="dark:bg-dark-900 h-11 flex-1 rounded-lg border border-gray-500 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800" 
             />
             <button 
               onClick={() => removeFeature(feature.id)}
-              className="flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 hover:text-error-500 transition-colors dark:border-gray-800 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-error-500"
+              className="flex items-center justify-center w-11 h-11 rounded-lg border border-gray-500 text-gray-500 hover:bg-gray-50 hover:text-error-500 transition-colors dark:border-gray-800 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-error-500"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
@@ -322,7 +322,7 @@ const KeyFeatures = () => {
         {features.length < 10 && (
           <button 
             onClick={addFeature}
-            className="flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-gray-300 bg-gray-50 py-3 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 transition"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-gray-500 bg-gray-50 py-3 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 transition"
           >
             + Add Feature
           </button>
@@ -338,7 +338,7 @@ const Pricing = () => {
 
   // Reusable currency input component with thick borders & brand focus rings
   const CurrencyInput = () => (
-    <div className="flex h-11 w-full items-center overflow-hidden rounded-lg border-2 border-gray-300 bg-transparent px-3 shadow-theme-xs focus-within:border-brand-500 focus-within:ring focus-within:ring-brand-500/20 dark:border-gray-600 dark:bg-gray-900 dark:focus-within:border-brand-500">
+    <div className="flex h-11 w-full items-center overflow-hidden rounded-lg border-2 border-gray-500 bg-transparent px-3 shadow-theme-xs focus-within:border-brand-500 focus-within:ring focus-within:ring-brand-500/20 dark:border-gray-600 dark:bg-gray-900 dark:focus-within:border-brand-500">
       <span className="text-gray-500 dark:text-gray-400 font-medium">$</span>
       <input 
         type="number" 
@@ -349,7 +349,7 @@ const Pricing = () => {
   );
 
   return (
-    <div className="rounded-2xl border-2 border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-white/[0.03] md:p-6">
+    <div className="rounded-2xl border-2 border-gray-500 bg-white p-5 dark:border-gray-700 dark:bg-white/[0.03] md:p-6">
       <h3 className="mb-4 text-base font-bold text-gray-800 dark:text-white/90">Pricing</h3>
       
       <div className="space-y-6">
@@ -382,7 +382,7 @@ const Pricing = () => {
           <button 
             type="button"
             onClick={() => setScheduleSale(!scheduleSale)}
-            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors border-2 ${scheduleSale ? 'bg-brand-500 border-brand-500 dark:bg-brand-600 dark:border-brand-600' : 'bg-gray-200 border-gray-300 dark:bg-gray-700 dark:border-gray-600'} focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900`}
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors border-2 ${scheduleSale ? 'bg-brand-500 border-brand-500 dark:bg-brand-600 dark:border-brand-600' : 'bg-gray-200 border-gray-500 dark:bg-gray-700 dark:border-gray-600'} focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900`}
           >
             <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${scheduleSale ? 'translate-x-5' : 'translate-x-0.5'}`} />
           </button>
@@ -402,14 +402,14 @@ const Pricing = () => {
                 <label className="mb-1.5 block text-sm font-bold text-gray-700 dark:text-gray-300">Start date *</label>
                 <input 
                   type="datetime-local" 
-                  className="dark:bg-dark-900 h-11 w-full rounded-lg border-2 border-gray-300 bg-transparent px-4 py-2.5 text-sm font-medium text-gray-800 shadow-theme-xs focus:border-brand-500 focus:outline-none focus:ring focus:ring-brand-500/20 dark:border-gray-600 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-500"
+                  className="dark:bg-dark-900 h-11 w-full rounded-lg border-2 border-gray-500 bg-transparent px-4 py-2.5 text-sm font-medium text-gray-800 shadow-theme-xs focus:border-brand-500 focus:outline-none focus:ring focus:ring-brand-500/20 dark:border-gray-600 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-500"
                 />
               </div>
               <div className="flex-1">
                 <label className="mb-1.5 block text-sm font-bold text-gray-700 dark:text-gray-300">End date *</label>
                 <input 
                   type="datetime-local" 
-                  className="dark:bg-dark-900 h-11 w-full rounded-lg border-2 border-gray-300 bg-transparent px-4 py-2.5 text-sm font-medium text-gray-800 shadow-theme-xs focus:border-brand-500 focus:outline-none focus:ring focus:ring-brand-500/20 dark:border-gray-600 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-500"
+                  className="dark:bg-dark-900 h-11 w-full rounded-lg border-2 border-gray-500 bg-transparent px-4 py-2.5 text-sm font-medium text-gray-800 shadow-theme-xs focus:border-brand-500 focus:outline-none focus:ring focus:ring-brand-500/20 dark:border-gray-600 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-500"
                 />
               </div>
             </div>
@@ -456,13 +456,13 @@ const Pricing = () => {
         </div>
 
         {/* Tax Checkbox - NOW USING BRAND THEME */}
-        <div className="pt-4 border-t-2 border-gray-200 dark:border-gray-700">
+        <div className="pt-4 border-t-2 border-gray-500 dark:border-gray-700">
           <label className="flex items-center gap-3 cursor-pointer">
             <div className="relative flex items-center">
               <input 
                 type="checkbox" 
                 defaultChecked
-                className="peer h-5 w-5 cursor-pointer appearance-none rounded border-2 border-gray-300 bg-white transition-all checked:border-brand-500 checked:bg-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-900 dark:checked:border-brand-500 dark:checked:bg-brand-500 dark:focus:ring-offset-gray-900"
+                className="peer h-5 w-5 cursor-pointer appearance-none rounded border-2 border-gray-500 bg-white transition-all checked:border-brand-500 checked:bg-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-900 dark:checked:border-brand-500 dark:checked:bg-brand-500 dark:focus:ring-offset-gray-900"
               />
               <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 pointer-events-none stroke-white opacity-0 peer-checked:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
@@ -479,9 +479,9 @@ const Pricing = () => {
 
 // 5. Product Status Component
 const ProductStatus = () => (
-  <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+  <div className="rounded-2xl border border-gray-500 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
     <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Product Status</label>
-    <select className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800">
+    <select className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-500 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800">
       <option value="draft">Draft</option>
       <option value="active">Active</option>
       <option value="archived">Archived</option>
@@ -491,12 +491,12 @@ const ProductStatus = () => (
 
 // 6. Organization Component
 const Organization = () => (
-  <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+  <div className="rounded-2xl border border-gray-500 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
     <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Organization</h3>
     <div className="space-y-4">
       <div>
         <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Category</label>
-        <select className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800">
+        <select className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-500 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800">
           <option value="">Select Category</option>
           <option value="apparel">Apparel</option>
           <option value="home">Home Decor</option>
@@ -507,7 +507,7 @@ const Organization = () => (
         <input 
           type="text" 
           placeholder="e.g. Summer, Limited" 
-          className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+          className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-500 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
         />
       </div>
     </div>
