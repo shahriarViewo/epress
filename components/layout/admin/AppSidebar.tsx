@@ -16,6 +16,8 @@ import {
   PlugInIcon,
   TableIcon,
   UserCircleIcon,
+  PlusIcon,
+  BoxIcon,
 } from "@/icons/index";
 
 type NavItem = {
@@ -33,14 +35,14 @@ const navItems: NavItem[] = [
     path: "/vendor-dashboard"
   },
   {
-    icon: <CalenderIcon />,
-    name: "Add Products",
+    icon: <PlusIcon />,
+    name: "Add Product",
     path: "/add-products",
   },
   {
-    icon: <UserCircleIcon />,
-    name: "User Profile",
-    path: "/profile",
+    icon: <BoxIcon />,
+    name: "Product List",
+    path: "/product-list",
   },
 
   {
