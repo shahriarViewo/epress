@@ -16,7 +16,7 @@ export default function CreateCollectionModal({ isOpen, onClose }: CreateCollect
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm sm:p-6 font-sans">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-md sm:p-6 font-sans">
       {/* Modal Container */}
       <div className="flex w-full max-w-5xl max-h-[95vh] flex-col overflow-hidden rounded-xl bg-gray-50 shadow-2xl dark:bg-gray-900">
         

@@ -22,7 +22,7 @@ function AdminLayoutContent({
       : "lg:ml-[90px]";
   
     return (
-      <div className="min-h-screen xl:flex">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-cyan-50 xl:flex">
         {/* Sidebar and Backdrop */}
         <AppSidebar />
         <Backdrop />
