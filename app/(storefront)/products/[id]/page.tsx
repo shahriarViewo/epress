@@ -1,11 +1,11 @@
 import React from 'react';
-import Breadcrumbs from '../../components/ui/layout/Breadcrumbs';
-import ProductDetails from '../../components/features/product/ProductDetails';
-import ProductTabs from '../../components/features/product/ProductTabs';
-import ServiceInfo from '../../components/features/product/ServiceInfo';
-import RelatedProducts from '../../components/features/product/RelatedProducts';
-import FeaturesSection from '../../components/features/home/FeaturesSection';
-import FaqSection from '../../components/features/home/FaqSection';
+import Breadcrumbs from '../../../components/ui/layout/Breadcrumbs';
+import ProductDetails from '../../../components/features/product/ProductDetails';
+import ProductTabs from '../../../components/features/product/ProductTabs';
+import ServiceInfo from '../../../components/features/product/ServiceInfo';
+import RelatedProducts from '../../../components/features/product/RelatedProducts';
+import FeaturesSection from '../../../components/features/home/FeaturesSection';
+import FaqSection from '../../../components/features/home/FaqSection';
 
 // --- MOCK DATA ---
 const MOCK_PRODUCT = {

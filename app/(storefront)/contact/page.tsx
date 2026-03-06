@@ -6,8 +6,8 @@ import ContactInfoCard from "../../components/features/contact/ContactInfoCard";
 import FeaturesSection from "../../components/features/home/FeaturesSection";
 import { Button } from "@/components/ui/button"; // Using your existing Shadcn button
 import MapSection from "../../components/features/contact/MapSection";
-import { typography } from "../config/typography";
-import { colors } from "../config/colors";
+import { typography } from "../../config/typography";
+import { colors } from "../../config/colors";
 
 export default function ContactPage() {
   return (
