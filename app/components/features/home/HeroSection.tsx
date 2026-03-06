@@ -63,18 +63,27 @@ const HeroSection = () => {
       subtitle: "Unleash your vision with bold, lasting t-shirts, mugs, phone cases, tot bags, wall art, and unique gifts. Spark inspiration and fuel your brand growth with OnePrint!",
       cta: "Explore Mug",
       color: colors.info
+    },
+    {
+      id: 7,
+      bgImage: '/images/hero/background.jpg',
+      heroImage: '/images/hero/hero4.webp',
+      title: "Make Your Brand Stand Out with Premium Custom Merch",
+      subtitle: "From caps and tees to mugs and accessories, bring your ideas to life with vibrant prints, durable materials, and fast production made for modern creators.",
+      cta: "Explore Collection",
+      color: colors.primary
     }
 
   ];
 
-  // 3. Auto-play logic
+  // 3. Auto-play logic - resets whenever slide changes
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 5000);
 
     return () => clearInterval(slideInterval);
-  }, [slides.length]);
+  }, [currentSlide, slides.length]);
 
   return (
     <div className="w-full px-4 py-4 lg:py-16 lg:px-16">
