@@ -9,6 +9,7 @@ import TwoColumnBanner from "../components/features/home/TwoColumnBanner";
 import PromoGridSection from "../components/features/home/PromoGridSection";
 import TestimonialSection from "../components/features/home/TestimonialSection";
 import TShirtCollectionGrid from "../components/features/home/TShirtCollectionGrid";
+import HoodyLadyCollectionGrid from "../components/features/home/HoodyLadyCollectionGrid";
 import PromotionalBanner from "../components/features/home/PromotionalBanner";
 import FaqSection from "../components/features/home/FaqSection";
 import FeaturesSection from "../components/features/home/FeaturesSection";
@@ -17,6 +18,7 @@ import OurFeaturedCaps from "../components/features/home/OurFeaturedCaps";
 import BestsellersSection from "../components/features/home/BestsellersSection";
 import CapCarousel from "../components/features/home/CapCarousel";
 import TshirtCarousel from '../components/features/home/TshirtCarousel';
+import HoodyCarousel from "../components/features/home/HoodyCarousel";
 export default function Home() {
   return (
     <>
@@ -36,11 +38,12 @@ export default function Home() {
         <PromoGridSection />
         <TestimonialSection />
         <TShirtCollectionGrid />
+
         <PromotionalBanner />
-
         <CapCarousel />
-
         <TshirtCarousel />
+        <HoodyCarousel />
+        <HoodyLadyCollectionGrid />
         <FaqSection />
         <FeaturesSection />
       </main>
