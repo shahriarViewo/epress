@@ -1,12 +1,29 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: ["@svgr/webpack"],
+        });
+        return config;
+    },
+    experimental: {
+        turbo: {
+            rules: {
+                '*.svg': {
+                    loaders: ['@svgr/webpack'],
+                    as: '*.js',
+                },
+            },
+        },
+    },
   output: 'export',
-  distDir: 'dist', // Changes the build output directory to 'dist' instead of '.next'
+  distDir: 'dist',
   trailingSlash: true,
   reactStrictMode: true,
   images: {
-    unoptimized: true, // Required for static export on cPanel
+    unoptimized: true,
     domains: ['placehold.co', 'images.unsplash.com', 'cdn.pixabay.com', 'upload.wikimedia.org'],
     remotePatterns: [
       {

@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 // @ts-ignore
 import "./globals.css";
-import TopBar from "./components/ui/layout/topbar";
-import Navbar from "./components/ui/layout/navbar";
-import Footer from "./components/ui/layout/Footer";
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
@@ -25,10 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${instrumentSans.className} bg-white`}>
-        <TopBar />
-        <Navbar />
-        <main className="bg-white">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

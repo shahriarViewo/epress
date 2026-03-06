@@ -7,8 +7,8 @@ import { IoMdArrowDropdown } from 'react-icons/io';
 
 const Topbar: FC = () => {
   return (
-    <div className="hidden md:block w-full text-white text-sm bg-black max-w-[1600px] mx-auto">
-      <div className="w-full px-16 py-2 flex justify-between items-center">
+    <div className="w-full bg-black hidden md:block text-white text-sm">
+      <div className="max-w-[1600px] mx-auto w-full px-16 py-2 flex justify-between items-center">
         {/* Left Side */}
         <div className="flex space-x-6 items-center">
           <div className="flex items-center space-x-2">
