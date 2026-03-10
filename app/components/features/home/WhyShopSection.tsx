@@ -136,7 +136,7 @@ const WhyShopSection = () => {
             <span className="text-white/90 font-medium italic mb-2 block text-lg">
               Save up to 15%
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-8">
               Your New <br /> Favorite Tee <br /> Starts Here
             </h2>
             <button
