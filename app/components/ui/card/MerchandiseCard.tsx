@@ -50,11 +50,11 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
 
       {/* Content Section */}
       <div className="flex flex-col px-1">
-        <h3 className="text-2xl font-bold text-gray-900 leading-tight mb-2 tracking-tight">
+        <h3 className="text-sm lg:text-base font-semibold text-gray-900 leading-tight mb-2 tracking-tight">
           {title}
         </h3>
 
-        <p className="text-base leading-relaxed mb-4" style={{ color: colors.textDefault }}>
+        <p className="text-xs lg:text-sm leading-relaxed mb-4" style={{ color: colors.textDefault }}>
           {description}
         </p>
 
@@ -65,7 +65,7 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
         {/* CTA Button */}
         <button
           onClick={onButtonClick}
-          className="relative flex items-center justify-center overflow-hidden w-full py-3.5 rounded-full bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold text-lg transition-all duration-200 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-[200%] hover:before:w-full hover:before:left-0 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
+          className="relative flex items-center justify-center overflow-hidden w-full py-1.5 px-3 lg:py-2.5 lg:px-6 rounded-full bg-[#EF5A2B] text-white hover:text-[#EF5A2B] font-semibold text-sm lg:text-base transition-all duration-200 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-[200%] hover:before:w-full hover:before:left-0 hover:border hover:border-[#EF5A2B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF5A2B]"
         >
           <span className="relative z-10">
             {buttonText}

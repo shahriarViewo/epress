@@ -3,12 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import { colors } from "../../../config/colors";
-import { typography } from "../../../config/typography";
 
 const PromotionalBanner = () => {
   return (
     <div className="px-4 lg:px-16">
       <div className="relative w-full min-h-[380px] md:min-h-[450px] lg:min-h-[550px] bg-[#6a2615] overflow-hidden flex items-center justify-center p-4 lg:p-16 rounded-2xl">
+        {/* Background Gradient - Similar to HelpBanner */}
+        <div className="absolute inset-0 z-0 h-full w-full bg-[radial-gradient(circle_at_center,_#FC5C269C_0%,_#8b3a1f_40%,_#6a2615_100%)]"></div>
         {/* --- Floating Images Group (Left Side) --- */}
         {/* We use a fixed width container for the images to ensure they stay grouped relative to each other */}
         {/* 
@@ -37,7 +38,7 @@ const PromotionalBanner = () => {
 
         {/* --- Main Content (Center) --- */}
         <div className="relative z-20 flex flex-col items-center text-center max-w-2xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6 drop-shadow-lg">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight mb-6 drop-shadow-lg">
             Get UP TO 30% OFF on <br />
             T-Shirts, Caps & Mugs
           </h1>

@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { colors } from "../../../config/colors";
-import { typography } from "../../../config/typography";
 
 const TShirtCollectionGrid = () => {
   return (
@@ -21,7 +20,7 @@ const TShirtCollectionGrid = () => {
           />
 
           {/* Overlay Content */}
-          <div className="absolute inset-0 bg-black/10 p-8 md:p-12 flex flex-col justify-end items-start">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-8 md:p-12 flex flex-col justify-end items-start">
             <h2 className="text-4xl font-bold text-white mb-8 leading-tight drop-shadow-md">
               Heat Press T-Shirt <br /> Collection
             </h2>

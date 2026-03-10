@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import { colors } from "../../../config/colors";
-import { typography } from "../../../config/typography";
 
 const FaqSection = () => {
   // State to track which accordion item is open.
@@ -43,17 +42,17 @@ const FaqSection = () => {
   ];
 
   return (
-    <div className={`w-full ${typography.fontFamily} py-4 md:py-20 px-4 lg:px-16`}>
+    <div className={`w-full py-4 md:py-20 px-4 lg:px-16`}>
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column: Text and Image */}
           <div>
             {/* FAQ Text */}
             <div className="w-full mb-8 lg:mb-12">
-              <h2 className={`${typography.sectionTitle} ${colors.textStrong} mb-4`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${colors.textStrong} mb-4`}>
                 Discover More in Our Faq
               </h2>
-              <p className={`${typography.body} ${colors.textMuted} leading-relaxed`}>
+              <p className={`text-base ${colors.textMuted} leading-relaxed`}>
                 Find quick answers to the most common questions about our
                 T-shirts, caps, mugs, shipping, returns, and more — everything
                 you need for a smooth shopping experience.
@@ -74,7 +73,7 @@ const FaqSection = () => {
               {/* Black Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90">
                 <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                  <h3 className={`${typography.h3} leading-tight mb-6`} style={{ color: colors.textPrimary }}>
+                  <h3 className={`text-2xl font-bold leading-tight mb-6`} style={{ color: colors.textPrimary }}>
                     We'd love to <br />
                     hear from you <br />
                     let's talk!
@@ -118,7 +117,7 @@ const FaqSection = () => {
                     onClick={() => toggleFaq(index)}
                     className="w-full flex justify-between items-center p-5 text-left focus:outline-none"
                   >
-                    <span className={`${typography.body} ${colors.textStrong} font-medium`}>
+                    <span className={`text-base ${colors.textStrong} font-medium`}>
                       {item.question}
                     </span>
                     {isOpen ? (
@@ -133,7 +132,7 @@ const FaqSection = () => {
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <div className={`p-5 pt-0 ${typography.body} leading-relaxed`} style={{ color: `${colors.textStrong} !important` }}>
+                    <div className={`p-5 pt-0 text-base leading-relaxed`} style={{ color: `${colors.textStrong} !important` }}>
                       {item.answer}
                     </div>
                   </div>

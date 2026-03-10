@@ -15,10 +15,10 @@ const PromoDealsSection = () => {
           <div className="hidden lg:flex lg:col-span-2 relative rounded-[32px] overflow-hidden p-6 md:p-8 lg:p-10 flex-col justify-between h-full min-h-[400px] lg:min-h-0 group" style={{ backgroundColor: colors.info }}>
             {/* Top Section: Text */}
             <div className="relative z-10">
-              <h2 className="text-4xl font-bold text-white leading-tight mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-4">
                 Level Up Your <br />Look with<br /> Exclusive  <br />Cap Deals
               </h2>
-              <p className="text-white/90 text-lg">
+              <p className="text-white/90 text-base">
                 From sporty to streetwear, elevate every
                 <br /> outfit at an unbeatable price.
               </p>
@@ -66,7 +66,7 @@ const PromoDealsSection = () => {
             {/* Top: Purple Card (Mug) */}
             <div className="relative rounded-4xl overflow-hidden p-6 flex flex-col justify-between h-[300px] lg:h-[calc(50%-12px)]" style={{ backgroundColor: colors.promoCardPurple }}>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-white leading-snug">
+                <h3 className="text-xl font-bold text-white leading-snug">
                   Serve Style with <br /> Every Sip — Offer <br /> On Now
                 </h3>
               </div>
@@ -95,7 +95,7 @@ const PromoDealsSection = () => {
             {/* Bottom: Cyan Card (Cap) */}
             <div className="relative rounded-[32px] overflow-hidden p-6 flex flex-col justify-between h-[300px] lg:h-[calc(50%-12px)]" style={{ backgroundColor: colors.promoCardCyan }}>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-white leading-snug">
+                <h3 className="text-xl font-bold text-white leading-snug">
                   Upgrade Your <br /> Headwear Shop & <br /> Save
                 </h3>
               </div>

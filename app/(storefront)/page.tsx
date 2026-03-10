@@ -8,8 +8,7 @@ import WhyShopSection from "../components/features/home/WhyShopSection";
 import TwoColumnBanner from "../components/features/home/TwoColumnBanner";
 import PromoGridSection from "../components/features/home/PromoGridSection";
 import TestimonialSection from "../components/features/home/TestimonialSection";
-import TShirtCollectionGrid from "../components/features/home/TShirtCollectionGrid";
-import HoodyLadyCollectionGrid from "../components/features/home/HoodyLadyCollectionGrid";
+import CollectionGrid from "../components/features/home/CollectionGrid";
 import PromotionalBanner from "../components/features/home/PromotionalBanner";
 import FaqSection from "../components/features/home/FaqSection";
 import FeaturesSection from "../components/features/home/FeaturesSection";
@@ -37,13 +36,33 @@ export default function Home() {
 
         <PromoGridSection />
         <TestimonialSection />
-        <TShirtCollectionGrid />
+        <CollectionGrid
+          title="Heat Press T-Shirt Collection"
+          mainImage="/images/landingPage/TshirtCollection/1.jpg"
+          galleryImages={[
+            "/images/landingPage/TshirtCollection/2.jpg",
+            "/images/landingPage/TshirtCollection/3.jpg",
+            "/images/landingPage/TshirtCollection/4.jpg",
+            "/images/landingPage/TshirtCollection/5.jpg"
+          ]}
+          useGradientOverlay={true}
+        />
 
         <PromotionalBanner />
         <CapCarousel />
         <TshirtCarousel />
         <HoodyCarousel />
-        <HoodyLadyCollectionGrid />
+        <CollectionGrid
+          title="Heat Press Hoodie Collection"
+          mainImage="/images/landingPage/HoodyWithBackground/1.webp"
+          galleryImages={[
+            "/images/landingPage/HoodyWithBackground/2.webp",
+            "/images/landingPage/HoodyWithBackground/3.webp",
+            "/images/landingPage/HoodyWithBackground/4.webp",
+            "/images/landingPage/HoodyWithBackground/5.webp"
+          ]}
+          useGradientOverlay={false}
+        />
         <FaqSection />
         <FeaturesSection />
       </main>

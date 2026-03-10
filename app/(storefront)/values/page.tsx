@@ -1,24 +1,23 @@
 "use client";
 
 import React from "react";
-import OurValuesSection from "../../components/features/values/OurValuesSection";
-import HelpBanner from "../../components/banners/HelpBanner";
+import TestingBanner from "@/app/components/delete/TestingBanner";
+import AboutSection from "@/app/components/features/about/AboutSection";
+import FeaturesSection from "@/app/components/features/home/FeaturesSection";
+
 export default function ValuesPage() {
   return (
-    <div className="min-h-screen bg-gray-50/50 font-sans">
-      <main className="w-full">
-            <HelpBanner
-            title="We’re Here to Help"
-            subtitle={`Need product info or support? Contact us anytime.\nYour satisfaction is our priority.`}
-            images={{
-                leftMain: "/images/banners/Frame 1171278359.jpg",
-                leftCard: "/images/banners/Frame 1171278360.jpg",
-                rightMain: "/images/banners/Frame 1171278361.jpg",
-                rightCard: "/images/banners/Frame 1171278362.jpg"
-            }}
-        />
-        <OurValuesSection />
+    <>
+      <TestingBanner pageType="values" />
+      
+      {/* Page Container */}
+      <main className="min-h-screen bg-gray-50/50 p-4 lg:p-8 font-sans">
+        
+        {/* The About Section Component */}
+        <AboutSection pageType="values" />
+        <FeaturesSection pageType="values" />
+
       </main>
-    </div>
+    </>
   );
 }

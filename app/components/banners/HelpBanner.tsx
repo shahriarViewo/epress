@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import { getPageContent } from '@/config/pageContent';
 
 interface HelpBannerProps {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
+  pageType?: string;
   images: {
     leftMain: string;
     leftCard: string;
@@ -12,7 +14,11 @@ interface HelpBannerProps {
   };
 }
 
-const HelpBanner: React.FC<HelpBannerProps> = ({ title, subtitle, images }) => {
+const HelpBanner: React.FC<HelpBannerProps> = ({ title, subtitle, pageType = 'home', images }) => {
+  const content = getPageContent(pageType);
+  const bannerTitle = title || content.helpBanner?.title || "We're Here to Help";
+  const bannerSubtitle = subtitle || content.helpBanner?.subtitle || "Need product info or support? Contact us anytime.\nYour satisfaction is our priority.";
+  
   return (
     // 1. OUTER CONTAINER: Matches your NavBar exactly
     // NavBar uses: max-w-[1600px] mx-auto md:px-16 px-4
@@ -53,10 +59,10 @@ const HelpBanner: React.FC<HelpBannerProps> = ({ title, subtitle, images }) => {
           {/* CENTER TEXT */}
           <div className="max-w-xl text-center z-30 mx-4">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-lg">
-              {title}
+              {bannerTitle}
             </h2>
             <p className="text-orange-100/90 text-sm md:text-base leading-relaxed whitespace-pre-line">
-              {subtitle}
+              {bannerSubtitle}
             </p>
           </div>
 

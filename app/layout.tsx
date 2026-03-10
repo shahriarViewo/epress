@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${instrumentSans.className} bg-white`}>
+      <body className={`${instrumentSans.className} bg-white`} suppressHydrationWarning>
         {children}
       </body>
     </html>

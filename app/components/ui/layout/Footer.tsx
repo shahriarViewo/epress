@@ -220,7 +220,7 @@ const Footer = () => {
               alt="Mastercard" 
             />
             <PaymentLogo 
-              src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" 
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" 
               alt="Visa" 
             />
             <PaymentLogo 

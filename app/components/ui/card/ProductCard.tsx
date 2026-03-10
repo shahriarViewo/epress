@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { colors } from "../../../config/colors";
-import { typography } from "../../../config/typography";
 
 type ProductCardProps = {
   title: string;
@@ -79,7 +78,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="p-3 lg:p-4 flex-1 flex flex-col">
         <div className="flex justify-between items-start mb-1 lg:mb-2 gap-2">
           {/* Title: Text-sm on mobile, truncated to 1 line to save space */}
-          <h3 className={`${typography.productTitle} text-gray-900 line-clamp-1 lg:line-clamp-none`}>
+          <h3 className={`text-sm lg:text-base font-semibold text-gray-900 line-clamp-1 lg:line-clamp-none`}>
             {title}
           </h3>
           
@@ -101,7 +100,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Description: Hidden or clamped strictly on mobile */}
-        <p className={`${typography.productDescription} mb-2 lg:mb-4 flex-1 line-clamp-2`}>
+        <p className={`text-xs lg:text-sm text-gray-600 mb-2 lg:mb-4 flex-1 line-clamp-2`}>
           {description}
         </p>
 
@@ -147,7 +146,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <span className="relative z-10">Cart</span>
           </button>
 
-          <span className={`${typography.productPrice} text-gray-900`}>
+          <span className={`text-base lg:text-lg font-bold text-gray-900`}>
             ${price.toFixed(2)}
           </span>
         </div>

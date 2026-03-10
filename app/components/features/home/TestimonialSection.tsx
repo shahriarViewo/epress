@@ -3,7 +3,6 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import { colors } from "../../../config/colors";
-import { typography } from "../../../config/typography";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -79,7 +78,7 @@ const TestimonialSection = () => {
       <div className="max-w-[1440px] mx-auto">
         {/* Header & Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
-          <h2 className={`${typography.sectionTitle} text-center md:text-left`} style={{ color: colors.textStrong }}>
+          <h2 className={`text-xl md:text-2xl font-bold text-center md:text-left`} style={{ color: colors.textStrong }}>
             Creators Love OnePrint
           </h2>
 
@@ -130,13 +129,13 @@ const TestimonialSection = () => {
                     <span className="absolute -top-4 -left-2 text-6xl font-serif leading-none select-none" style={{ color: colors.border }}>
                       &ldquo;
                     </span>
-                    <p className={`relative z-10 ${typography.body} font-medium leading-relaxed`} style={{ color: colors.textGray }}>
+                    <p className={`relative z-10 text-base font-medium leading-relaxed`} style={{ color: colors.textGray }}>
                       "{item.quote}"
                     </p>
                   </div>
 
                   <div className="mt-8">
-                    <p className={`${typography.body} font-bold text-lg`} style={{ color: colors.textStrong }}>
+                    <p className={`text-base font-bold text-lg`} style={{ color: colors.textStrong }}>
                       {item.author},{" "}
                       <span className="font-normal" style={{ color: colors.textMuted }}>
                         {item.role}
