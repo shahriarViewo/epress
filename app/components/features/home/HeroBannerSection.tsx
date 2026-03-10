@@ -14,7 +14,7 @@ const HeroBannerSection = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start z-10">
           
           {/* Big Bold Headline */}
-          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black ${colors.textStrong} leading-tight tracking-tight mb-6 md:mb-10 space-y-2 md:space-y-4`}>
+          <h1 className={`text-3xl md:text-4xl lg:text-4xl font-black ${colors.textStrong} leading-tight tracking-tight mb-6 md:mb-10 space-y-2 md:space-y-4`}>
             <div className="block">PRESS IT.</div>
             <div className="block">WEAR IT.</div>
             <div className="block">LOVE IT.</div>

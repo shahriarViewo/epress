@@ -1,27 +1,20 @@
 "use client";
 
 import React from "react";
-import WhyChooseUsSection from "../../components/features/why-choose-us/WhyChooseUsSection";
-import FaqSection from "../../components/features/home/FaqSection";
-import HelpBanner from "../../components/banners/HelpBanner";
+import TestingBanner from "@/app/components/delete/TestingBanner";
+import FeaturesSection from "@/app/components/features/home/FeaturesSection";
 
 export default function WhyChooseUsPage() {
   return (
-    <div className="min-h-screen bg-gray-50/50 font-sans">
-      <main className="w-full">
-                <HelpBanner
-            title="We’re Here to Help"
-            subtitle={`Need product info or support? Contact us anytime.\nYour satisfaction is our priority.`}
-            images={{
-                leftMain: "/images/banners/Frame 1171278359.jpg",
-                leftCard: "/images/banners/Frame 1171278360.jpg",
-                rightMain: "/images/banners/Frame 1171278361.jpg",
-                rightCard: "/images/banners/Frame 1171278362.jpg"
-            }}
-        />
-        <WhyChooseUsSection />
-        <FaqSection />
+    <>
+      <TestingBanner pageType="why-choose-us" />
+      
+      {/* Page Container */}
+      <main className="min-h-screen bg-gray-50/50 p-4 lg:p-8 font-sans">
+        
+        <FeaturesSection pageType="why-choose-us" />
+
       </main>
-    </div>
+    </>
   );
 }

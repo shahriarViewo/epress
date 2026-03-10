@@ -11,7 +11,7 @@ const CtaSection = () => {
       <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
         
         {/* Main headline, large and bold, in white. */}
-        <h2 className={`text-3xl md:text-4xl font-bold ${colors.textPrimary} mb-6 leading-tight`}>
+        <h2 className={`text-3xl md:text-4xl font-bold text-white mb-6 leading-tight`}>
           Ready to Create a Buzz?
         </h2>
         

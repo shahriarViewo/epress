@@ -19,7 +19,7 @@ export function FilterSidebar() {
       {/* Price Range Section */}
       <div className="space-y-6">
         {/* H4 Title: text-xl */}
-        <h3 className="text-xl font-bold text-gray-900">Price Range</h3>
+        <h3 className="text-lg md:text-xl font-bold text-gray-900">Price Range</h3>
         <Slider
           defaultValue={[0, 899]}
           max={1000}
@@ -29,10 +29,10 @@ export function FilterSidebar() {
           className="py-4"
         />
         <div className="flex items-center justify-between gap-4">
-          <div className="px-4 py-2 border rounded-full text-base text-gray-600 w-full text-center">
+          <div className="px-4 py-2 border rounded-full text-sm md:text-base text-gray-600 w-full text-center">
             ${priceRange[0]}
           </div>
-          <div className="px-4 py-2 border rounded-full text-base text-gray-600 w-full text-center">
+          <div className="px-4 py-2 border rounded-full text-sm md:text-base text-gray-600 w-full text-center">
             ${priceRange[1]}
           </div>
         </div>
@@ -46,7 +46,7 @@ export function FilterSidebar() {
         {/* Product Type */}
         <AccordionItem value="type" className="border-none">
           {/* H4 Title: text-xl */}
-          <AccordionTrigger className="text-xl font-bold hover:no-underline py-4">
+          <AccordionTrigger className="text-lg md:text-xl font-bold hover:no-underline py-4">
             Product Type
           </AccordionTrigger>
           <AccordionContent className="space-y-4 pt-2">
@@ -60,7 +60,7 @@ export function FilterSidebar() {
                 {/* Body Text: text-base */}
                 <label
                   htmlFor={item.id}
-                  className="text-base text-gray-600 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  className="text-sm md:text-base text-gray-600 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                   {item.label} <span className="text-gray-400">({item.count})</span>
                 </label>
@@ -71,19 +71,19 @@ export function FilterSidebar() {
 
         {/* Availability */}
         <AccordionItem value="availability" className="border-none">
-          <AccordionTrigger className="text-xl font-bold hover:no-underline py-4">
+          <AccordionTrigger className="text-lg md:text-xl font-bold hover:no-underline py-4">
             Availability
           </AccordionTrigger>
           <AccordionContent className="space-y-4 pt-2">
             <div className="flex items-center space-x-3">
               <Checkbox id="instock" className="w-5 h-5" />
-              <label htmlFor="instock" className="text-base text-gray-600">
+              <label htmlFor="instock" className="text-sm md:text-base text-gray-600">
                 In Stock <span className="text-gray-400">(955)</span>
               </label>
             </div>
             <div className="flex items-center space-x-3">
               <Checkbox id="outstock" className="w-5 h-5" />
-              <label htmlFor="outstock" className="text-base text-gray-600">
+              <label htmlFor="outstock" className="text-sm md:text-base text-gray-600">
                 Out of Stock <span className="text-gray-400">(12)</span>
               </label>
             </div>
@@ -92,7 +92,7 @@ export function FilterSidebar() {
 
         {/* Color Palette */}
         <AccordionItem value="color" className="border-none">
-          <AccordionTrigger className="text-xl font-bold hover:no-underline py-4">
+          <AccordionTrigger className="text-lg md:text-xl font-bold hover:no-underline py-4">
             Color
           </AccordionTrigger>
           <AccordionContent className="pt-2">
@@ -109,7 +109,7 @@ export function FilterSidebar() {
                   aria-label="Select color"
                 />
               ))}
-              <button className="text-base text-[#EF5A2B] font-medium flex items-center mt-2">
+              <button className="text-sm md:text-base text-[#EF5A2B] font-medium flex items-center mt-2">
                 + Show More
               </button>
             </div>
@@ -118,7 +118,7 @@ export function FilterSidebar() {
 
         {/* Size */}
         <AccordionItem value="size" className="border-none">
-          <AccordionTrigger className="text-xl font-bold hover:no-underline py-4">
+          <AccordionTrigger className="text-lg md:text-xl font-bold hover:no-underline py-4">
             Size
           </AccordionTrigger>
           <AccordionContent className="space-y-4 pt-2">
@@ -131,7 +131,7 @@ export function FilterSidebar() {
             ].map((item) => (
               <div key={item.id} className="flex items-center space-x-3">
                 <Checkbox id={item.id} className="w-5 h-5" />
-                <label htmlFor={item.id} className="text-base text-gray-600">
+                <label htmlFor={item.id} className="text-sm md:text-base text-gray-600">
                   {item.label} <span className="text-gray-400">({item.count})</span>
                 </label>
               </div>

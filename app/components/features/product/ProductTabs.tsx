@@ -77,7 +77,7 @@ export default function ProductTabs() {
             className={`pb-3 text-base sm:text-lg font-medium transition-all relative ${
               activeTab === tab.id
                 ? 'text-[#F15A24]'
-                : 'text-gray-500 hover:text-gray-800'
+                : 'text-gray-700 hover:text-gray-900'
             }`}
           >
             {tab.label}
@@ -89,7 +89,7 @@ export default function ProductTabs() {
       </div>
 
       {/* --- Tab Content --- */}
-      <div className="text-gray-600 leading-relaxed">
+      <div className="text-gray-700 leading-relaxed">
         
         {activeTab === 'description' && (
           <div className="animate-in fade-in duration-300 space-y-4">
@@ -106,16 +106,16 @@ export default function ProductTabs() {
                  <div className="divide-y divide-gray-200">
                     {specifications.filter((_, i) => i % 2 === 0).map((spec, idx) => (
                       <div key={idx} className="grid grid-cols-2 p-4">
-                        <span className="font-semibold text-gray-900">{spec.label}</span>
-                        <span className="text-gray-700">{spec.value}</span>
+                        <span className="font-semibold text-gray-800">{spec.label}</span>
+                        <span className="text-gray-600">{spec.value}</span>
                       </div>
                     ))}
                  </div>
                  <div className="divide-y divide-gray-200">
                     {specifications.filter((_, i) => i % 2 !== 0).map((spec, idx) => (
                       <div key={idx} className="grid grid-cols-2 p-4">
-                         <span className="font-semibold text-gray-900">{spec.label}</span>
-                         <span className="text-gray-700">{spec.value}</span>
+                         <span className="font-semibold text-gray-800">{spec.label}</span>
+                         <span className="text-gray-600">{spec.value}</span>
                       </div>
                     ))}
                  </div>
@@ -129,8 +129,8 @@ export default function ProductTabs() {
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
-                <h3 className="text-xl font-bold text-gray-900">Reviews (12)</h3>
-                <p className="text-gray-500 text-sm mt-1">Get specific details about this product from customers who own it.</p>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800">Reviews (12)</h3>
+                <p className="text-sm md:text-base text-gray-600 mt-1">Get specific details about this product from customers who own it.</p>
               </div>
               
               {/* --- WRITE REVIEW BUTTON --- */}
@@ -144,7 +144,7 @@ export default function ProductTabs() {
               <div className="flex text-[#F15A24]">
                 {[...Array(5)].map((_, i) => (<Star key={i} size={20} fill="currentColor" />))}
               </div>
-              <span className="text-lg font-bold text-gray-900">5 out of 5</span>
+              <span className="text-base md:text-lg font-bold text-gray-800">5 out of 5</span>
             </div>
 
             <div className="space-y-8">
@@ -153,9 +153,9 @@ export default function ProductTabs() {
                   <div className="flex text-[#F15A24]">
                     {[...Array(5)].map((_, i) => (<Star key={i} size={16} fill={i < review.rating ? "currentColor" : "none"} />))}
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{review.text}</p>
-                  <div className="text-sm text-gray-500">
-                    Reviewed by <span className="font-semibold text-gray-900">{review.name}</span> on {review.date}
+                  <p className="text-gray-600 leading-relaxed">{review.text}</p>
+                  <div className="text-sm text-gray-600">
+                    Reviewed by <span className="font-semibold text-gray-800">{review.name}</span> on {review.date}
                   </div>
                 </div>
               ))}

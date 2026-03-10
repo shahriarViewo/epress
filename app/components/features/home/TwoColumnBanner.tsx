@@ -12,14 +12,14 @@ const TwoColumnBanner = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
         
         {/* === Left Card: Pink (Caps) === */}
-        <div className={`relative rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col justify-center min-h-[360px] md:min-h-[400px]`} style={{ backgroundColor: colors.backgroundSecondary }}>
+        <div className={`relative rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col justify-center min-h-[360px] md:min-h-[400px]`} style={{ backgroundColor: colors.categoryBackground }}>
           
           {/* Text Content */}
           <div className="relative z-10 max-w-[60%] flex flex-col items-start h-full justify-center">
             <h2 className={`text-2xl md:text-3xl font-bold ${colors.textStrong} leading-tight mb-4`}>
               Buy a Cap, Boost <br /> Your Style
             </h2>
-            <p className={`${colors.textMuted} text-base md:text-lg mb-8 max-w-xs leading-relaxed`}>
+            <p className={`${colors.textMuted} text-xs lg:text-sm mb-8 max-w-xs leading-relaxed`}>
               Exclusive styles crafted for everyday confidence. Shop the offer today.
             </p>
               <button
@@ -65,7 +65,7 @@ const TwoColumnBanner = () => {
             <h2 className={`text-2xl md:text-3xl font-bold ${colors.textStrong} leading-tight mb-4`}>
               Your Favorite Mug, <br /> Now on Sale
             </h2>
-            <p className={`${colors.textMuted} text-base md:text-lg mb-8 max-w-xs leading-relaxed`}>
+            <p className={`${colors.textMuted} text-xs lg:text-sm mb-8 max-w-xs leading-relaxed`}>
               Limited-time offer on bestselling designs. Don't miss your perfect fit.
             </p>
               <button

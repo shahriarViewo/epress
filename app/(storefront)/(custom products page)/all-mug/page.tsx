@@ -31,15 +31,15 @@ const PRODUCTS = [
 export default function AllTshirtPage() {
     return (
       <>
-          <TestingBanner />
+          <TestingBanner pageType="all-mug" />
     <div className="min-h-screen bg-gray-50/50 p-4 lg:p-8 font-sans">
       
       {/* --- Header Section --- */}
       <div className="max-w-[1400px] mx-auto mb-8 lg:mb-10">
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900">All Products</h1>
-            <p className="text-lg text-gray-500 mt-2">
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900">All Mugs</h1>
+            <p className="text-sm md:text-base text-gray-500 mt-2">
               676 products are available
             </p>
           </div>
@@ -49,7 +49,7 @@ export default function AllTshirtPage() {
             {/* Mobile Filter Trigger */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" className="lg:hidden flex-1 gap-2 h-12 text-base">
+                <Button variant="outline" className="lg:hidden flex-1 gap-2 h-12 text-sm md:text-base">
                   <SlidersHorizontal className="w-5 h-5" />
                   Filters
                 </Button>
@@ -63,16 +63,16 @@ export default function AllTshirtPage() {
 
             {/* Sort Dropdown */}
             <div className="flex items-center gap-3 flex-1 sm:flex-none justify-end">
-              <span className="text-base text-gray-500 hidden sm:inline">Sort By:</span>
+              <span className="text-sm md:text-base text-gray-500 hidden sm:inline">Sort By:</span>
               <Select defaultValue="best-match">
-                <SelectTrigger className="w-[140px] sm:w-[200px] h-11 text-base">
+                <SelectTrigger className="w-[140px] sm:w-[200px] h-11 text-sm md:text-base">
                   <SelectValue placeholder="Sort By" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="best-match" className="text-base">Best Match</SelectItem>
-                  <SelectItem value="price-low" className="text-base">Price: Low to High</SelectItem>
-                  <SelectItem value="price-high" className="text-base">Price: High to Low</SelectItem>
-                  <SelectItem value="newest" className="text-base">Newest Arrivals</SelectItem>
+                  <SelectItem value="best-match" className="text-sm md:text-base">Best Match</SelectItem>
+                  <SelectItem value="price-low" className="text-sm md:text-base">Price: Low to High</SelectItem>
+                  <SelectItem value="price-high" className="text-sm md:text-base">Price: High to Low</SelectItem>
+                  <SelectItem value="newest" className="text-sm md:text-base">Newest Arrivals</SelectItem>
                 </SelectContent>
               </Select>
             </div>

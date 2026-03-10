@@ -78,7 +78,7 @@ const TestimonialSection = () => {
       <div className="max-w-[1440px] mx-auto">
         {/* Header & Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
-          <h2 className={`text-3xl md:text-4xl font-bold text-center md:text-left`} style={{ color: colors.textStrong }}>
+          <h2 className={`text-xl md:text-2xl font-bold text-center md:text-left`} style={{ color: colors.textStrong }}>
             Creators Love OnePrint
           </h2>
 

@@ -174,7 +174,7 @@ const TopSellingSection = () => {
     <section className="w-full py-4 lg:py-12 px-3 lg:px-16 mx-auto">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-6 lg:mb-10 w-full">
-        <h2 className={`text-3xl md:text-4xl font-bold ${colors.textStrong}`}>
+        <h2 className={`text-xl md:text-2xl font-bold ${colors.textStrong}`}>
           Top Selling Products
         </h2>
 

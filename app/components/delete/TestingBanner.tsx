@@ -3,8 +3,14 @@
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { getPageContent } from '@/config/pageContent';
 
-export default function TestingBanner() {
+interface TestingBannerProps {
+  pageType?: string;
+}
+
+export default function TestingBanner({ pageType = 'home' }: TestingBannerProps) {
+  const content = getPageContent(pageType);
   
   // FIX: Added 'as any' here. This forces TypeScript to accept the object 
   // regardless of strict type checks.
@@ -18,7 +24,7 @@ export default function TestingBanner() {
   } as any;
 
   return (
-    <section className="relative w-full min-h-screen bg-[#F0FBFF] overflow-hidden flex items-center justify-center font-sans">
+    <section className="relative w-full min-h-[70vh] bg-[#F0FBFF] overflow-hidden flex items-center justify-center font-sans">
       
       {/* --- Floating Decorations --- */}
       
@@ -70,16 +76,17 @@ export default function TestingBanner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
+          className="space-y-6 flex flex-col justify-start"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
-            The leader in <br />
-            quality <span className="text-gray-900">custom T-Shirts</span>
-          </h1>
-          
-          <p className=" text-lg md:text-xl max-w-lg leading-relaxed">
-            Turn your ideas into premium products that leave a lasting impression
-          </p>
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tight whitespace-pre-line">
+              {content.banner.title}
+            </h1>
+            
+            <p className="text-base md:text-lg max-w-lg leading-relaxed">
+              {content.banner.subtitle}
+            </p>
+          </div>
 
           <div className="pt-4">
             <motion.button 
@@ -87,7 +94,7 @@ export default function TestingBanner() {
               whileTap={{ scale: 0.95 }}
               className="group relative px-8 py-4 bg-gradient-to-r from-[#623CEA] to-[#8E2DE2] text-white rounded-full font-semibold shadow-lg shadow-purple-200 flex items-center gap-3"
             >
-              Shop Now
+              {content.banner.buttonText || 'Shop Now'}
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </motion.button>
           </div>
@@ -123,15 +130,6 @@ export default function TestingBanner() {
           />
         </motion.div>
 
-      </div>
-
-      {/* Pagination Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
-        <div className="w-4 h-4 rounded-full border-2 border-purple-600 flex items-center justify-center p-0.5">
-            <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-        </div>
-        <div className="w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors cursor-pointer"></div>
-        <div className="w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors cursor-pointer"></div>
       </div>
 
     </section>

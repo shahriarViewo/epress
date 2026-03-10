@@ -4,6 +4,7 @@ import React from "react";
 import { Phone, MapPin, Mail, Send } from "lucide-react";
 import ContactInfoCard from "../../components/features/contact/ContactInfoCard";
 import FeaturesSection from "../../components/features/home/FeaturesSection";
+import HelpBanner from "../../components/banners/HelpBanner";
 import { Button } from "@/components/ui/button"; // Using your existing Shadcn button
 import MapSection from "../../components/features/contact/MapSection";
 import { colors } from "../../config/colors";
@@ -25,7 +26,7 @@ export default function ContactPage() {
           <div className="flex-1 lg:max-w-[480px] space-y-8 lg:sticky lg:top-8">
             <div>
               {/* H1: Section Headings -> text-5xl */}
-              <h1 className={`text-3xl md:text-4xl font-bold mb-6 ${colors.textStrong} mb-4`}>
+              <h1 className={`text-xl md:text-2xl font-bold mb-6 ${colors.textStrong} mb-4`}>
                 Get in touch
               </h1>
               {/* Body: text-lg */}
@@ -58,7 +59,7 @@ export default function ContactPage() {
           <div className={`flex-1 w-full ${colors.cardBackground} p-6 sm:p-8 lg:p-10 rounded-3xl border ${colors.border} shadow-lg`}>
             <div className="mb-8">
               {/* H2/H3 equivalent for form title -> Let's use H2 (text-4xl) for weight */}
-              <h2 className={`text-3xl md:text-4xl font-bold ${colors.textStrong} mb-3`}>
+              <h2 className={`text-xl md:text-2xl font-bold ${colors.textStrong} mb-3`}>
                 Let's Talk
               </h2>
               {/* Body: text-lg */}
@@ -160,9 +161,20 @@ export default function ContactPage() {
         </div>
       </main>
       
+      {/* Help Banner Section */}
+      <HelpBanner
+        pageType="contact"
+        images={{
+          leftMain: "/images/banners/Frame 1171278359.jpg",
+          leftCard: "/images/banners/Frame 1171278360.jpg",
+          rightMain: "/images/banners/Frame 1171278361.jpg",
+          rightCard: "/images/banners/Frame 1171278362.jpg"
+        }}
+      />
+      
       {/* Features Section */}
       <div >
-        <FeaturesSection />
+      <FeaturesSection pageType="contact" />
         <MapSection />
       </div>
     </div>

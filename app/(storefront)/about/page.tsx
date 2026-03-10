@@ -25,8 +25,8 @@ export default function AboutPage() {
       {/* You can add a Page Header here if needed later */}
       
       {/* The About Section Component */}
-      <AboutSection />
-      <FeaturesSection />
+      <AboutSection pageType="about" />
+      <FeaturesSection pageType="about" />
       <TopSellingSection />
       {/* You can add more sections below (e.g., Team, Values, etc.) */}
 

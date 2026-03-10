@@ -58,7 +58,7 @@ export default function ProductDetails({ product }: ProductProps) {
         {/* --- RIGHT: Details --- */}
         <div className="flex flex-col gap-6 pt-2">
           <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">{product.title}</h1>
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900">{product.title}</h1>
             <div className="flex items-center gap-2">
               <div className="flex text-orange-500">
                 {[...Array(5)].map((_, i) => (<Star key={i} size={16} fill={i < Math.floor(product.rating) ? "currentColor" : "none"} />))}
