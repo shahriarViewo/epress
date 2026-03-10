@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { colors } from "../../../config/colors";
-import { typography } from "../../../config/typography";
 
 const PromoGridSection = () => {
   return (
@@ -13,7 +12,7 @@ const PromoGridSection = () => {
         <div className="relative rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group" style={{ backgroundColor: colors.promoCard1 }}>
           {/* Text Content */}
           <div className="relative z-10 max-w-[70%]">
-            <h2 className={`${typography.sectionTitle} leading-tight mb-6`} style={{ color: colors.textStrong }}>
+            <h2 className={`text-2xl md:text-3xl font-bold leading-tight mb-6`} style={{ color: colors.textStrong }}>
               Vibrant, <br />
               Personalized, <br />
               Durable Tote
@@ -58,7 +57,7 @@ const PromoGridSection = () => {
         {/* === Card 2: Pink (Tote Bag) === */}
         <div className="relative rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group" style={{ backgroundColor: colors.promoCard2 }}>
           <div className="relative z-10 max-w-[60%]">
-            <h2 className={`${typography.sectionTitle} leading-tight mb-6`} style={{ color: colors.textStrong }}>
+            <h2 className={`text-2xl md:text-3xl font-bold leading-tight mb-6`} style={{ color: colors.textStrong }}>
               Stylish, <br />
               Custom, <br />
               Eco-Friendly
@@ -102,7 +101,7 @@ const PromoGridSection = () => {
         {/* === Card 3: Green (T-Shirt Model) === */}
         <div className="relative rounded-4xl p-8 overflow-hidden min-h-[400px] flex flex-col justify-between group" style={{ backgroundColor: colors.promoCard3 }}>
           <div className="relative z-10 max-w-[60%]">
-            <h2 className={`${typography.sectionTitle} leading-tight mb-6`} style={{ color: colors.textStrong }}>
+            <h2 className={`text-2xl md:text-3xl font-bold leading-tight mb-6`} style={{ color: colors.textStrong }}>
               Bold, <br />
               Unique, <br />
               Long Lasting

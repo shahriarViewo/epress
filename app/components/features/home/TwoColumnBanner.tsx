@@ -3,7 +3,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { colors } from "../../../config/colors";
-import { typography } from "../../../config/typography";
 
 const TwoColumnBanner = () => {
   return (
@@ -17,7 +16,7 @@ const TwoColumnBanner = () => {
           
           {/* Text Content */}
           <div className="relative z-10 max-w-[60%] flex flex-col items-start h-full justify-center">
-            <h2 className={`${typography.h2} ${colors.textStrong} leading-tight mb-4`}>
+            <h2 className={`text-2xl md:text-3xl font-bold ${colors.textStrong} leading-tight mb-4`}>
               Buy a Cap, Boost <br /> Your Style
             </h2>
             <p className={`${colors.textMuted} text-base md:text-lg mb-8 max-w-xs leading-relaxed`}>
@@ -25,7 +24,7 @@ const TwoColumnBanner = () => {
             </p>
               <button
                 type="button"
-                className={`relative flex items-center justify-center overflow-hidden text-white font-semibold ${typography.buttonText} py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                className={`relative flex items-center justify-center overflow-hidden text-white font-semibold text-sm md:text-base py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2`}
                 style={{ backgroundColor: colors.button }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = colors.buttonHover;
@@ -63,7 +62,7 @@ const TwoColumnBanner = () => {
           
           {/* Text Content */}
           <div className="relative z-10 max-w-[60%] flex flex-col items-start h-full justify-center">
-            <h2 className={`${typography.h2} ${colors.textStrong} leading-tight mb-4`}>
+            <h2 className={`text-2xl md:text-3xl font-bold ${colors.textStrong} leading-tight mb-4`}>
               Your Favorite Mug, <br /> Now on Sale
             </h2>
             <p className={`${colors.textMuted} text-base md:text-lg mb-8 max-w-xs leading-relaxed`}>
@@ -71,7 +70,7 @@ const TwoColumnBanner = () => {
             </p>
               <button
                 type="button"
-                className={`relative flex items-center justify-center overflow-hidden text-white font-semibold ${typography.buttonText} py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                className={`relative flex items-center justify-center overflow-hidden text-white font-semibold text-sm md:text-base py-2.5 px-6 rounded-full gap-2 transition-all duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 hover:border focus:outline-none focus:ring-2 focus:ring-offset-2`}
                 style={{ backgroundColor: colors.button }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = colors.buttonHover;

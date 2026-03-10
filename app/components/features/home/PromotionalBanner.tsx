@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { colors } from "../../../config/colors";
-import { typography } from "../../../config/typography";
 
 const PromotionalBanner = () => {
   return (

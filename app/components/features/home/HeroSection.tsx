@@ -126,12 +126,12 @@ const HeroSection = () => {
               <div className="relative z-10 h-full flex flex-col justify-between p-6 pt-8 pb-14 md:p-8 md:pb-12 lg:p-10 lg:pb-12 xl:p-12 xl:pb-16 w-full md:max-w-lg xl:max-w-xl">
                 {/* TOP: Title & Subtitle */}
                 <div>
-                  <h2 className="text-3xl sm:text-4xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-2 md:mb-3 xl:mb-4 animate-fadeIn">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-2 md:mb-3 xl:mb-4 animate-fadeIn">
                     {slide.title}
                   </h2>
 
                   {/* Description hidden on mobile, shown on md+ */}
-                  <p className="hidden md:block text-white/90 text-sm md:text-base xl:text-lg md:max-w-[80%] lg:max-w-md line-clamp-3 md:line-clamp-3 xl:line-clamp-none">
+                  <p className="hidden md:block text-white/90 text-base md:max-w-[80%] lg:max-w-md line-clamp-3 md:line-clamp-3 xl:line-clamp-none">
                     {slide.subtitle}
                   </p>
                 </div>
@@ -140,7 +140,7 @@ const HeroSection = () => {
                 <div>
                   <button
                     type="button"
-                    className="relative flex items-center justify-center overflow-hidden font-semibold text-xs md:text-sm xl:text-base py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                    className="relative flex items-center justify-center overflow-hidden text-sm font-semibold py-2 px-6 md:py-2 md:px-6 xl:py-3 xl:px-8 rounded-full w-fit shadow-lg transition-colors duration-200 transition-[text-shadow] before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                     style={{ 
                       backgroundColor: colors.heroButton,
                       color: colors.heroButtonText
@@ -189,7 +189,7 @@ const HeroSection = () => {
           <div className="flex-1 relative rounded-[32px] overflow-hidden flex flex-col justify-between p-6 lg:p-6 xl:p-8 min-h-[240px]" style={{ backgroundColor: colors.secondary }}>
             {/* Text Section (Top) */}
             <div className="z-10 w-1/2 lg:w-3/5 xl:w-1/2">
-              <h3 className="text-3xl lg:text-2xl xl:text-3xl font-bold text-white mb-2">
+              <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
                 Comfort <br /> Meets Style
               </h3>
               
@@ -203,7 +203,7 @@ const HeroSection = () => {
             <div className="z-10 relative">
               <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                className={`relative flex items-center justify-center overflow-hidden text-sm font-semibold py-2 px-6 lg:px-5 xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500`}
                 style={{ 
                   backgroundColor: colors.heroButton,
                   color: colors.heroButtonText
@@ -237,7 +237,7 @@ const HeroSection = () => {
           <div className="flex-1 relative rounded-[32px] overflow-hidden flex flex-col justify-between p-6 lg:p-6 xl:p-8 min-h-[240px]" style={{ backgroundColor: colors.primary }}>
             {/* Text Section (Top) */}
             <div className="z-10 w-3/5 lg:w-2/3 xl:w-3/5">
-              <h3 className="text-3xl lg:text-2xl xl:text-3xl font-bold text-white mb-2">
+              <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
                 Serve Style <br /> with Sip
               </h3>
               
@@ -251,7 +251,7 @@ const HeroSection = () => {
             <div className="z-10 relative">
               <button
                 type="button"
-                className="relative flex items-center justify-center overflow-hidden font-bold py-2 px-6 lg:px-5 lg:text-xs xl:text-sm xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                className="relative flex items-center justify-center overflow-hidden text-sm font-semibold py-2 px-6 lg:px-5 xl:px-6 rounded-full w-fit shadow-md transition-colors duration-200 before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-600 before:duration-500 before:ease-out hover:shadow-orange-600/30 hover:before:h-56 hover:before:w-56 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                 style={{ 
                   backgroundColor: colors.heroButton,
                   color: colors.heroButtonText
